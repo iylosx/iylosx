@@ -1,0 +1,76 @@
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), 
+    url(../test/fonts/Pretendard-Regular.woff2) format('woff2'), 
+    url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), 
+    url(../fonts/Pretendard-Bold.woff2) format('woff2'), 
+    url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+/* *=와일드카드 / ""모든태그""를 지칭 */
+* {
+    margin: 0;
+    padding: 0;   /* 여백삭제 (브라우저가 임의로 태그에 걸어버린 여백을 싹 삭제하고 내가 편집할거임!!!!!)*/
+
+}
+/* body태그는 모든 태그를 감싸는 태그로 글자의 기본 스타일을 준다 = 글자스타일""만"" 상속이 가능하다 */
+/* body에는 본문 스타일을 주자 */
+body {
+    font-family: 'Pretendard';
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #555555;
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto; /* 가운데 정렬*/
+}
+.eng {
+    margin: 127px 0px 0px 0px; /* 마진순서 = 시계방향 */
+}
+.eng h1 {                   /* 점을 안찍는건 태그명 */
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.eng .sub_tit {    /* 점을 찍는 건 클래스명 */
+    font-size: 24px;
+    color: #1d1d1d;
+    margin: 32px 0px 12px 0px;
+}
+.eng strong {
+    color: #547bac;
+    font-weight: 700;
+
+}
+
+.env {
+    text-align: center;
+
+}
+
+.env h1 {
+    font-size: 60px;
+    font-weight: 700;
+    color: #d81408;
+    margin: 153px 0px 0px 0px;
+}
+.env .sub_tit {
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 21px 0px 13px 0px;
+
+}
+.env strong {
+    color: #d81408;
+    font-weight: 700;
+    text-decoration-line: underline;
+}
