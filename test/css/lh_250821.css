@@ -1,0 +1,52 @@
+@import url(common.css);
+.future {
+    margin: 169px 0 0 0;
+}
+.future .tit {
+    text-align: center;
+}
+.future .tit strong {
+    font-weight: 700;
+    color: #0067db;
+}
+.future .tit h1{
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 17px 0 14px 0;
+}
+.future .list {
+    margin: 100px 0 0 0;
+}
+.future .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.future .list ul li {
+    width: 297px;
+    height: 250px;
+    color: #fff;
+    border-radius: 30px;
+    padding: 56px 30px 0 30px;
+}
+.future .list ul li h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+ /* il 붙여서 클래스 호출 = li 안에서 해당 클래스명 가진 li 자신을 칭한다 
+띄어쓰면 li 안에 해당 클래스를 가진 ""다른 요소""를 호출한다고 인식*/
+
+.future .list ul li.bg1 {             
+    background-color: #2bdd66;
+}
+.future .list ul li.bg2 {
+    background-color: #008bfa;
+}
+.future .list ul li.bg3 {
+    background-color: #a5cefd;
+}
+.future .list ul li.bg4 {
+    background-color: #0078f9;
+}
