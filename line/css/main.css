@@ -1,0 +1,53 @@
+@import url(common.css);
+
+.global {
+    margin: 120px 0 0 0;
+}
+.global h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.global h2 {
+    color: #00b900;
+    margin: 18px 0 11px 0;
+}
+
+.global a {
+    border: 1px solid #00b900;
+    margin: 29px 0 0 0;
+    padding: 5px 29px 5px 29px;
+    color: #00b900;
+    display: inline-block;
+}
+.global .photo {
+    margin: 42px 0 0 0;
+}
+
+.store {
+    margin: 95px 0 0 0;
+    text-align: center;
+    background: url(../images/bg_store.jpg) no-repeat center center / cover;
+    height: 642px;
+    padding: 118px 0 0 0;
+}
+.store h1{
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+}
+.store p {
+    margin: 11px 0 0 0;
+    color: #fff;
+}
+
+.store a {
+    border: 1px solid #fff;
+    margin: 35px 0 0 0;
+    padding: 6px 26px 6px 26px;
+    color: #fff;
+    display: inline-block;
+}
+.store .photo {
+    margin: 42px 0 0 0;
+}
