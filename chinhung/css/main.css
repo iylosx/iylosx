@@ -115,7 +115,9 @@ footer .f_nav ul {
     display: flex;
     gap: 0 45px;  /*상하좌우 순서 - 여백*/
 }
-
+footer .f_nav ul li.privacy a{   /*글자에 a가 있으면 a에 글자스타일을 주세요. 왜?? 기본 스타일이 파란언더라인 글자라서 안전빵으로!!*/
+    font-weight: 700;
+}
 footer .f_info {
     margin: 19px 0 19px 0;
     display: flex;
