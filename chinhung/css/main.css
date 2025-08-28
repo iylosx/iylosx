@@ -106,7 +106,21 @@ header .gnb ul li a {
 }
 
 footer {
-    background-color: #111;
-    padding: 62px 0 68px 0;
+    background-color: #040402;
+    padding: 70px 0 66px 0;
     color: #787878;
+    font-size: 15px;
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 0 45px;  /*상하좌우 순서 - 여백*/
+}
+
+footer .f_info {
+    margin: 19px 0 19px 0;
+    display: flex;
+    gap: 0 24px;
+}
+footer .f_info strong {
+    font-weight: 700;
 }
