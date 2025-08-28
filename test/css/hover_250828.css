@@ -46,3 +46,59 @@
     background-color: #3953F9;
     color: #fff;
 }
+
+.gallery {
+    margin: 100px 0 0 0;
+}
+.gallery ul {
+    display: flex;
+    justify-content: space-between;
+}
+.gallery ul li{
+    width: 404px;
+}
+.gallery ul li a {
+    display: block;
+}
+.gallery ul li a .photo {
+    overflow: hidden;
+    border-radius: 30px;
+    height: 319px;
+}
+
+.gallery ul li a .photo img {
+    transition: 0.5s;
+}
+.gallery ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);   /* ((상하)배수 , (좌우)배수 , 1) */
+}
+
+.bbs {
+    margin: 100px 0 0 0;
+}
+.bbs ul {
+    display: flex;
+    justify-content: space-between;
+}
+.bbs ul li{
+    width: 404px;
+}
+.bbs ul li a {
+    display: block;
+}
+.bbs ul li a .photo {
+    overflow: hidden;
+    border-radius: 30px;
+    height: 319px;
+    transition: 0.5s;
+}
+.bbs ul li a:hover .photo {
+    transform: translateY(-20px);
+    box-shadow: rgba(19, 25, 39, 0.12) 0px 8px 28px -6px, rgba(19, 25, 39, 0.14) 0px 18px 88px -4px;
+}
+
+.bbs ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
