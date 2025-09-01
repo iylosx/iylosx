@@ -95,3 +95,148 @@ header .gnb ul li {
     padding: 8px 28px 8px 28px;
     display: block;
 }
+.biz .btn_wrap a:hover {
+    background-color: #990012;
+    color: #F8F3F1;
+}
+.community {
+    background: url(../images/community_bg.jpg) no-repeat center top / auto 815px;
+    margin: 115px 0 0 0;
+    color: #F8F3F1;
+}
+.community .news {
+    padding: 111px 0 0 0;
+}
+.community .news .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.community .news .tit strong {
+    font-weight: 700;
+    display: block;
+}
+.community .news .tit h2 {
+      font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 1px 0 15px 0;
+    letter-spacing: -0.02em;  
+}
+.community .news .tit a {
+    border: 1px solid #F8F3F1;
+    border-radius: 40px;
+    padding: 8px 31px 8px 31px;
+    display: inline-block;
+    margin: 33px 0 0 0;
+}
+.community .news .tit a:hover {
+    background-color: #F8F3F1;
+    color: #990012;
+}
+.community .news ul li {
+    width: 725px;
+    border-bottom: 1px solid rgb(248, 243, 241, 0.2);
+}
+.community .news ul li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 28px 0 28px 0;
+    align-items: center;
+}
+.community .news ul li a:hover {
+    font-weight: 700;
+}
+.community .news ul li a h3 {
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    line-height: 1.3;  
+    width: 560px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.community .news ul li a span {
+    color: rgb(248, 243, 241, 0.8);
+}
+.community .media {
+    margin: 155px 0 0 0;
+}
+.community .media .tit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+
+}
+.community .media .tit strong {
+    font-weight: 700;
+    display: block;
+}
+.community .media .tit h2 {
+      font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 1px 0 15px 0;
+    letter-spacing: -0.02em;  
+}
+.community .media .tit a {
+    border: 1px solid #F8F3F1;
+    border-radius: 40px;
+    padding: 8px 31px 8px 31px;
+    display: inline-block;
+}
+.community .media .tit a:hover {
+    background-color: #F8F3F1;
+    color: #990012;
+}
+.community .media .list {
+    margin: 30px 0 0 0;
+}
+.community .media .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.community .media .list ul li {
+    width: 404px;
+}
+.community .media .list ul li a{
+    display: block;
+}
+.community .media .list ul li a h3 {
+    display: -webkit-box;
+    color: #111;
+    margin: 31px 0 0 0;
+    line-height: 1.4;
+    height: 2.8em;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;      /*일부브라우저에서만 되는 핵(webkit) 속성 css검사에서 워링뜸*/
+}
+.community .media .list ul li a .photo {
+    height: 227px;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+.community .media .list ul li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer {
+    margin: 102px 0 0 0;
+    padding: 77px 0 91px 0;
+    background-color: #F8F3F1;
+    border-top: 1px solid #dbdbdb;
+    color: #787878;
+}
+footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+footer .f_nav ul {
+    display: flex;
+}
+footer .f_nav ul li.privacy a{
+    font-weight: 700;
+} 
