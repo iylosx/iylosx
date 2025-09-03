@@ -22,6 +22,11 @@ header .wrapper {
 header .gnb ul {
     display: flex;
 }
+header .gnb ul li a {
+    line-height: 80px;
+    padding: 0 20px 0 20px;
+    display: block;
+}
 .visual {
     background: url(../images/visual_bg.jpg);
     color: #fff;
