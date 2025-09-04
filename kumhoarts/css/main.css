@@ -28,6 +28,7 @@ header .gnb ul li a::after {
     bottom: 29px;
     width: 0%;
     height: 2px;
+    border-radius: 2px;
     background-color: #990012;
 }
 header .gnb ul li a:hover::after {
