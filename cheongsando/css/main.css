@@ -1,0 +1,109 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+
+header {
+    position: absolute;   /*wrap 기준 정렬 --- 원래는 body였으나 wrap에 position 줌으로써 해결*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    color: #fff;
+    z-index: 100;
+    border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul a {
+    display: block;
+    padding: 0 24px 0 24px;
+    line-height: 90px;
+    font-size: 20px;
+}
+
+.visual {
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    /*vw/vh - 가변사이즈 (브라우저 넓이/높이를 기준으로 계산함 )*/
+    height: 100vh;
+    border-radius: 0 0 200px 0;
+    min-height: 580px;
+}
+.visual .wrapper {
+    position: relative;
+    height: 100vh;
+}
+.visual h2 {
+    padding: 22vh 0 0 343px;
+}
+.visual p {
+    text-align: center;
+    color: #fff;
+    margin: 86px 0 0 0;
+}
+
+.visual .life {
+    position: absolute;
+    right: -100px;
+    bottom: -100px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #2654C7;
+    display: block;
+    text-align: center;
+    padding: 119px 0 0 0;
+    box-shadow: -7px 5px 11.4px 6px rgb(0, 0, 0, 0.1);
+    transition: 0.5s;
+}
+.visual .life:hover {
+    color: #D4FFC0;
+    box-shadow: -7px 5px 21.4px 6px rgb(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+.visual .life::before {
+    content: "";
+    position: absolute;
+    width: 100%;  /*기준은 life*/
+    height: 72px;
+    left: 0;  /* 좌표 x = 0 이렇게 생각하면 될 것 같다*/
+    top: 46px;
+    background: url(../images/life_ico.svg) no-repeat center top;
+}
+.visual .life:hover::before {
+    background-image: url(../images/life_ico_over.png);
+}
+.visual .life strong {
+    display: block;
+    transition: 0.5s;
+}
+.visual .life:hover strong {
+    display: block;
+    position: relative;
+    transform: translateX(-6px);
+    transition: 0.5s;
+}
+.visual .life strong::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    right: -65px;
+    top: 0;
+    background: url(../images/life_strong_over.svg) no-repeat center center;
+
+}
+.visual .life:hover strong::before {
+    width: 100%;
+    transition: 0.5s;
+}
+footer {
+    height: 155px;
+}

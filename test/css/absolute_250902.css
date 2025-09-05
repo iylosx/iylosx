@@ -97,6 +97,8 @@ header .gnb ul li a {
     margin: 33px 0 0 0;
     display: inline-block;
     position: relative;
+    transition: 0.5s;
+
 }
 .btn_svg a::after {
     content: "";
@@ -110,6 +112,7 @@ header .gnb ul li a {
 .btn_svg a:hover {
     background-color: #111;
     color: #fff; 
+    transition: 0.5s;
 }
 .btn_svg a:hover::after {
     background-image: url(../images/btn_arr02.svg);
