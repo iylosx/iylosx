@@ -18,6 +18,9 @@ header .wrapper {
     justify-content: space-between;
     align-items: center;
 }
+header .gnb{
+    margin: 0 0 0 100px;
+}
 header .gnb ul {
     display: flex;
 }
@@ -27,7 +30,45 @@ header .gnb ul a {
     line-height: 90px;
     font-size: 20px;
 }
-
+header .util {
+    display: flex;
+    gap: 0 22px;
+    font-size: 16px;
+}
+header .util a {
+    padding: 0 0 0 21px;
+    position: relative;
+}
+header .util .weather {
+    position: relative;
+}
+header .util .weather::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 19px;
+    height: 100%;
+    background: url(../images/util_weather.svg) no-repeat left center;
+}
+header .util .sea::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 100%;
+    background: url(../images/util_sea.svg) no-repeat left center;
+}
+header .util .flow::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 100%;
+    background: url(../images/util_flow.svg) no-repeat left center;
+}
 .visual {
     background: url(../images/visual_bg.jpg) no-repeat center center / cover;
     /*vw/vh - 가변사이즈 (브라우저 넓이/높이를 기준으로 계산함 )*/
@@ -104,6 +145,349 @@ header .gnb ul a {
     width: 100%;
     transition: 0.5s;
 }
+
+.culture {
+    margin: 151px 0 0 0;
+}
+.culture .wrapper {
+    position: relative;
+}
+.culture .tit h2 {
+    font-size: 40px;
+    font-weight: 800;
+    margin: 0 0 18px 0;
+}
+.culture .tit strong {
+    color: #2654C7;
+}
+.culture .list {
+    margin: 27px 0 0 0;
+}
+.culture .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.culture .list ul li {
+    /* 33.33%(100/li개수) / (32*2)(여백*여백개수) / 64/3(li갯수) 
+     = 33.33% / 64 / 21*/  
+     width: calc(33.33% - 21px);
+}
+.culture .list ul li a {
+    display: block;
+}
+.culture .list ul li a .photo {
+    overflow: hidden;
+    height: 268px;
+    border-radius: 20px;
+}
+.culture .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.culture .list ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+    transition: 0.5s;
+}
+.culture .list ul li h3 {
+    margin: 30px 0 6px 0;
+    font-size: 28px;
+    font-weight: 700;
+    transition: 0.3s;    
+}
+
+.culture .more a,
+.tour .more a {
+    padding: 0 26px 0 0;
+    transition: 0.3s;        
+    position: absolute;
+    right: 0;
+    top: 80px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.culture .more a::after,
+.tour .more a::after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+    width: 14px;
+    height: 100%;
+    background: url(../images/culture_more.svg) no-repeat right center;
+    transition: 0.3s;    
+}
+.culture .more a:hover,
+.tour .more a:hover {
+    color: #2654C7;
+    transition: 0.3s;    
+}
+.culture .more a:hover::after,
+.tour .more a:hover::after {
+    background-image: url(../images/culture_more_over.svg);
+    transition: 0.3s;
+    animation-name: more;
+    animation-duration: 1.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 3;
+}
+@keyframes more {
+    0% { transform: translateX(0);}
+    50% { transform: translateX(-10px);}
+    100% { transform: translateX(0);}
+
+
+}
+.tour {
+    margin: 121px 0 0 0;
+    padding: 145px 0 0 0;
+    height: 888px;
+    background-color: #F7F7F7;
+    border-radius: 200px 0 0 0;
+}
+.tour .wrapper {
+    position: relative;
+}
+.tour .tit h2 {
+    font-size: 40px;
+    font-weight: 800;
+    margin: 0 0 18px 0;
+}
+.tour .tit h2 strong{
+    color: #226C4E;
+}
+.tour .list {
+    margin: 27px 0 0 0;
+}
+.tour .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.tour .list ul li {
+    width: 16.19%;
+    /*li=204px ul=1260px
+    li = ul의 16.19%*/
+}
+.tour .list ul li a {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 0 45px 0;
+    height: 406px;    /*li = a size 동일*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    border-radius: 20px;
+
+}
+.tour .list ul li h3{
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+.tour .list ul li p {
+    display: none;
+}
+/*li에 on 클래스명이 들어갔을 때 = 열렸을 때*/ /*오버했을때 바뀌는건 java에서 ...*/
+.tour .list ul li.on {
+    width: 48.49%;
+}
+.tour .list ul li.on a {
+    align-items: flex-start;
+    padding: 0 0 53px 62px;
+}
+.tour .list ul li.on p{
+    display: block;
+    margin: 6px 0 0 0;
+}
+.tour .list ul li.bg1 a {
+    background-image: url(../images/tour1.jpg);
+}
+.tour .list ul li.bg2 a {
+    background-image: url(../images/tour2.jpg);
+}
+.tour .list ul li.bg3 a {
+    background-image: url(../images/tour3.jpg);
+}
+.tour .list ul li.bg4 a {
+    background-image: url(../images/tour4.jpg);
+}
+
+.community {
+    background: url(../images/community_bg.jpg) no-repeat center center / cover;
+    padding: 145px 0 0 0;
+    color: #fff;
+    height: 800px;
+}
+.community .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.community .tit {
+    width: 350px;
+    position: relative;
+}
+.community .tit::after { 
+    content: "";
+    position: absolute;
+    right: 28px;
+    top: 9px;
+    width: 190px;
+    height: 1px;
+    background-color: #fff;
+}
+.community .tit h2{
+    font-size: 40px;
+    font-weight: 800;
+    margin: 14px 0 12px 0;
+    line-height: 1.3;
+
+}
+.community .inner {
+    display: flex;
+    gap: 0 27px;
+}
+.community .inner .notice {
+    backdrop-filter: blur(10px);
+    background-color: rgba(63, 63, 63, 0.5);
+    height: 432px;
+    padding: 50px 50px 0 50px;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.5s;
+}
+.community .inner .notice:hover {
+    background-color: #2654C7;
+    transition: 0.5s;
+    
+}
+.community .inner .notice:hover li a span {
+    opacity: 100%;
+}
+.community .inner .notice h3 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0 0 23px 0;
+    position: relative;
+}
+.community .inner .notice li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    width: 390px;
+}
+.community .inner .notice li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0 14px 0;
+}
+.community .inner .notice li a h4 {
+    width: calc(100% - 114px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.community .inner .notice li a span {
+    font-size: 13px;
+    opacity: 70%;
+}
+.community .inner .notice li a:hover h4 {
+    font-weight: 700;
+}
+
+.community .inner .notice .more {
+    position: absolute;
+    right: 50px;
+    top: 55px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgb(255, 255, 255, 0.7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.community .inner .service {
+    width: 307px;
+}
+.community .inner .service ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 432px;
+}
+.community .inner .service ul li {
+    display: block;
+    backdrop-filter: blur(10px);
+    background-color: rgba(63, 63, 63, 0.5);
+    height: 130px;
+    width: 100%;
+    padding: 22px 0 0 30px;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.5s;
+}
+.community .inner .service ul li a {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.4;
+    display: block;
+    position: relative;
+}
+.community .inner .service ul li.icon1::after {
+    display: block;
+    content: "";
+    position: absolute;
+    right: 21px;
+    bottom: 20px;
+    width: 64px;
+    height: 64px;
+    background-image: url(../images/service1.svg);
+    transition: 0.5s;
+
+}
+.community .inner .service ul li.icon2::after {
+    display: block;
+    content: "";
+    position: absolute;
+    right: 21px;
+    bottom: 20px;
+    width: 64px;
+    height: 64px;
+    background-image: url(../images/service2.svg);
+    transition: 0.5s;
+
+}
+.community .inner .service ul li.icon3::after {
+    display: block;
+    content: "";
+    position: absolute;
+    right: 21px;
+    bottom: 20px;
+    width: 64px;
+    height: 64px;
+    background-image: url(../images/service3.svg);
+    transition: 0.5s;
+}
+.community .inner .service ul li:hover {
+    background-color: #2654C7;
+}
+.community .inner .service ul li:hover.icon1::after {
+    background-image: url(../images/service1_over.svg);
+    transition: 0.5s;
+}
+.community .inner .service ul li:hover.icon2::after {
+    background-image: url(../images/service2_over.svg);
+    transition: 0.5s;
+}
+.community .inner .service ul li:hover.icon3::after {
+    background-image: url(../images/service3_over.svg);
+    transition: 0.5s;
+}
 footer {
-    height: 155px;
+    height: 327px;
+    background-color: #111;
 }
