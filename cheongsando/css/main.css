@@ -293,7 +293,7 @@ header .util .flow::before {
 }
 /*li에 on 클래스명이 들어갔을 때 = 열렸을 때*/ /*오버했을때 바뀌는건 java에서 ...*/
 .tour .list ul li.on {
-    width: 48.49%;
+    width: 48.49%;  /*열렸을 때 넓이가 1260의 몇 퍼??*/
 }
 .tour .list ul li.on a {
     align-items: flex-start;
@@ -438,7 +438,6 @@ header .util .flow::before {
     position: relative;
 }
 .community .inner .service ul li.icon1::after {
-    display: block;
     content: "";
     position: absolute;
     right: 21px;
@@ -450,7 +449,6 @@ header .util .flow::before {
 
 }
 .community .inner .service ul li.icon2::after {
-    display: block;
     content: "";
     position: absolute;
     right: 21px;
@@ -462,7 +460,6 @@ header .util .flow::before {
 
 }
 .community .inner .service ul li.icon3::after {
-    display: block;
     content: "";
     position: absolute;
     right: 21px;
@@ -488,6 +485,161 @@ header .util .flow::before {
     transition: 0.5s;
 }
 footer {
+    padding: 76px 0 0 0;
     height: 327px;
     background-color: #111;
+    color: rgba(255, 255, 255, 0.5);
+}
+footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+footer .left_area .f_nav ul {
+    display: flex;
+    gap: 0 40px;
+}
+footer .left_area .f_nav ul li {
+    position: relative;
+}
+footer .left_area .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -21px;
+    top: 5px;
+    width: 1px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+footer .left_area .f_nav ul li:last-child::after {
+    display: none;
+}
+footer .left_area .f_nav ul li a {
+    position: relative;
+}
+footer .left_area .f_nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 22px;
+    width: 0%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: 0.5s;
+}
+footer .left_area .f_nav ul li a:hover::after {
+    width: 100%;
+    transition: 0.5s;
+}
+footer .left_area .f_nav ul li.privacy {
+    font-weight: 700;
+}
+footer .left_area .f_info {
+    display: flex;
+    margin: 32px 0 32px 0;
+    gap: 0 43px;
+}
+footer .left_area .copyright .no {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.3);
+}
+footer .right_area {
+    display: flex;
+    align-items: flex-start;
+    gap: 0 12px;
+}
+footer .right_area .family {
+    position: relative;
+}
+footer .right_area .family button {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    width: 145px;
+    height: 38px;
+    text-align: left;
+    padding: 0 0 0 15px;
+    position: relative;
+}
+footer .right_area .family button::after {
+    position: absolute;
+    content: "";
+    right: 10px;
+    bottom: 8px;
+    width: 24px;
+    height: 24px;
+    background-position: center center;
+    background-repeat: no-repeat;
+} 
+footer .right_area .family button.open::after {
+    background-image: url(../images/family_open.svg);
+}
+footer .right_area .family button.close {
+    display: none;
+    background-color: #fff;
+    color: #111;      
+}
+footer .right_area .family button.close::after {
+    background-image: url(../images/family_close.svg);
+}
+footer .right_area .family .family_cnt {
+    position: absolute;  /*family 에 맞춰 정렬*/
+    display: none;
+    left: 0;
+    bottom: 39px;
+    width: 100%;
+    height: 95px;
+    padding: 15px 0 17px 13px;
+    background-color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #111;    
+}
+footer .right_area .family .family_cnt ul li a {
+    display: block;
+    padding: 3px 0 3px 0;
+}
+footer .right_area .family .family_cnt ul li a:hover{
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+footer .right_area .family .family_cnt ul li a span{
+    position: relative;
+}
+footer .right_area .family .family_cnt ul li a span::after {
+    content: "";
+    position: absolute;
+    right: -18px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    background: url(../images/family_blank.svg) no-repeat center center;
+}
+
+/*family가 열렸을때 = open 클래스 추가*/
+footer .right_area .family.open .family_cnt {
+    display: block;
+}
+footer .right_area .family.open button.close {
+    display: block;
+}
+footer .right_area .family.open button.open {
+    display: none;
+}
+footer .right_area .top {
+    width: 38px;
+    height: 38px;
+    background-color: #2654C7;
+    position: relative;
+}
+footer .right_area .top::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/top.svg) no-repeat center center;
+}
+footer .right_area .top:hover::before {
+    background-image: url(../images/top_over.svg);
+}
+footer .right_area .top span {
+    display: none;
 }
