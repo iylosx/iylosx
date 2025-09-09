@@ -263,11 +263,15 @@ header .util .flow::before {
 .tour .list ul {
     display: flex;
     justify-content: space-between;
+    gap: 0 12px;
 }
 .tour .list ul li {
-    width: 16.19%;
-    /*li=204px ul=1260px
+    flex: 1 1 0%;
+    /*width: 16.19%;*/
+    /*li=204px ul=1260px    
     li = ul의 16.19%*/
+    transition: 0.5s;
+    overflow: hidden;
 }
 .tour .list ul li a {
     display: flex;
@@ -290,10 +294,12 @@ header .util .flow::before {
 }
 .tour .list ul li p {
     display: none;
+    white-space: nowrap;
 }
 /*li에 on 클래스명이 들어갔을 때 = 열렸을 때*/ /*오버했을때 바뀌는건 java에서 ...*/
 .tour .list ul li.on {
-    width: 48.49%;  /*열렸을 때 넓이가 1260의 몇 퍼??*/
+    flex: 4 1 0%;
+    /*열렸을 때 넓이가 1260의 몇 퍼??*/
 }
 .tour .list ul li.on a {
     align-items: flex-start;
