@@ -79,3 +79,12 @@ button {
     line-height: inherit;
     cursor: pointer;
 }
+/*글자 안보이게 할 때 쓸 것*/
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}

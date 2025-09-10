@@ -562,6 +562,7 @@ footer .right_area .family button {
     height: 38px;
     text-align: left;
     padding: 0 0 0 15px;
+    border-radius: 10px;
     position: relative;
 }
 footer .right_area .family button::after {
@@ -580,6 +581,7 @@ footer .right_area .family button.open::after {
 footer .right_area .family button.close {
     display: none;
     background-color: #fff;
+    border-radius: 10px;
     color: #111;      
 }
 footer .right_area .family button.close::after {
@@ -589,11 +591,12 @@ footer .right_area .family .family_cnt {
     position: absolute;  /*family 에 맞춰 정렬*/
     display: none;
     left: 0;
-    bottom: 39px;
+    bottom: 43px;
     width: 100%;
     height: 95px;
     padding: 15px 0 17px 13px;
     background-color: #fff;
+    border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.5);
     color: #111;    
 }
@@ -632,6 +635,7 @@ footer .right_area .top {
     width: 38px;
     height: 38px;
     background-color: #2654C7;
+    border-radius: 10px;
     position: relative;
 }
 footer .right_area .top::before {

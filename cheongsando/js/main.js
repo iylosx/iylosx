@@ -9,7 +9,24 @@ $(document).ready(function(){
     })
 
     $('footer .right_area .family button.open').on('click', function(){
-        //console.log('클릭함')
+        //console.log('열기 클릭함')
         $('footer .right_area .family').addClass('open')
     })
-})
+
+    $('footer .right_area .family button.close').on('click', function(){
+        //console.log('닫기 클릭함')
+        $('footer .right_area .family').removeClass('open')
+    })
+
+    $('footer .right_area .top').on('click', function(){
+        // console.log('탑클릭했음')
+        let scrolling = $(window).scrollTop()
+        console.log(scrolling)
+        //$(window).scrollTop(0)
+        $('html, body').animate({
+            scrollTop : 0
+        }, 500)
+    })
+
+
+}) //document.ready

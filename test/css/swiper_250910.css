@@ -1,0 +1,106 @@
+@import url(common.css);
+
+.visual {
+    position: relative;
+}
+.visual .swiper-slide{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    height: 900px;
+}
+.visual .swiper-slide h2 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 382px 0 17px 0;
+}
+.visual .swiper-slide.bg1 {
+    background-image: url(../images/swiper01.jpg);
+}
+.visual .swiper-slide.bg2 {
+    background-image: url(../images/swiper02.jpg);
+}
+.visual .swiper-slide.bg3 {
+    background-image: url(../images/swiper03.jpg);
+}
+
+.visual .ctrl_btn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 3px;
+    z-index: 10;
+    bottom: 44px;
+    left: 0;
+    width: 100%;
+    color: #fff;
+}
+.visual .ctrl_btn button {
+    width: 24px;
+    height: 24px;
+}
+
+.visual .ctrl_btn .btn_prev,
+.visual .ctrl_btn .btn_next{
+
+    background: url(../images/swiper_arrow.svg) no-repeat center center;
+}
+.visual .ctrl_btn .btn_prev {
+    transform: rotate(180deg);
+}
+.visual .ctrl_btn .paging {
+    width: auto;
+    font-weight: 700;
+}
+
+.visual .ctrl_btn .btn_stop {
+    background: url(../images/swiper_stop.svg) no-repeat center center;
+}
+.visual .ctrl_btn .btn_play {
+    display: none;
+    background: url(../images/swiper_play.svg) no-repeat center center;
+}
+
+.news {
+    margin: 100px 0 100px 0;
+}
+.news .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #111;
+    margin: 0 0 6px 0;
+}
+.news .list {
+    margin: 47px 0 0 0;
+}
+.news .list .swiper-slide a {
+    display: block;
+}
+.news .list .swiper-slide a .photo {
+    overflow: hidden;
+    height: 259px;
+}
+.news .list .swiper-slide a .photo img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+.news .list .swiper-slide a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+    transition: 0.5s;
+} 
+.news .list .swiper-slide a h3{
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+    margin: 26px 0 12px 0;
+    overflow: hidden;
+    height: 3em;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; 
+}
