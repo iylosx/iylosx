@@ -53,11 +53,9 @@ $(document).ready(function(){
         //centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
         
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.btn_wrap .btn_next',
+            prevEl: '.btn_wrap .btn_prev',
         },
      
     });
-
-
 }) //document

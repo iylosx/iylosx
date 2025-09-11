@@ -67,6 +67,9 @@
 .news {
     margin: 100px 0 100px 0;
 }
+.news .wrapper {
+    position: relative;
+}
 .news .tit h2 {
     font-size: 40px;
     font-weight: 700;
@@ -100,7 +103,49 @@
     color: #111;
     margin: 26px 0 12px 0;
     overflow: hidden;
-    height: 3em;
+    height: 3em;  /*행간 * 줄 수 = n 'em'*/
+
+    /*여러 줄을 제한할 때 뒤에 ...을 추가
+    호환성이 떨어지며 검사 시 경고 뜸*/
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2; 
+}
+.news .list .swiper-slide a p{
+ /* 3줄 제한 */
+    overflow: hidden;
+    height: 4.5em;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+
+}
+.btn_wrap {
+    position: absolute;
+    right: 0;
+    top: 58px;
+    display: flex;
+    gap: 0 6px;
+    
+}
+.btn_wrap button,
+.btn_wrap a {
+    width: 33px;
+    height: 33px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.btn_wrap .btn_prev {
+    background-image: url(../images/news_arrow.svg);
+}
+.btn_wrap .btn_next {
+    background-image: url(../images/news_arrow.svg);
+    transform: rotate(180deg);
+}
+.btn_wrap .more {
+    background-image: url(../images/news_more.svg);
+}
+.btn_wrap button.swiper-button-disabled {
+    opacity: 0.5;
 }
