@@ -130,10 +130,12 @@ header .inner .shop::before {
     height: 24px;
     background: url(../images/product_like.svg) no-repeat center center;
 }
-
 .product .list ul li a:hover h3{
     text-decoration: underline;
     text-underline-offset: 3px;
+}
+.product .list ul li a:hover h3::after {
+    background-image: url(../images/product_like_over.svg);
 }
 .product .list ul li .price {
     font-weight: 700;
@@ -214,7 +216,9 @@ header .inner .shop::before {
     position: relative;
     overflow: hidden;
 }
-
+.network .more a span {
+    z-index: 0;
+}
 .network .more a::after {
     content: "";
     position: absolute;
@@ -227,10 +231,10 @@ header .inner .shop::before {
 
 .network .more a:hover {
     border: 1px solid #00AC47;
-    background-color: #00AC47;
+    /* background-color: #00AC47; */
 }
 
-/* .network .more a::before {
+.network .more a::before {
     content: "";
     position: absolute;
     left: 0;
@@ -239,11 +243,12 @@ header .inner .shop::before {
     height: 100%;
     background-color: #00AC47;
     transition: 0.5s;
+    z-index: -1;
 }
 .network .more a:hover::before {
     width: 100%;
     transition: 0.5s;
-}                                        이 부분은 product의 more와 똑같은 스타일를 주었는데 구현이 되지 않습니다.. z인덱스를 건드려도 구현이 되지 않는데 이유가 뭘까요 .. ?*/  
+}                                       
 
 .community {
     margin: 170px 0 0 0;
