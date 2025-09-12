@@ -214,11 +214,11 @@ header .inner .shop::before {
     padding: 7px 59px 7px 26px;
     border-radius: 40px;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
-.network .more a span {
+/* .network .more a span {
     z-index: 0;
-}
+} */
 .network .more a::after {
     content: "";
     position: absolute;
@@ -231,10 +231,10 @@ header .inner .shop::before {
 
 .network .more a:hover {
     border: 1px solid #00AC47;
-    /* background-color: #00AC47; */
+    background-color: #00AC47;
 }
 
-.network .more a::before {
+/* .network .more a::before {
     content: "";
     position: absolute;
     left: 0;
@@ -248,7 +248,7 @@ header .inner .shop::before {
 .network .more a:hover::before {
     width: 100%;
     transition: 0.5s;
-}                                       
+}                                        */
 
 .community {
     margin: 170px 0 0 0;
