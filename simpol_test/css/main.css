@@ -92,7 +92,7 @@ header .inner .shop::before {
     border-radius: 40px;
     color: #00AC47; 
 }
-.product .kategorie ul li:first-child a {     /*첫 번째 카테고리는 이미 선택되어 보여지고 있다고 가정하고 오버스타일을 기본으로 주었습니다*/
+.product .kategorie ul li:first-child a {     /*첫 번째 카테고리의 경우, 이미 펼쳐져있는 상태를 기본으로 설정*/
     color: #fff;
     background-color: #00AC47;
 }
@@ -140,6 +140,9 @@ header .inner .shop::before {
     color: #1d1d1d;
     margin: 0 0 12px 0;
 }
+.product .list ul li span {
+    font-size: 15px;
+}
 .product .more {
     text-align: center;
     margin: 97px 0 0 0;
@@ -151,6 +154,19 @@ header .inner .shop::before {
     padding: 8px 46px 8px 26px;
     font-size: 15px;
     position: relative;
+    overflow: hidden;
+}
+.product .more a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #00AC47;
+    z-index: -1;
+    transition: 0.5s;
+
 }
 .product .more a::after {
     content: "";
@@ -163,13 +179,15 @@ header .inner .shop::before {
 }
 .product .more a:hover {
     color: #fff;
-    background-color: #00AC47;
     border: 1px solid #00AC47;
 }
 .product .more a:hover::after {
     background-image: url(../images/product_more_over.svg);
 }
-
+.product .more a:hover::before {
+    width: 100%;
+    transition: 0.5s;
+}
 .network {
     margin: 85px 0 0 0;
     background: url(../images/network_bg.jpg) no-repeat center center / cover;
@@ -194,7 +212,9 @@ header .inner .shop::before {
     padding: 7px 59px 7px 26px;
     border-radius: 40px;
     position: relative;
+    overflow: hidden;
 }
+
 .network .more a::after {
     content: "";
     position: absolute;
@@ -204,11 +224,26 @@ header .inner .shop::before {
     height: 16px;
     background: url(../images/product_more_over.svg) no-repeat center center;
 }
+
 .network .more a:hover {
-    color: #fff;
-    background-color: #00AC47;
     border: 1px solid #00AC47;
+    background-color: #00AC47;
 }
+
+/* .network .more a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #00AC47;
+    transition: 0.5s;
+}
+.network .more a:hover::before {
+    width: 100%;
+    transition: 0.5s;
+}                                        이 부분은 product의 more와 똑같은 스타일를 주었는데 구현이 되지 않습니다.. z인덱스를 건드려도 구현이 되지 않는데 이유가 뭘까요 .. ?*/  
 
 .community {
     margin: 170px 0 0 0;
