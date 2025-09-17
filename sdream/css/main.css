@@ -2,3 +2,119 @@
 @import url(font.css);
 @import url(common.css);
 
+.visual {
+    position: relative;
+}
+.visual .swiper-slide {
+    height: 100vh; /*브라우저 높이와 동일*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    /* padding: 424px 0 0 0; */
+    display: flex;
+    align-items: center;
+}
+
+.visual .swiper-slide.bg1 {
+    background-image: url(../images/visual_bg1.jpg);
+}
+.visual .swiper-slide.bg2 {
+    background-image: url(../images/visual_bg2.jpg);
+}
+.visual .swiper-slide.bg3 {
+    background-image: url(../images/visual_bg3.jpg);
+}
+
+.visual .swiper-slide h3 {
+    font-size: 60px;
+    margin: 120px 0 19px 0;
+}
+.visual .btn_wrap {
+    position: absolute;
+    left: calc(50% - 630px);
+    top: calc(50% + 180px);
+    z-index: 1;
+    display: flex;
+    gap: 0 7px;
+}
+.visual .btn_wrap button {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 31px;
+    height: 31px;
+    background-color: rgba(255, 255, 255, 0.1);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .btn_wrap button.btn_prev {
+    background-image: url(../images/visual_arrow.svg);
+}
+.visual .btn_wrap button.btn_play {
+    background-image: url(../images/visual_play.svg);
+}
+.visual .btn_wrap button.btn_stop {
+    background-image: url(../images/visual_stop.svg);
+}
+.visual .btn_wrap button.btn_next {
+    background-image: url(../images/visual_arrow.svg);
+    transform: rotate(180deg);
+}
+
+
+@media screen and (max-width:768px){
+
+           
+                .visual .swiper-slide {
+                    align-items: flex-end;
+                }
+                .visual .swiper-slide.bg1 {
+                    background-image: url(../images/visual_bg1_mo.jpg);
+                }
+                .visual .swiper-slide.bg2 {
+                    background-image: url(../images/visual_bg2_mo.jpg);
+                }
+                .visual .swiper-slide.bg3 {
+                    background-image: url(../images/visual_bg3_mo.jpg);
+                }
+                .visual .swiper-slide h3 {
+                    font-size: 32px;
+                    margin: 120px 0 10px 0;
+                }
+                .visual .swiper-slide p {
+                    margin: 0 0 140px 0;
+                }
+                .visual .btn_wrap {
+                    left: 50%;
+                    top: auto;
+                    bottom: 40px;
+                    transform: translateX(-50%);
+                }
+                .visual .btn_wrap button {
+                    border: 1px solid #fff;
+                    border-radius: 50%;
+                    width: 31px;
+                    height: 31px;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                }
+                .visual .btn_wrap button.btn_prev {
+                    background-image: url(../images/visual_arrow.svg);
+                }
+                .visual .btn_wrap button.btn_play {
+                    background-image: url(../images/visual_play.svg);
+                }
+                .visual .btn_wrap button.btn_stop {
+                    background-image: url(../images/visual_stop.svg);
+                }
+                .visual .btn_wrap button.btn_next {
+                    background-image: url(../images/visual_arrow.svg);
+                    transform: rotate(180deg);
+                }
+
+}/*@media*/
+
+footer {
+    margin: 400px 0 0 0;
+}
