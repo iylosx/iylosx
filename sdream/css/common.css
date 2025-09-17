@@ -9,6 +9,7 @@ body {
     line-height: 1.5;
     color: #111;
     word-break: keep-all;
+    word-wrap: break-word;
 }
 .wrapper {
     width: 1260px;
@@ -16,6 +17,14 @@ body {
 }
 
 #wrap {
-    min-width: 1460px ;   /* 1260 + 30 + 30 = 1320* = 최소 넓이!! 너 이이상 줄어들면 죽는다 = 이미지가 잘리지 않아 ...*/
+    min-width: 1320px ;   /* 1260 + 30 + 30 = 1320* = 최소 넓이!! 너 이 이상 줄어들면 죽는다 = 이미지가 잘리지 않아 ...*/
     position: relative;
 }
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0); /*도형을 그리는 명령*/
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}    /*html구조상 문자를 써주긴 했는데 글자를 안보이게 하고 싶을 때 blind 클래스로 사라지게 함*/
