@@ -36,6 +36,12 @@ body {
     font-size: 40px;
     font-weight: 700;
 }
+.tit_top{
+    font-weight: 700;
+    color: #4578E5;
+    margin: 0 0 18px 0;
+    display: block;
+}
 
 @media screen and (max-width:768px){
 
