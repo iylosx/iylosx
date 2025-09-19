@@ -183,6 +183,13 @@
 
 /*a 에 마우스 오버*/
 
+
+
+
+footer {
+    margin: 1400px 0 0 0;
+}
+@media screen and (min-width:769px) {
 .biz .list ul li a .photo::before{
     content: "";
     position: absolute;
@@ -208,10 +215,6 @@
 .biz .list ul li a:hover .txt p {
     opacity: 1;
 }
-
-
-footer {
-    margin: 1400px 0 0 0;
 }
 
 @media screen and (max-width:768px) {
