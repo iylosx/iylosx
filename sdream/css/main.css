@@ -128,6 +128,9 @@
     position: sticky;
     top: 30%
 }
+.biz .tit h2 br.mo_on{
+    display: none;
+}
 
 .biz .list {
     width: 748px;
@@ -153,6 +156,8 @@
     overflow: hidden;
     height: 456px;
     border-radius: 20px;
+    position: relative;
+
 }
 .biz .list ul li a .photo img {
     width: 100%;
@@ -163,16 +168,133 @@
     position: absolute;
     left: 40px;
     width: calc(100% - 80px);
-    bottom: 54px;
+    bottom: -39px;
     color: #fff;
 }
 .biz .list ul li a .txt h3 {
     font-size: 28px;
 }
 .biz .list ul li a .txt p {
-    display: none;
+    opacity: 0;
+    transition: 0.3;
+    margin: 13px 0 0 0;
+
 }
+
+/*a 에 마우스 오버*/
+
+.biz .list ul li a .photo::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #121B60;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.biz .list ul li a:hover .txt {
+    bottom: 40px;
+    transition: 0.3s;
+}
+.biz .list ul li a:hover .photo::before {
+    opacity: 0.8;
+}
+
+
+
+.biz .list ul li a:hover .txt p {
+    opacity: 1;
+}
+
 
 footer {
     margin: 1400px 0 0 0;
 }
+
+@media screen and (max-width:768px) {
+                
+            .biz {
+                margin: 80px 0 0 0;
+            }
+            .biz .wrapper {
+                display: block;
+            }
+            .biz .tit {
+                position: relative;
+                top: auto;
+                margin: 0 0 29px 0;
+            }
+            .biz .tit h2 br.pc_on{
+            display: none;
+            }
+            .biz .list {
+                width: auto;
+                padding:0;
+            }
+            .biz .list ul {
+                flex-wrap: nowrap;
+                flex-direction: column;
+                gap: 0;
+
+            }
+            .biz .list ul li {
+                width: auto;
+                border-top: 1px solid rgba(0, 0, 0, 0.1) ;
+            }
+            .biz .list ul li:last-child {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1) ;
+            }
+            .biz .list ul li:nth-child(odd) {
+                transform: translateY(0);
+            }
+            .biz .list ul li a {
+                padding: 15px 0 15px 0;
+            }
+            .biz .list ul li a .photo {
+              display: none;
+            }
+            .biz .list ul li a .photo img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .biz .list ul li a .txt {
+                position: relative;
+                left: auto;
+                width: auto;
+                bottom: auto;
+                color: #111;
+                margin: 0 0 0 0;
+            }
+            .biz .list ul li a .txt h3 {
+                font-size: 18px;
+                font-weight: 400;
+                position: relative;
+            }
+
+            .biz .list ul li a .txt h3 br {
+                display: none;
+            }
+            .biz .list ul li a .txt h3::after{
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: 3px;
+                width: 18px;
+                height: 18px;
+                background-color: #121B60;
+                border-radius: 50%;
+                background-image: url(../images/biz_arrow.svg);
+                background-position: center center;
+                background-repeat: no-repeat;
+            } 
+            .biz .list ul li a .txt p {
+                display: none;
+            }
+
+            }
+
+ /*biz media*/
