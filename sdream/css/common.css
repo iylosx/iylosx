@@ -19,6 +19,7 @@ body {
 #wrap {
     min-width: 1320px ;   /* 1260 + 30 + 30 = 1320* = 최소 넓이!! 너 이 이상 줄어들면 죽는다 = 이미지가 잘리지 않아 ...*/
     position: relative;
+    overflow: hidden ;
 }
 .blind {
     position: absolute;
