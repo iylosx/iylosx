@@ -68,4 +68,41 @@ $(document).ready(function(){
 
     })
 
+    
+    $('header').on('mouseenter', function(){
+        $(this).addClass('fixed')
+    })
+
+
+    $('header').on('mouseleave', function(){
+        //브라우저 스크롤값이 >0 면 작동하지 않음~
+        //브라우저 스크롤이 <= 0 일 때 작동!!
+        
+        if (scrolling <= 0){
+            $(this).removeClass('fixed')
+            console.log('스크롤값은 0보다 작거나 같다')
+        }
+    
+    })
+
+
+    //문서로딩 후 단 1번 실행된다
+    let scrolling
+    scroll_chk()
+
+    //반복되는 함수 정의
+    function scroll_chk(){
+        scrolling = $(window).scrollTop()
+
+       if(scrolling > 0){
+            $('header').addClass('fixed')
+        }else{
+            $('header').removeClass('fixed')
+        } 
+    }
+
+    //스크롤 할때마다 1번 실행
+    $(window).scroll(function(){
+        scroll_chk()
+    })
 })//document

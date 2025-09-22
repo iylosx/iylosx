@@ -10,17 +10,22 @@ header {
     z-index: 100;
     display: flex;
     width: 100%;
+    font-weight: 700;
     color: #fff;
     justify-content: space-between;
     align-items: center;
     padding: 0 30px 0 30px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: 0.2s;
+
 }
+
 header .logo a {
     display: block;
     width: 115px;
     height: 39px;
     background:url(../images/logo.svg) no-repeat center center / contain;
+    transition: 0.2s;
 }
 header .gnb .gnb_open,
 header .gnb .gnb_close {
@@ -33,6 +38,11 @@ header .gnb .gnb_wrap ul li a {
     display: block;
     line-height: 90px;
     padding: 0 27px 0 27px;
+
+}
+header .gnb .gnb_wrap ul li a span {
+    transition: 0.2s;
+
 }
 header .util {
     display: flex;
@@ -51,7 +61,27 @@ header .util .lang_open {
     background-image:url(../images/util_lang.svg);
 }
 
-
+header.fixed {
+    position: fixed; /*무조건 body랑만 정렬을 해여 ...*/
+    color: #111;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(238, 241, 246, 1);
+    transition: 0.2s;
+}
+header.fixed .logo a {
+    background:url(../images/logo_c.svg) no-repeat center center / contain;
+    transition: 0.2s;
+}
+header.fixed ul li a:hover span {
+    color: #4578E5;
+    transition: 0.2s;
+}
+header.fixed .util .mypage {
+    background-image: url(../images/util_mypage_b.svg);
+}
+header.fixed .util .lang_open {
+    background-image:url(../images/util_lang_b.svg);
+}
 
 
 @media screen and (max-width:768px){
@@ -75,7 +105,9 @@ header .util .lang_open {
         header .util {
             display: none;
         }
-       
+        header.fixed .gnb .gnb_open {
+            background: url(../images/gnb_open_b.svg) no-repeat center center;
+        }
 }
 
 
