@@ -436,6 +436,9 @@ header.fixed .search .search_open {
         }
         .book .book_wrap .list .swiper-slide  .txt p {
             font-size: 13px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
     
         .book .book_wrap .more {
@@ -443,7 +446,7 @@ header.fixed .search .search_open {
             left: 50%;
             transform: translateX(-50%);
             top: auto;
-            bottom: -20px;
+            bottom: -37px;
             font-size: 13px;
         }
         .book .book_wrap .more a{
@@ -483,7 +486,7 @@ header.fixed .search .search_open {
 }
 .interview .tit {
     text-align: center;
-    margin: 0 0 116px 0;
+    margin: 0 0 96px 0;
 }
 .interview .list ul {
     display: flex;
@@ -515,11 +518,6 @@ header.fixed .search .search_open {
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
     z-index: 5;
 }
-.interview .list ul li a:hover .photo {
-    height: 317px;
-    border-radius: 0 70px 0 0 ;
-    overflow: hidden;
-}
 
 .interview .list ul li a .photo img {
     object-fit: cover;
@@ -528,13 +526,7 @@ header.fixed .search .search_open {
     filter: grayscale(1);
     transition: .5s;
 }
-.interview .list ul li a:hover .photo img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    filter: grayscale(0);
-    transition: .5s;
-}
+
 .interview .list ul li .txt {
     position: absolute;
     left: auto;
@@ -549,54 +541,31 @@ header.fixed .search .search_open {
 .interview .list ul li:nth-child(2) .txt {
     top: 190px;
 }
-.interview .list ul li a .txt::after {
+.interview .list ul li a .photo::after {  /*txt에 after로 할게 아니라 photo에 after로 해야할듯*/
     content: "";
     position: absolute;
+    z-index: 11;
     width: 56px;
     height: 56px;
-   right: -10px;
-    bottom: 109px;
+    right: 30px;
+    bottom: 39px;
     background-position: center center;
     background-repeat: no-repeat;
     background-image: url("data:image/svg+xml,%3Csvg width='56' height='56' viewBox='0 0 56 56' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_32_1365' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='56' height='56'%3E%3Crect width='56' height='56' fill='%23D9D9D9'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_32_1365)'%3E%3Cpath d='M27.1834 45.9665V28.8165H10.0334V27.1832H27.1834V10.0332H28.8168V27.1832H45.9668V28.8165H28.8168V45.9665H27.1834Z' fill='%23EFEEEC'/%3E%3C/g%3E%3C/svg%3E%0A");
 }
-.interview .list ul li a:hover .txt {
-    position: absolute;
-    left: auto;
-    top: 168px;
-    background-color: #564334;
-    padding: 25px 30px 25px 30px;
-    color: #EFEEEC;
-    border-radius: 0 30px 0 0 ;
-    transition: .5s;
-    transform: translateY(0);
-    
-}
-.interview .list ul li:nth-child(2) a:hover .txt {
-    top: 240px;
-}
-.interview .list ul li a:hover .txt::after {
-    display: none;
-}
+
 .interview .list ul li a .txt strong {
     display: block;
     transform: translateY(20px);
 }
-.interview .list ul li a:hover .txt strong {
-    display: none;
-}
+
 .interview .list ul li a .txt h3 {
     font-family: 'Pretendard';
     font-weight: 600;
     font-size: 28px;
     transform: translateY(20px);
 }
-.interview .list ul li a:hover .txt h3 {
-    font-family: 'Pretendard';
-    font-weight: 600;
-    font-size: 28px;
-    transform: translateY(0);
-}
+
 .interview .list ul li a .txt p {
     margin: 9px 0 14px 0;
     height: 3em;
@@ -607,21 +576,14 @@ header.fixed .search .search_open {
     text-overflow: ellipsis;
     opacity: 0;
 }
-.interview .list ul li a:hover .txt p {
-    opacity: 1;
-    transition: .5s;
-}
+
 .interview .list ul li .txt span {
     font-size: 15px;
     padding-right: 17px;
     position: relative;
     opacity: 0;
 }
-.interview .list ul li a:hover .txt span {
-    transition: .5s;
-    transition-delay: .2s;
-    opacity: 1;
-}
+
 .interview .list ul li .txt span::after {
     content: "";
     position: absolute;
@@ -633,7 +595,6 @@ header.fixed .search .search_open {
 }
 .interview .more {
     position: absolute;
-    font-size: 15px;
     padding-right: 16px;
     text-align: center;
     left: 50%;
@@ -651,10 +612,7 @@ header.fixed .search .search_open {
     transition: 0.5s;
 
 }
-.interview  .more a:hover::after {
-    transform: rotate(180deg);
-    transition: .5s;
-}
+
 .interview .more a::before {
     content: "";
     position: absolute;
@@ -665,15 +623,180 @@ header.fixed .search .search_open {
     background-color: #3C3C3C;
     transition: 0.5s;
 }
-.interview .more a:hover::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: #3C3C3C;
-    transition: 0.5s;
+
+@media screen and (min-width:769px){
+     .interview .list ul li a:hover .photo {
+        height: 317px;
+        border-radius: 0 70px 0 0 ;
+        overflow: hidden;
+    }
+    .interview .list ul li a:hover .photo::after {
+        display: none;
+    }
+    .interview .list ul li a:hover .photo img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        filter: grayscale(0);
+        transition: .5s;
+    }
+    .interview .list ul li a:hover .txt {
+        position: absolute;
+        left: auto;
+        top: 168px;
+        background-color: #564334;
+        padding: 25px 30px 25px 30px;
+        color: #EFEEEC;
+        border-radius: 0 30px 0 0 ;
+        transition: .5s;
+        transform: translateY(0);
+        
+    }
+    .interview .list ul li:nth-child(2) a:hover .txt {
+        top: 212px;
+    }
+    .interview .list ul li a:hover .txt::after {
+        display: none;
+    }
+
+    .interview .list ul li a:hover .txt strong {
+        display: none;
+    }
+
+    .interview .list ul li a:hover .txt h3 {
+        font-family: 'Pretendard';
+        font-weight: 600;
+        font-size: 28px;
+        transform: translateY(0);
+    }
+
+    .interview .list ul li a:hover .txt p {
+        opacity: 1;
+        transition: .5s;
+    }
+
+    .interview .list ul li a:hover .txt span {
+        transition: .5s;
+        transition-delay: .5s;
+        opacity: 1;
+    }
+
+
+    .interview  .more a:hover::after {
+        transform: rotate(180deg);
+        transition: .5s;
+    }
+    
+    .interview .more a:hover::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #3C3C3C;
+        transition: 0.5s;
+    }
+}
+@media screen and (max-width:768px){
+    .interview {
+        margin: 77px 0 0 0;
+        padding: 79px 0 0 0;
+        height: 547px;
+    }
+    .interview .tit {
+        margin: 0 0 34px 0;
+    }
+    .interview .tit h2{
+        font-size: 24px;
+    }
+    .interview .list ul {
+        display: flex;
+    }
+    .interview .list ul li {
+        width: calc(50% - 8px);
+    }
+    .interview .list ul li:nth-child(3) {
+        display: none;
+    }
+    .interview .list ul li:nth-child(1) {
+        margin: auto;
+    }
+    .interview .list ul li:nth-child(2) {
+        margin: auto;
+    }
+    .interview .list ul li a .photo {
+        height: 255px;
+        border-radius: 0 30px 0 0 ;
+    }
+    .interview .list ul li a .photo::after {
+        top: 170px
+    }
+    .interview .list ul li:nth-child(1) .txt {
+        top: 99px;
+    }
+    .interview .list ul li:nth-child(2) .txt {
+        top: 99px;
+    }
+    .interview .list ul li a .txt::after {
+        right: 40px;
+        bottom: 97px;
+    }
+    .interview .list ul li a .txt h3 {
+        font-size: 22px;
+    }
+    .interview .more {
+        font-size: 13px;
+        top: auto;
+        bottom: -60px;
+        transform: translateX(-50%);
+    }
+    .interview  .more a::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 4px;
+        width: 12px;
+        height: 12px;
+        background: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 0.5V4.5H0.5V5.5H4.5V9.5H5.5V5.5H9.5V4.5H5.5V0.5H4.5Z' fill='%233C3C3C'/%3E%3C/svg%3E%0A") no-repeat center center;
+        transition: 0.5s;
+    
+    }
+    .interview .more a::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #3C3C3C;
+        transition: 0.5s;
+    }
+} /*!!!!! interview media !!!!!*/
+
+@media screen and (max-width:499px){
+    .interview .list ul {
+        display: block;
+    }
+    .interview .list ul li {
+        width: auto;
+    }
+    .interview .list ul li:nth-child(odd) {
+        display: none;
+    }
+    .interview .list ul li:nth-child(2) {
+        margin: auto;
+    }
+}  /*중간 사이즈!!!!!!!!!!!!!*/
+
+
+
+
+
+
+
+.archive {
+    margin: 162px 0 0 0;
 }
 
 
