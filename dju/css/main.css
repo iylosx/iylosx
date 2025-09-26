@@ -196,7 +196,7 @@ section .tit h2 {
 .service {
     margin: 77px 0 0 0;
     padding: 102px 0 102px 0;
-    height: 966px;
+    height: 100%;
 }
 .service .wrapper {
     display: block;
@@ -213,6 +213,7 @@ section .tit h2 {
     flex-wrap: wrap;
     gap: 16px 16px;
 }
+
 .service .list ul li a{
     display: block;
     width: 155px;
