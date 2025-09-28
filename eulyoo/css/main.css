@@ -1044,6 +1044,7 @@ footer ul {
 }
 footer .copyright {
     position: relative;
+    top:auto;
     bottom: auto;
     left: auto;
     text-align: center;
