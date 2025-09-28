@@ -49,11 +49,6 @@ section .tit h2 {
 .news .list ul li a .photo {
     height: 250px;
 }
-.news .list ul li a .photo img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
 .news .more {
     position: absolute;
     right: 0;
@@ -63,7 +58,7 @@ section .tit h2 {
     display: block;
     position: relative;
     color: #004EA2;
-    padding-right: 17px;
+    padding: 0 17px 0 0;
 
 }
 .news .more a::after {
@@ -77,6 +72,22 @@ section .tit h2 {
     background-position: center center;
     background-repeat: no-repeat;
 }
+
+
+@media screen and (max-width:1024px){
+    .news .tit h2 {
+    font-size: 32px;
+}
+ .news .list ul li {
+    width: calc(50% - 10px);
+}
+}
+@media screen and (max-width:1024px) and (min-width:769px){
+.news .list ul li:nth-child(3){
+display: none;
+}
+}
+
 
 @media screen and (max-width:768px){
 
