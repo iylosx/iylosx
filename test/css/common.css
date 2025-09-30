@@ -23,12 +23,12 @@
     url(../fonts/Pretendard-SemiBold.woff) format('woff');
 }
 /*스타일 초기화*/
-body {    
+html, body {    
     font-family: "Pretendard", "Malgun Gothic", "맑은 고딕", Dotum, "돋움", Helvetica, AppleSDGothicNeo, sans-serif;
     /* 프리텐다드를 적용하되, 만약 적용이 안되면 순서대로 적용하게 둔다. 
     sans-serif = 모든 폰트가 안되면 고딕체 아무거나 설정하라는 소리다.
     참고로 그냥 serif는 명조체.*/
-    font-size: 17px;
+    font-size: var(--base-font-size);
     font-weight: 400;
     line-height: 1.5;
     color: #555;
@@ -107,23 +107,47 @@ button {
 
 */
 @media screen and (max-width:1361px){ 
-    .wrapper {
-        width: auto;
-        margin: 0 4%;
+        .wrapper {
+            width: auto;
+            margin: 0 4%;
 
-}
+        }
 }
 
 
 @media screen and (max-width:768px){    
-    .wrapper {
-    width: auto;
-    margin: 0 16px;
-} /*브라우저 사이즈 768px 부터 그 이하의 사이즈만 적용*/
 
-body {    
-    font-size: 16px;
+        .wrapper {
+            margin: 0 16px;
+        } /*브라우저 사이즈 768px 부터 그 이하의 사이즈만 적용*/
 }
+/*@media*/
 
+:root {    /*스타일 가이드대로 정의해두고 쓸 수 있어요
+            root = 변수선언
+            사용 할 때에는 000: var(변수명)*/
+    --base-font-size: 17px;
+    --tit-color: #1d1d1d;
+    --tit-font-size: 40px;
+    --h3-font-size: 20px;
+    --tit-line-height: 1.3;
+    --bold-weight: 700;
+    --semi-bold-weight: 600;
+}
+@media screen and (max-width:1024px){
+    :root {
+        --tit-font-size: 32px;
+        --h3-font-size: 19px;
+
+    }
+}
+@media screen and (max-width:768px){
+
+    :root {
+        --base-font-size: 16px;
+        --tit-font-size: 30px;
+        --h3-font-size: 18px;
+
+    }
 }
 /*@media*/

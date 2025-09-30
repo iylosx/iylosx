@@ -1,0 +1,325 @@
+@import url(common.css);
+
+
+.test {
+    margin: 50px 0 0 0;
+    font-size: 10px;
+}
+.test h2 {
+    font-size: 40px;
+}
+.test h2 strong {
+    font-size: 20px;
+}
+.test h3 {
+    font-size: 2.5em;
+    /*em은 나를 감싸는 요소의 글자 크기에서 1em 그 글자 크기 그대로
+    2.5em 두배 17*2.5 = 42.5 (px)...
+    strong은 감싸고 있는 h3, 즉 42.5 * 2 = 85*/
+}
+.test h3 strong {
+    font-size: 2em;
+}
+.test h4 {
+    font-size: 2.5rem;
+    /*rem은 html에 선언된 글자 크기를 1rem으로 본다
+    pc와 태블릿, 모바일에서 기본 글자를 변경하면 여백이나 ㅏ모든 글자 크기가 줄어드는 효과를 주기 위해서 ..
+    하지만 현재 pc의 글자 크기와 모바일 글자크기를 거의 동일하게 주기 때문에 의미가 사라지고 있다
+    그럼에도 아직까지 인기가 많은 방법!!*/
+}
+.test h4 strong {
+    font-size: 2rem;
+}
+.test h5 {
+    font-size: 2vw;
+    /*브라우저 넓이를 100vw로 보며, 브라우저 크기에 따라 상대적으로 조절됨
+    단점 ! 물리적으로 작은 핸드폰에서는 글자가 작아지고 큰 핸드폰에서는 글자가 커짐*/
+}
+.test h5 strong {
+    font-size: 1vw;
+}
+.test h6 {
+    font-size: clamp(24px, 3vw, 40px);
+}
+
+.news {
+    margin: 205px 0 0 0;
+}
+.news .wrapper {
+    display: flex;
+    position: relative;
+}
+.news .tit h2{
+    margin: 0 0 13px 0 ;
+    font-size: var(--tit-font-size);
+    font-weight: var(--bold-weight);
+    color: var(--tit-color);
+    line-height: var( --tit-line-height);
+}
+.news .tit h2 span {
+    display: block;
+}
+.news .more {
+    position: absolute;
+    bottom: 144px;
+    left: 0;
+    font-size: 15px;
+}
+.news .more a {
+    display: flex; /*span i 좌우배치*/
+    align-items: center;
+    gap: 0 17px;    
+}
+.news .more a i {
+    width: 6px;
+
+}
+.news .more a i svg {
+    width: 100%;
+    height: 100%;
+}
+.news .tit {
+    width: 34%;
+}
+.news .list{
+    width: 66%;
+
+}
+.news .list ul li {
+    border-bottom: 1px solid #ccc;
+}
+.news .list ul li:first-child {
+    border-top: 1px solid #ccc;
+}
+.news .list ul li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 38px 0 35px 0 ;
+    align-items: center;
+    
+}
+.news .list ul li a h3 {
+    font-size: var(--h3-font-size);
+    font-weight: var(--semi-bold-weight);
+    color: var(--tit-color);
+    width: calc(100% - 130px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.news .list ul li a span {
+    font-size: 15px;
+}
+
+@media screen and (max-width:768px){
+
+    .news {
+        margin: 116px 0 0 0;
+    }
+    .news .wrapper {
+        display: block;
+    }
+    .news .tit h2{
+        margin: 0 ;
+    }
+    .news .tit h2 span {
+        display: none;
+    }
+    .news .tit p {
+        display: none;
+    }
+    .news .more {
+        bottom: auto;
+        left: auto;
+        top: 6px;
+        right: 0;
+    }
+    .news .more a {
+        justify-content: center;
+        gap: 0;
+        width: 26px;
+        height: 26px;
+        border: 1px solid #555;
+        border-radius: 50%;
+    }
+    .news .more a i {
+        width: 6px;
+    }
+    .news .more a i svg {
+        width: 100%;
+        height: 100%;
+    }
+    .news .more a span {
+        display: none;
+    }
+    .news .tit {
+        width: auto;
+    }
+    .news .list{
+        margin: 48px 0 0 0;
+        width: auto;
+    }
+    .news .list ul li a {
+        display: block;
+        padding: 18px 0 13px 0 ;
+        
+    }
+    .news .list ul li a h3 {
+        width: auto;
+        white-space: wrap;
+        overflow: visible;
+        margin: 0 0 7px 0;
+    }
+    .news .list ul li a span {
+        font-size: 13px;
+    }
+}
+
+
+
+
+.notice {
+    margin: 152px 0 0 0;
+    background-color: #111;
+    color: rgba(255, 255, 255, .5);
+    padding: 168px 0 133px;
+}
+.notice .wrapper {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+.notice .tit h2{
+    margin: 0 0 13px 0 ;
+    color: #fff;
+    font-size: var(--tit-font-size);
+    font-weight: var(--bold-weight);
+    line-height: var( --tit-line-height);
+}
+.notice .tit h2 span {
+    display: block;
+}
+.notice .more {
+    position: absolute;
+    bottom: 144px;
+    left: 0;
+}
+.notice .more a {
+    display: flex; /*span i 좌우배치*/
+    align-items: center;
+    gap: 0 17px;
+    font-size: 15px;
+}
+.notice .more a i {
+    width: 6px;
+
+}
+.notice .more a i svg {
+    width: 100%;
+    height: 100%;
+}
+.notice .more a i svg path {
+    fill: rgba(255, 255, 255, .5);
+    
+}
+.notice .list {
+    max-width: 832px;
+    width: calc(100% - 297px);
+}
+.notice .list ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, .3);
+}
+.notice .list ul li:first-child {
+    border-top: 1px solid rgba(255, 255, 255, .3);
+}
+.notice .list ul li a {
+    display: flex;
+    padding: 38px 0 35px 0;
+    justify-content: space-between;
+    align-items: center;
+}
+.notice .list ul li a h3 {
+    font-size: var(--h3-font-size);
+    font-weight: var(--semi-bold-weight);
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: calc(100% - 130px);
+}
+.notice .list ul li a span {
+    font-size: 15px;
+}
+
+
+@media screen and (max-width:768px){
+    .notice {
+        margin: 113px 0 0 0;
+        padding: 117px 0 55px;
+    }
+    .notice .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 48px 0;
+    }
+    .notice .tit h2{
+        margin: 0 ;
+    }
+    .notice .tit h2 span {
+        display: none;
+    }
+    .notice .tit p {
+        display: none;
+    }
+    .notice .more {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0 0 0;
+        
+    }
+    .notice .more a {
+        display: flex; /*span i 좌우배치*/
+        align-items: center;
+        gap: 0 17px;
+        font-size: 15px;
+        background-color: #555;
+        padding: 4px 15px 3px 20px;
+        border-radius: 20px;
+        color: #111;
+    }
+    .notice .more a i {
+        width: 6px;
+    
+    }
+    .notice .more a i svg {
+        width: 100%;
+        height: 100%;
+    }
+    .notice .more a i svg path {
+        fill: #111;
+        
+    }
+    .notice .list {
+        max-width: 100%;
+        width: auto;
+    }
+    .notice .list ul li a {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px 0 13px 0;
+        gap: 7px;
+    }
+    .notice .list ul li a h3 {
+        white-space: wrap;
+        overflow: visible;
+        width: auto;
+    }
+    .notice .list ul li a span {
+        font-size: 13px;
+    }
+    
+}
