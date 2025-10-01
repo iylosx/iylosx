@@ -1,0 +1,279 @@
+@import url(common.css);
+
+:root {
+    --header-h: 90px ;
+}
+@media screen and (max-width:1024px){ 
+    :root {
+        --header-h: 56px ;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: var(--header-h);
+    color: #fff;
+    padding: 0 30px 0 30px;
+}
+header .logo a{
+    display: block;
+    width: 141px;
+    height: 26px;
+    background: url(../images/menu_logo_w.svg) no-repeat center center/ contain;
+}
+
+header .util {
+    display: flex;
+    gap: 0 10px;
+    align-items: center;
+}
+header .util .lng .lng_open{
+    width: 37px;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .util .lng .lng_open i {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+}
+header .util .search .search_open {
+    width: 37px;
+    height: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .util .search .search_open i {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+@media screen and (min-width:1025px){   /*pc일때만 적용*/
+    header .gnb .gnb_open, 
+    header .gnb .gnb_close {
+        display: none;
+    }
+    header .gnb .gnb_wrap ul.depth1 {
+        display: flex;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li {
+        position: relative;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a {
+        display: block;
+        font-size: 22px;
+        font-weight: var(--semi-bold-weight);
+        line-height: var(--header-h);
+        padding: 0 35.5px 0 35.5px;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li ul.depth2 {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: var(--header-h);
+        width: 100%;
+        padding: 25px 0 0 0;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li ul.depth2 > li > a {
+        display: block;
+        text-align: center;
+        padding: 4px 0 4px;
+        color: #555;
+    } 
+}
+
+/*헤더에 메뉴 오버가 들어갔을 때 .....*/
+header.menu_over {
+    color: #1d1d1d;
+}
+header.menu_over::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 303px;
+    background-color: #fff; 
+    z-index: -1;
+}
+header.menu_over::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #f4f4f4;
+}
+header.menu_over .logo a{
+    background-image: url(../images/menu_logo.svg);
+}
+
+header.menu_over .util .lng .lng_open i svg path{
+    fill: #1d1d1d;
+} 
+header.menu_over .util .search .search_open i svg path{
+    fill: #1d1d1d;
+}
+header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a {
+    color: #0098A3;
+}
+header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a span {
+    position: relative;
+}
+header.menu_over .gnb .gnb_wrap ul.depth1 > li.over > a span::after {
+    content: "";
+    position: absolute;
+    left: -7px;
+    bottom: -32px;
+    width: calc(100% + 14px);
+    height: 1px;
+    background-color: #0098A3;
+    z-index: 10;
+} 
+header.menu_over .gnb .gnb_wrap ul.depth1 > li ul.depth2 {
+    display: block;
+}
+header.menu_over .gnb .gnb_wrap ul.depth1 > li ul.depth2 > li > a:hover {
+    color: #0098A3;
+    text-decoration: underline;
+}
+
+
+
+@media screen and (max-width:1024px){
+    header {
+        padding: 0 0 0 16px;
+    }
+    header .logo a{
+        width: 31px;
+        height: 26px;
+        background-image: url(../images/menu_logo_sw.svg);
+    }
+    
+    header .util {
+        position: absolute; /*header를 기준으로 정렬*/
+        right: var(--header-h);
+        top: 0;
+    }
+    header .util .lng{
+        display: none;
+    }
+    header .util .search .search_open {
+        width: 34px;
+        height: 56px;
+    }
+    header .util .search .search_open i{
+        width: 20px;
+        height: 20px;
+    }
+    header .gnb .gnb_close {
+        display: flex;
+    }
+    header .gnb .gnb_open {
+        display: block;
+        width: var(--header-h);
+        height: var(--header-h);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    header .gnb .gnb_open i {
+        width: 20px;
+        height: 18px;
+    }
+    header .gnb .gnb_wrap {
+        display: none;
+    }
+
+    header.menu_open .gnb .gnb_wrap {
+        display: block;
+        position: absolute; /*header 기준 정렬*/
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100dvh;
+        background-color: #fff;
+        color: #555;
+        padding: 82px 0 0 0;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a {
+        display: block;
+        padding: 16.5px 50px 16.5px 16px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #1d1d1d;
+        position: relative;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a::after {
+        content: "";
+        position: absolute;
+        top: 29px;
+        right: 24px;
+        width: 10px;
+        height: 6px;
+        background: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 1.33337L5 6.33337L1.96701e-06 1.33337L1.16667 0.166707L5 4.00004L8.83334 0.166707L10 1.33337Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A") no-repeat center center;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+        background-color: #f7f7f7;
+        padding: 25px 0 27px 16px;
+        display: none;  /*1차메뉴 열면 열려요*/
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 a {
+        display: block;
+        padding: 4px 0 4px 0;
+    }
+  
+    header .gnb .gnb_close {
+        display: none;
+        position: absolute; /*header 기준*/
+        right: 0;
+        top: 0;
+        width: var(--header-h);
+        height: var(--header-h);
+        justify-content: center;
+        align-items: center;
+    }
+    header .gnb .gnb_close i {
+        display: block;
+        width: 20px;
+        height: 20px;
+    }
+
+    /*header에 menu_open이 있을 때 - 메뉴가 열렸을 때*/
+    header.menu_open .gnb .gnb_wrap {
+        display: block;
+    }
+    header.menu_open .gnb .gnb_close{
+        display: flex;
+    }
+    header.menu_open .gnb .gnb_wrap ul.depth1 > li.open > a::after {
+        transform: rotate(180deg);
+    }
+    header.menu_open .gnb .gnb_wrap ul.depth1 > li.open > ul.depth2 {
+        display: block;
+    }
+    
+} 
+
+
+
+
+
+.visual {
+    height: 100dvh;
+    background: url(../images/menu_visual.jpg) no-repeat center center / cover;
+}
