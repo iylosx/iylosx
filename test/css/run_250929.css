@@ -1,0 +1,415 @@
+@import url(common.css);
+
+
+.plus {
+    margin: 156px 0 0 0;
+}
+.plus .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.plus .tit {
+    margin: 50px 0 32px 0;
+    width: 40.55%;
+        /*1260px의 511px은 몇 퍼센트?
+    511/1260 * 100 ... */
+}
+.plus .tit h2 {
+    margin: 0 0 35px 0 ;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+}
+.plus .photo {
+    width: 49.04% ;
+    /*1260 618 .. 
+    */
+    border-radius: 10px;
+}
+.plus .photo img {
+    vertical-align: top;
+
+}
+@media screen and (max-width:1024px){  
+    .plus .tit h2 {
+        margin: 0 0 22px 0 ;
+        font-size: 32px;
+    }
+}
+@media screen and (max-width:768px){  
+
+
+    .plus {
+        margin: 94px 0 0 0;
+    }
+    .plus .wrapper {
+        display: block;
+    }
+    .plus .tit {
+        margin: 50px 0 32px 0;
+        width: auto;  /*고정값을 삭제하고 원래 가지는 값으로*/
+
+    }
+    .plus .tit h2 {
+        margin: 0 0 19px 0 ;
+        font-size: 24px;
+    }
+    .plus .photo {
+        width: auto ;
+        /*1260 618 .. 
+        */
+    }
+
+
+
+}
+
+.support {
+    margin: 119px 0 0 0;
+}
+.support .wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.support .tit {
+    margin: 50px 0 0 0;
+    width: 511px;
+
+
+}
+.support .tit h2 {
+    margin: 0 0 35px 0 ;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+}
+.support .photo {
+    width: calc(100% - 642px) ;
+    height: 390px;
+    /*1260 618 .. 
+    */
+    border-radius: 10px;
+}@media screen and (max-width:1024px){
+
+    .support .tit {
+        width: 400px;
+    }
+    .support .tit h2 {
+        font-size: 32px;
+    }
+    .support .photo {
+        width: calc(100% - 460px) ;
+    }
+
+}
+@media screen and (max-width:768px){
+    .support {
+        margin: 103px 0 0 0;
+    }
+    .support .wrapper {
+        display: block;
+
+    }
+    .support .tit {
+        margin: 50px 0 32px 0;
+        width: auto;
+        /*1260px의 511px은 몇 퍼센트?
+        511/1260 * 100 ... */
+    
+    }
+    .support .tit h2 {
+        margin: 0 0 29px 0 ;
+        font-size: 24px;
+    }
+    .support .photo {
+        width: auto ;
+        height: 280px;
+        /*1260 618 .. 
+        */
+        border-radius: 10px;
+    }
+}
+
+
+
+.minus {
+    margin: 119px 0 0 0;
+}
+.minus .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.minus .tit {
+    width: 40%;
+    margin: 50px 0 0 0;
+}
+.minus .tit h2 {
+    margin: 0 0 35px 0 ;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+}
+.minus .photo {
+    width: 49%;
+    height: 390px;
+    border-radius: 10px;
+}
+@media screen and (max-width:1024px){
+    .minus .tit h2 {
+        font-size: 32px;
+    }
+}
+@media screen and (max-width:768px){
+    .minus {
+        margin: 103px 0 0 0;
+    }
+    .minus .wrapper {
+        display: block;
+    }
+    .minus .tit {
+        width: auto;
+        margin: 0 0 32px 0;
+    }
+    .minus .tit h2 {
+        margin: 0 0 29px 0 ;
+        font-size: 24px;
+    }
+    .minus .photo {
+        width: auto;
+        height: 290px;
+        border-radius: 10px;
+    }
+}
+.service {
+    margin: 150px 0 0 0;
+    background-color: #4977CD;
+    color:#Fff;
+    padding: 75px 0 70px 0;
+}
+.service .list ul {
+    display: flex;
+}
+.service .list ul li {
+    width: 16.66%;
+    /*나를 !!!감싸는!!! ul의 넓이의 16%..
+    즉, 100% = 감싸는 것의 넓이*/
+}
+.service .list ul li a {
+    display: flex;  /*감싸는 것에 꽉 차도록*/
+    gap: 0 21px;
+    align-items: center;
+}
+.service .list ul li a i {
+    width: 75px;
+    height: 75px;
+    background-color: #Fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.service .list ul li a span {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+@media screen and (max-width:1361px){
+    
+    .service .list ul li a {
+        gap: 10px 0 ;
+        flex-direction: column;
+    }
+    .service .list ul li a span {
+        font-size: 18px;
+    }
+    .service .list ul li a span br {
+        display: none;
+    }
+    
+} 
+@media screen and (max-width:1024px){
+    .service .list ul li a {
+        gap: 10px 0 ;
+        flex-direction: column;
+    }
+    .service .list ul li a span {
+        font-size: 16px;
+        text-align: center;
+    }
+    .service .list ul li a span br {
+        display: block;
+    }
+}
+@media screen and (max-width:768px){
+    .service {
+        padding: 51px 0 67px 0;
+    }
+    .service .list ul {
+        flex-wrap: wrap;
+        gap: 50px 0;
+    }
+    .service .list ul li {
+        width: 33.33%;
+        /*나를 !!!감싸는!!! ul의 넓이의 16%..
+        즉, 100% = 감싸는 것의 넓이*/
+    }
+    .service .list ul li a span br {
+        display: none;
+    }
+    .service .list ul li a i {
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+    }
+    
+    .service .list ul li a i svg {
+        width: 90%;
+        height: 90%;
+        /*감싸는영역이 svg 에 써있는 사이즈보다 작으면 자동으로 사이즈가 줄어든다*/
+    }
+    .service .list ul li a i svg path {
+        fill: #F2FBFF;
+        /*내가 복사한 svg html의 path 선택자에 fill이 채워져있음*/
+    }
+}
+
+@media screen and (max-width:420px){
+
+    .service .list ul li {
+        width: 50%;
+        /*나를 !!!감싸는!!! ul의 넓이의 16%..
+        즉, 100% = 감싸는 것의 넓이*/
+    }
+}
+
+.sdi {
+    margin: 145px 0 0 0;
+}
+.sdi .tit h2{
+    margin: 0 0 12px 0 ;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+}
+.sdi .inner {
+    margin: 52px 0 0 0;
+    display: flex;
+    gap: 0 24px;
+}
+.sdi .inner .item {
+    background-color: #f4f4f4;
+    height: 234px;
+    width: calc(25% - 18px); /*나와 같은 사이즈들이 있을 때를 가정하고 계산
+                             실제로는 3등분이지만 100%의 4등분짜리 사이즈라서 4개로 계산
+                             100/4 - (24*3/4 = 18)*/
+    border-radius: 20px;
+    padding: 35px 38px 0 38px;
+}
+.sdi .inner .item h3{
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1d1d1d;
+    margin: 0 0 10px 0;
+}
+.sdi .inner .item.career {
+    width: calc(50% - 12px); /*나와 같은 사이즈들이 있을 때를 가정하고 계산
+                                실제로는 3등분이지만 100%의 2등분짜리 사이즈라서 2개로 계산
+                                100/2 - (24*1/2 = 12)*/
+    padding: 0;
+} 
+.sdi .inner .career .career_tit {
+    display: flex;
+    align-items: center;
+    background-color: #4977CD;
+    color: #Fff;
+    border-radius: 20px 20px 0 0 ;
+    padding: 38px 36px 36px 36px;
+    gap: 0 24px ;
+}
+.sdi .inner .career .career_tit h3 {
+    color: #Fff;
+    margin: 0;
+
+}
+.sdi .inner .career .career_list ul {
+    display: flex;
+    margin: 47px 0 0 0 ;
+
+}
+.sdi .inner .career .career_list ul  li {
+    width: 33.33%;
+    text-align: center;
+}
+.sdi .inner .career .career_list ul  li a {
+    display: block;
+    font-weight: 600;
+    color: #1d1d1d;
+}
+.sdi .inner .career .career_list ul  li a br {
+    display: none;
+}
+@media screen and (max-width:1024px){
+    .sdi .inner .career .career_list ul  li a br {
+        display: block;
+    }
+}
+@media screen and (max-width:768px){
+    .sdi {
+        margin: 100px 0 0 0;
+    }
+    .sdi .tit h2{
+        margin: 0 0 6px 0 ;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.3;
+        color: #1d1d1d;
+    }
+    .sdi .inner {
+        margin: 20px 0 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px 16px;
+    }
+    .sdi .inner .item {
+        background-color: #f4f4f4;
+        height: 234px;
+        width: calc(50% - 8px); /*나와 같은 사이즈들이 있을 때를 가정하고 계산
+                                 실제로는 3등분이지만 100%의 4등분짜리 사이즈라서 4개로 계산
+                                 100/4 - (24*3/4 = 18)*/
+        border-radius: 20px;
+        padding: 35px 38px 0 38px;
+    }
+    .sdi .inner .item h3{
+        font-size: 20px;
+        margin: 0 0 6px 0;
+    }
+    .sdi .inner .item.career {
+        width: 100%; /*나와 같은 사이즈들이 있을 때를 가정하고 계산
+                                    실제로는 3등분이지만 100%의 2등분짜리 사이즈라서 2개로 계산
+                                    100/2 - (24*1/2 = 12)*/
+        padding: 0;
+    } 
+    .sdi .inner .career .career_list ul  li a br {
+        display: none;
+    }
+}
+@media screen and (max-width:420px){
+    .sdi .inner .career .career_list ul  li a br {
+        display: block;
+    }
+}
+
+
+
+body {
+    margin: 0 0 400px 0 ;
+}
+
