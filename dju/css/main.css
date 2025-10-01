@@ -140,20 +140,24 @@ section .tit h2 {
     display: flex;
     justify-content: space-between;
 }
-.service .list ul {
+.service .list {
     width: 700px;
+}
+.service .list ul {
     display: flex;
     flex-wrap: wrap;
     gap: 20px 20px;
 }
+.service .list ul li {
+    width: calc(25% - 15px) ;
+}
 .service .list ul li a{
     display: block;
-    width: 160px;
-    height: 150px;
     text-align: center;
     padding: 85px 0 0 0;
     background-color: rgba(255, 255, 255, 0.1);
     position: relative;
+    height: 150px;
 }
 .service .list ul li a::before {
     content: "";
@@ -206,18 +210,17 @@ section .tit h2 {
     font-size: 24px;
     margin: 8px 0 44px 0;
 }
-.service .list ul {
+.service .list {
     width: auto;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+}
+.service .list ul {
     gap: 16px 16px;
 }
-
+.service .list ul li {
+    width: calc(50% - 8px);
+}
 .service .list ul li a{
     display: block;
-    width: 155px;
-    height: 145px;
     text-align: center;
     padding: 85px 0 0 0;
     background-color: rgba(255, 255, 255, 0.1);
