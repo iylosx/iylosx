@@ -203,8 +203,8 @@ header.menu_over .gnb .gnb_wrap ul.depth1 > li ul.depth2 > li > a:hover {
     }
     header .gnb .gnb_close i {
         display: block;
-        width: 20px;
-        height: 20px;
+        width: 15px;
+        height: 15px;
     }
 
     /* 메뉴 열릴 때 */
@@ -239,7 +239,7 @@ header.menu_over .gnb .gnb_wrap ul.depth1 > li ul.depth2 > li > a:hover {
         content: "";
         position: absolute;
         top: 29px;
-        right: 24px;
+        right: 23px;
         width: 10px;
         height: 6px;
         background: url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 1.33337L5 6.33337L1.96701e-06 1.33337L1.16667 0.166707L5 4.00004L8.83334 0.166707L10 1.33337Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A") no-repeat center center;
