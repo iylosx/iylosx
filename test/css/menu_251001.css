@@ -93,9 +93,7 @@ header .util .search .search_open i {
         padding: 4px 0 4px;
         color: #555;
     } 
-}
-
-/*헤더에 메뉴 오버가 들어갔을 때 .....*/
+    /*헤더에 메뉴 오버가 들어갔을 때 .....*/
 header.menu_over {
     color: #1d1d1d;
 }
@@ -151,8 +149,7 @@ header.menu_over .gnb .gnb_wrap ul.depth1 > li ul.depth2 > li > a:hover {
     color: #0098A3;
     text-decoration: underline;
 }
-
-
+}
 
 @media screen and (max-width:1024px){
     header {
@@ -163,9 +160,8 @@ header.menu_over .gnb .gnb_wrap ul.depth1 > li ul.depth2 > li > a:hover {
         height: 26px;
         background-image: url(../images/menu_logo_sw.svg);
     }
-    
     header .util {
-        position: absolute; /*header를 기준으로 정렬*/
+        position: absolute;
         right: var(--header-h);
         top: 0;
     }
@@ -180,14 +176,12 @@ header.menu_over .gnb .gnb_wrap ul.depth1 > li ul.depth2 > li > a:hover {
         width: 20px;
         height: 20px;
     }
-    header .gnb .gnb_close {
-        display: flex;
-    }
+
+    /* 햄버거 버튼 */
     header .gnb .gnb_open {
-        display: block;
+        display: flex;
         width: var(--header-h);
         height: var(--header-h);
-        display: flex;
         justify-content: center;
         align-items: center;
     }
@@ -195,26 +189,49 @@ header.menu_over .gnb .gnb_wrap ul.depth1 > li ul.depth2 > li > a:hover {
         width: 20px;
         height: 18px;
     }
+
+    /* 메뉴 닫기 버튼 - 기본은 숨김 */
+    header .gnb .gnb_close {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: var(--header-h);
+        height: var(--header-h);
+        justify-content: center;
+        align-items: center;
+    }
+    header .gnb .gnb_close i {
+        display: block;
+        width: 20px;
+        height: 20px;
+    }
+
+    /* 메뉴 열릴 때 */
     header .gnb .gnb_wrap {
         display: none;
     }
-
     header.menu_open .gnb .gnb_wrap {
         display: block;
-        position: absolute; /*header 기준 정렬*/
+        position: absolute;
         left: 0;
         top: 0;
         width: 100%;
         height: 100dvh;
         background-color: #fff;
         color: #555;
-        padding: 82px 0 0 0;
+        padding: 82px 0 0;
     }
+    header.menu_open .gnb .gnb_close {
+        display: flex;
+    }
+
+    /* depth1, depth2 */
     header .gnb .gnb_wrap ul.depth1 > li > a {
         display: block;
         padding: 16.5px 50px 16.5px 16px;
         font-size: 20px;
-        font-weight: 600;
+        /* font-weight: 600; */
         color: #1d1d1d;
         position: relative;
     }
@@ -229,36 +246,12 @@ header.menu_over .gnb .gnb_wrap ul.depth1 > li ul.depth2 > li > a:hover {
     }
     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
         background-color: #f7f7f7;
-        padding: 25px 0 27px 16px;
-        display: none;  /*1차메뉴 열면 열려요*/
+        padding: 25px 0 27px 25px;
+        display: none;
     }
     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 a {
         display: block;
-        padding: 4px 0 4px 0;
-    }
-  
-    header .gnb .gnb_close {
-        display: none;
-        position: absolute; /*header 기준*/
-        right: 0;
-        top: 0;
-        width: var(--header-h);
-        height: var(--header-h);
-        justify-content: center;
-        align-items: center;
-    }
-    header .gnb .gnb_close i {
-        display: block;
-        width: 20px;
-        height: 20px;
-    }
-
-    /*header에 menu_open이 있을 때 - 메뉴가 열렸을 때*/
-    header.menu_open .gnb .gnb_wrap {
-        display: block;
-    }
-    header.menu_open .gnb .gnb_close{
-        display: flex;
+        padding: 4px 0;
     }
     header.menu_open .gnb .gnb_wrap ul.depth1 > li.open > a::after {
         transform: rotate(180deg);
@@ -266,8 +259,8 @@ header.menu_over .gnb .gnb_wrap ul.depth1 > li ul.depth2 > li > a:hover {
     header.menu_open .gnb .gnb_wrap ul.depth1 > li.open > ul.depth2 {
         display: block;
     }
-    
-} 
+}
+
 
 
 
