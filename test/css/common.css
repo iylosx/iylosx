@@ -34,6 +34,7 @@ html, body {
     color: #555;
     word-break: keep-all;
     word-wrap: break-word;
+    overflow: hidden;
 }
 #wrap {
     /*최소넓이 안줌*/
