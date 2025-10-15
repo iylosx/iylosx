@@ -1,0 +1,207 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+.mo {
+    display: none;
+}
+
+.visual {
+    position: relative; /*ctrl_btn 정렬기준*/
+}
+.visual .swiper-slide {
+    height: 100dvh; /*브라우저 높이와 동일하게*/
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--white);
+    display: flex;
+    align-items: flex-end;
+    border-radius: 0 0 140px 140px;
+}
+.visual .swiper-slide.bg1 {
+    background-image: url(../images/visual_bg01.jpg);
+}
+.visual .swiper-slide.bg2 {
+    background-image: url(../images/visual_bg02.jpg);
+}
+.visual .swiper-slide.bg3 {
+    background-image: url(../images/visual_bg03.jpg);
+}
+.visual .swiper-slide h3 {
+    font-size: 50px;
+    font-family: 'KKIM';
+    line-height: var(--titline);
+    /*글자애니메이션*/
+    transition: 1s;
+    transform: translateY(20px);
+    opacity: 0;
+
+}
+.visual .swiper-slide.swiper-slide-active h3,
+.visual .swiper-slide.swiper-slide-active p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.visual .swiper-slide p {
+    margin: 20px 0 calc(22vh + 25px) 0;
+    transition: 1s;
+    transform: translateY(20px);
+    opacity: 0;
+    transition-delay: .2s;
+}
+
+.visual .ctrl_btn {
+    position: absolute;
+    bottom: 16%;
+    left: calc(50% - 630px);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+}
+.visual .ctrl_btn button {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: var(--white30);
+    border-radius: 50%;
+}
+.visual .ctrl_btn .stop,
+.visual .ctrl_btn .play {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 18px;
+
+}
+.visual .ctrl_btn .stop i,
+.visual .ctrl_btn .play i {
+    display: block;
+    width: 8px;
+    margin: 0 0 2px 0;
+}
+.visual .ctrl_btn .play {
+   display: none;
+}
+
+.visual .ctrl_btn .paging {
+    display: flex;
+    align-items: center;
+    gap: 0 11px;
+    color: var(--white);
+    font-family: 'KKIM';
+    font-size: var(--btnsize);
+}
+.visual .ctrl_btn .paging .current,
+.visual .ctrl_btn .paging .total {
+    width: 12px;
+}
+
+.visual .ctrl_btn .paging .bar {
+    width: 117px;
+    height: 3px;
+    background-color: var(--white30);
+    position: relative;
+}
+.visual .ctrl_btn .paging .bar span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--white);
+}
+@media screen and (max-width:1360.8px){
+    .visual .ctrl_btn {
+        left: 4%;
+    }
+}
+@media screen and (max-width:1024px){
+    .visual .ctrl_btn {
+        left: 3%;
+    }
+}
+@media screen and (max-width:768px){
+    
+    .mo {
+        display: block;
+    }
+    .pc {
+        display: none;
+    }
+    .visual {
+        position: relative; /*ctrl_btn 정렬기준*/
+    }
+    .visual .swiper-slide {
+        height: 361px; /*브라우저 높이와 동일하게*/
+        border-radius: 0 0 20px 20px;
+    }
+    .visual .swiper-slide h3 {
+        font-size: 24px;
+        transform: translateY(20px);
+        margin-bottom: 10vh;
+    }
+
+    .visual .ctrl_btn {
+        bottom: 5dvh;
+        left: 16px;
+    }
+
+    .visual .ctrl_btn button {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-color: var(--white30);
+        border-radius: 50%;
+    }
+    .visual .ctrl_btn .stop,
+    .visual .ctrl_btn .play {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 15px;
+    
+    }
+    .visual .ctrl_btn .stop i,
+    .visual .ctrl_btn .play i {
+        display: block;
+        width: 8px;
+        margin: 0 0 2px 0;
+    }
+    .visual .ctrl_btn .play {
+       display: none;
+    }
+    
+    .visual .ctrl_btn .paging {
+        display: flex;
+        align-items: center;
+        gap: 0 11px;
+        color: var(--white);
+        font-family: 'KKIM';
+        font-size: var(--btnsize);
+    }
+    .visual .ctrl_btn .paging .current,
+    .visual .ctrl_btn .paging .total {
+        width: 12px;
+    }
+    
+    .visual .ctrl_btn .paging .bar {
+        width: 90px;
+        height: 2px;
+        background-color: var(--white30);
+        position: relative;
+    }
+    .visual .ctrl_btn .paging .bar span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        background-color: var(--white);
+    }
+}
+
+footer {
+    margin: 300px 0 0 0;
+}
