@@ -1,0 +1,98 @@
+@import url(common.css);
+
+.btn1 {
+    margin: 50px 0 ;
+}
+.btn1 button {
+    background-color: #517B63;
+    color: #fff;
+    fill: #fff;
+    display: flex;
+    border-radius: 30px;
+    padding: 7px 22px;
+    gap: 0 7px;
+
+}
+.btn1 button i {
+    display: block;
+    width: 11.33px;
+}
+.btn1 button i svg {
+    transition: .5s;
+    margin-top: 1px;
+
+}
+.btn1 button:hover i svg {
+    transform: rotate(225deg);
+    transition: .5s;
+}
+
+.btn2 {
+    margin: 50px 0 ;
+}
+.btn2 button {  /*기준글자크기 17px*/
+    background-color: #517B63;
+    color: #fff;
+    fill: #fff;
+    display: flex;
+    border-radius: 1.7647em;
+    padding: 0.4118em 1.2941em;
+    gap: 0 0.4118em ;
+
+}
+.btn2 button i {
+    display: block;
+    width: 11.33px;
+}
+.btn2 button i svg {
+    margin-top: 1px;
+}
+
+.btn2 {
+    margin: 50px 0 ;
+}
+.btn2 button {  /*기준글자크기 17px*/ /*em은 나를 감싸고 있는 상위 태그를 기준으로 크기가 결정된다*/
+    background-color: #517B63;
+    color: #fff;
+    fill: #fff;
+    display: flex;
+    border-radius: 1.7647em;
+    padding: 0.4118em 1.2941em;
+    gap: 0 0.4118em ;
+
+}
+.btn2 button i {
+    display: block;
+    width: 11.33px;
+}
+.btn2 button i svg {
+    margin-top: 1px;
+}
+.btn3 {
+    margin: 50px 0 ;
+}
+.btn3 button {  /*기준글자크기 17px*/ /*rem은 html에서 지정된 글자 크기를 기준으로 설정된다*/
+    background-color: #517B63;
+    color: #fff;
+    fill: #fff;
+    display: flex;
+    border-radius: 1.7647rem;
+    padding: 0.4118rem 1.2941rem;
+    gap: 0 0.4118rem ;
+
+}
+.btn3 button i {
+    display: block;
+    width: 11.33px;
+}
+.btn3 button i svg {
+    margin-top: 1px;
+}
+
+
+
+@media screen and (max-width:768px){
+    html, body {
+        font-size: 12px;
+    }
+}

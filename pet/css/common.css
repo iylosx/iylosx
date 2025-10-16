@@ -2,13 +2,13 @@
 :root {
 
     /*color root*/
-    --green: #517B63;
+    --main-c: #517B63;
     --tit-c: #1d1d1d;
     --white: #fff;
     --white50: rgba( 255, 255, 255, 0.5);
     --white30: rgba( 255, 255, 255, 0.3);
     --dark: #312E2A;
-    --beige: #E7DFD2;
+    --light: #E7DFD2;
     --line-c: #ededed;
     --footer-c: #414A45;
 
@@ -21,7 +21,7 @@
     --titline: 1.3;
 
     /*display*/
-    --header-h: 90px;
+    --header-h: 80px;
 
     /*margin*/
     --ctn-mar: 0 30px;
@@ -79,9 +79,13 @@ body {
         좌우여백 4% : 1260 + 8% = 1360.8
 */
 @media screen and (max-width:1360.8px){
+    :root {
+        --ctn-mar: 0 4%;
+    }
     .wrapper {
         width: auto;
-        margin: 0 4%;
+        margin: var(--ctn-mar);
+        
     }
 }
 @media screen and (max-width:1024px){
