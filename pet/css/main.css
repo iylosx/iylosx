@@ -589,7 +589,7 @@ header.fixed .logo a{
 .find .tab_ctn .tab_item .ctrl_btn .prev i,
 .find .tab_ctn .tab_item .ctrl_btn .next i {
     width: 10px;
-    margin: 8px 0 0 0;
+    margin: 8px 0 0 4px;
     display: block;
 }
 
