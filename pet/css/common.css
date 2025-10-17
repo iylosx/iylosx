@@ -22,9 +22,10 @@
 
     /*display*/
     --header-h: 80px;
+    --header-var : clamp(56px, 7vw, 80px);
 
     /*margin*/
-    --ctn-mar: 0 30px;
+    --ctn-mar: 30px;
 }
 
 @media screen and (max-width:768px){
@@ -38,7 +39,7 @@
         --header-h: 56px;
 
         /*margin*/
-        --ctn-mar: 0 16px;
+        --ctn-mar: 16px;
     }
 }
 
@@ -80,25 +81,30 @@ body {
 */
 @media screen and (max-width:1360.8px){
     :root {
-        --ctn-mar: 0 4%;
+        --ctn-mar: 4%;
     }
     .wrapper {
         width: auto;
-        margin: var(--ctn-mar);
+        margin: 0 var(--ctn-mar);
         
     }
 }
 @media screen and (max-width:1024px){
+    :root {
+        --ctn-mar: 3%;
+    }
     .wrapper {
-        width: auto;
-        margin: 0 3%;
+        width: auto;  /*니가 알아서 ...*/
+        margin: 0 var(--ctn-mar);
     }
 }
 @media screen and (max-width:768px){
-
+    :root {
+        --ctn-mar: 16px;
+    }
     .wrapper {
         width: auto;  /*니가 알아서 ...*/
-        margin: 0 16px;
+        margin: 0 var(--ctn-mar);
     }
     
     #wrap {

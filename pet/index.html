@@ -14,7 +14,7 @@
 </head>
 <body>
    <div id="wrap">
-        <header class="menu_mo"> <!--메뉴오버(pc : menu_pc)--> <!--메뉴오버(menu_mo)-->
+        <header class=""> <!--메뉴오버(pc : menu_pc)--> <!--메뉴오버(menu_mo)--> <!--헤더고정 fixed-->
             <h1 class="logo"><a href="index.html"><span class="blind">유기동물 보호소</span></a></h1>
             <nav class="gnb">
                 <button class="gnb_open">
@@ -26,10 +26,10 @@
                     </i>
                 </button>
                 <div class="gnb_wrap">
-                    <div class="gnb_logo"><span>유기동물 보호소</span></div>
+                    <div class="gnb_logo"><span class="blind">유기동물 보호소</span></div>
                     <ul class="depth1">
-                        <li> <!--마우스 오버(pc)-->
-                            <a href="#n"><span>찾습니다</span></a>
+                        <li class=""> 
+                            <a href="https://ez1852.cafe24.com/page/web_250728.html"><span>찾습니다</span></a>
                             <ul class="depth2">
                                 <li><a href="#n"><span>반려동물 실종신고</span></a></li>
                                 <li><a href="#n"><span>유기동물 보호</span></a></li>
@@ -67,7 +67,7 @@
                         </li>
                     </ul>
                     <button class="gnb_close">
-                        <span>메뉴닫기</span>
+                        <span class="blind">메뉴닫기</span>
                         <i>
                             <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1.86633 13.0989L0.900391 12.133L6.03372 6.99966L0.900391 1.86633L1.86633 0.900391L6.99966 6.03372L12.133 0.900391L13.0989 1.86633L7.9656 6.99966L13.0989 12.133L12.133 13.0989L6.99966 7.9656L1.86633 13.0989Z"/>
@@ -148,7 +148,410 @@
                         </button>
                     </div>
             </section>
-            <section class="find"></section>
+            <section class="find">
+                <div class="wrapper">
+                    <h2>가족을 찾습니다</h2>
+                    <div class="tab_list">
+                        <ul>
+                            <!--선태된 탭은 active클래스를 추가
+                                버튼 안에 span태그에게 '선택됨' 이라는 글자도 추가-->
+                            <li class="item1 "><button>잃어버렸어요<span class="blind"> 선택됨</span></button></li>
+                            <li class="item2 active"><button>보호중이에요<span></span></button></li>
+                        </ul>
+                    </div>
+                    <div class="tab_ctn">
+                        <!--선택된 tab_item은 active클래스를 추가하고
+                            타이틀에 선택됨 추가-->
+                        <div class="tab_item item1 active" title="선택됨">
+                            <h3 class="blind">잃어버렸어요</h3>
+                            <div class="list">
+                                <div class="swiper">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find_01_01.jpg" alt="">
+                                                    <div class="local"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>브리티시 숏헤어</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종날짜</strong>
+                                                            <strong class="mo_only">실종</strong>
+                                                            <span>2025-10-13</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>고양이가 원래 마당에 나가 놀다가 다시 집에 잘 들어</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find_01_02.jpg" alt="">
+                                                    <div class="local"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>포메라니안</strong>
+                                                        <span>암컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종날짜</strong>
+                                                            <strong class="mo_only">실종</strong>
+                                                            <span>2025-10-16</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>사람을 잘 따르고 겁이 많아요. 낯선 곳에서 떨고 있을 수 있습니다.</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find_01_03.jpg" alt="">
+                                                    <div class="local"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>푸들</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종날짜</strong>
+                                                            <strong class="mo_only">실종</strong>
+                                                            <span>2025-10-11</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>대포항이나근포항 저구마을에서 낚시하시면서</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find_01_04.jpg" alt="">
+                                                    <div class="local"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>시바견</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종날짜</strong>
+                                                            <strong class="mo_only">실종</strong>
+                                                            <span>	2025-10-14</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>사람을 아주 잘 따르고 좋아합니다</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find_01_05.jpg" alt="">
+                                                    <div class="local"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>시츄</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종날짜</strong>
+                                                            <strong class="mo_only">실종</strong>
+                                                            <span>	2025-10-11</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>중성화수술 완료.목 내장칩 있음.보통시츄보다 많이
+                                                                작습니다. 갈색&흰색섞여있어요</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find_01_06.jpg" alt="">
+                                                    <div class="local"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>믹스견</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">실종날짜</strong>
+                                                            <strong class="mo_only">실종</strong>
+                                                            <span>2025-10-11</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>갈색 코+콧등 상처+혓바닥 검정 얼룩 무늬+쫑긋한 귀+정수리 부분
+                                                                진갈색 털+베이지색 목줄</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="ctrl_btn">
+                                <button class="prev">
+                                    <span class="blind">이전팝업보기</span>
+                                    <i>
+                                        <svg viewBox="0 0 13 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.0161 12.0003L0.600156 21.4163C0.351823 21.6646 0.230782 21.957 0.237031 22.2934C0.24349 22.6301 0.370886 22.9226 0.619219 23.1709C0.867761 23.4193 1.16026 23.5434 1.49672 23.5434C1.83318 23.5434 2.12568 23.4193 2.37422 23.1709L11.963 13.6013C12.189 13.3752 12.3565 13.122 12.4655 12.8416C12.5744 12.5612 12.6289 12.2807 12.6289 12.0003C12.6289 11.7199 12.5744 11.4395 12.4655 11.1591C12.3565 10.8787 12.189 10.6254 11.963 10.3994L2.37422 0.810323C2.12568 0.56199 1.82995 0.441053 1.48703 0.447511C1.14411 0.45397 0.84849 0.581365 0.600156 0.829698C0.351823 1.07803 0.227656 1.37053 0.227656 1.7072C0.227656 2.04366 0.351823 2.33605 0.600156 2.58439L10.0161 12.0003Z"/>
+                                        </svg>
+                                    </i>
+                                </button>
+                                <button class="next">
+                                    <span class="blind">다음팝업보기</span>
+                                    <i>
+                                        <svg viewBox="0 0 13 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.0161 12.0003L0.600156 21.4163C0.351823 21.6646 0.230782 21.957 0.237031 22.2934C0.24349 22.6301 0.370886 22.9226 0.619219 23.1709C0.867761 23.4193 1.16026 23.5434 1.49672 23.5434C1.83318 23.5434 2.12568 23.4193 2.37422 23.1709L11.963 13.6013C12.189 13.3752 12.3565 13.122 12.4655 12.8416C12.5744 12.5612 12.6289 12.2807 12.6289 12.0003C12.6289 11.7199 12.5744 11.4395 12.4655 11.1591C12.3565 10.8787 12.189 10.6254 11.963 10.3994L2.37422 0.810323C2.12568 0.56199 1.82995 0.441053 1.48703 0.447511C1.14411 0.45397 0.84849 0.581365 0.600156 0.829698C0.351823 1.07803 0.227656 1.37053 0.227656 1.7072C0.227656 2.04366 0.351823 2.33605 0.600156 2.58439L10.0161 12.0003Z"/>
+                                        </svg>
+                                    </i>
+                                </button>
+                                <a href="#n" class="more">
+                                    <span>더보기</span>
+                                    <i>
+                                        <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.99988 9.25C4.89354 9.25 4.8045 9.21404 4.73275 9.14213C4.66092 9.07029 4.625 8.98125 4.625 8.875V5.375H1.125C1.01875 5.375 0.929708 5.33904 0.857875 5.26713C0.785958 5.19521 0.75 5.10612 0.75 4.99988C0.75 4.89354 0.785958 4.8045 0.857875 4.73275C0.929708 4.66092 1.01875 4.625 1.125 4.625H4.625V1.125C4.625 1.01875 4.66096 0.929708 4.73288 0.857875C4.80479 0.785958 4.89388 0.75 5.00013 0.75C5.10646 0.75 5.1955 0.785958 5.26725 0.857875C5.33908 0.929708 5.375 1.01875 5.375 1.125V4.625H8.875C8.98125 4.625 9.07029 4.66096 9.14213 4.73288C9.21404 4.80479 9.25 4.89388 9.25 5.00013C9.25 5.10646 9.21404 5.1955 9.14213 5.26725C9.07029 5.33908 8.98125 5.375 8.875 5.375H5.375V8.875C5.375 8.98125 5.33904 9.07029 5.26713 9.14213C5.19521 9.21404 5.10612 9.25 4.99988 9.25Z"/>
+                                        </svg>
+                                    </i>
+
+                                </a>
+                            </div>
+                        </div>
+                        <div class="tab_item item2">
+                            <h3 class="blind">보호중이에요</h3>
+                            <div class="list">
+                                <div class="swiper">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find_02_01.jpg" alt="">
+                                                    <div class="local"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>진돗개</strong>
+                                                        <span>암컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">발견날짜</strong>
+                                                            <strong class="mo_only">발견</strong>
+                                                            <span>2025-09-01</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>헛짖음 없고 차분합니다.</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find_02_02.jpg" alt="">
+                                                    <div class="local"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>코리안숏헤어</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">발견날짜</strong>
+                                                            <strong class="mo_only">발견</strong>
+                                                            <span>2025-10-01</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>흰털에 날씬한 고양이었어요</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find_02_03.jpg" alt="">
+                                                    <div class="local"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>코리안숏헤어</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">발견날짜</strong>
+                                                            <strong class="mo_only">발견</strong>
+                                                            <span>2025-10-11</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>얌전하고 말을 잘 들어요</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find_02_04.jpg" alt="">
+                                                    <div class="local"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>믹스견</strong>
+                                                        <span>암컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">발견날짜</strong>
+                                                            <strong class="mo_only">발견</strong>
+                                                            <span>2025-10-11</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>인천 계양구 계양산 부근에서 발견했습니다.</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find_02_05.jpg" alt="">
+                                                    <div class="local"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>폼피치</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">발견날짜</strong>
+                                                            <strong class="mo_only">발견</strong>
+                                                            <span>2025-08-08</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">발견사항</strong>
+                                                            <strong class="mo_only">발견</strong>
+                                                            <span>3.5kg 작은 폼피치 남아 입니다.</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo">
+                                                    <img src="images/find_02_06.jpg" alt="">
+                                                    <div class="local"></div>
+                                                </div>
+                                                <div class="txt">
+                                                    <h4>
+                                                        <strong>말티푸</strong>
+                                                        <span>수컷</span>
+                                                    </h4>
+                                                    <ul>
+                                                        <li>
+                                                            <strong class="pc_only">발견날짜</strong>
+                                                            <strong class="mo_only">발견</strong>
+                                                            <span>2025-10-11</span>
+                                                        </li>
+                                                        <li>
+                                                            <strong class="pc_only">특이사항</strong>
+                                                            <strong class="mo_only">특징</strong>
+                                                            <span>사람을 좋아하고 분리 불안이 있습니다</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="ctrl_btn">
+                                <button class="prev">
+                                    <span class="blind">이전팝업보기</span>
+                                    <i>
+                                        <svg viewBox="0 0 13 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.0161 12.0003L0.600156 21.4163C0.351823 21.6646 0.230782 21.957 0.237031 22.2934C0.24349 22.6301 0.370886 22.9226 0.619219 23.1709C0.867761 23.4193 1.16026 23.5434 1.49672 23.5434C1.83318 23.5434 2.12568 23.4193 2.37422 23.1709L11.963 13.6013C12.189 13.3752 12.3565 13.122 12.4655 12.8416C12.5744 12.5612 12.6289 12.2807 12.6289 12.0003C12.6289 11.7199 12.5744 11.4395 12.4655 11.1591C12.3565 10.8787 12.189 10.6254 11.963 10.3994L2.37422 0.810323C2.12568 0.56199 1.82995 0.441053 1.48703 0.447511C1.14411 0.45397 0.84849 0.581365 0.600156 0.829698C0.351823 1.07803 0.227656 1.37053 0.227656 1.7072C0.227656 2.04366 0.351823 2.33605 0.600156 2.58439L10.0161 12.0003Z"/>
+                                        </svg>
+                                    </i>
+                                </button>
+                                <button class="next">
+                                    <span class="blind">다음팝업보기</span>
+                                    <i>
+                                        <svg viewBox="0 0 13 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10.0161 12.0003L0.600156 21.4163C0.351823 21.6646 0.230782 21.957 0.237031 22.2934C0.24349 22.6301 0.370886 22.9226 0.619219 23.1709C0.867761 23.4193 1.16026 23.5434 1.49672 23.5434C1.83318 23.5434 2.12568 23.4193 2.37422 23.1709L11.963 13.6013C12.189 13.3752 12.3565 13.122 12.4655 12.8416C12.5744 12.5612 12.6289 12.2807 12.6289 12.0003C12.6289 11.7199 12.5744 11.4395 12.4655 11.1591C12.3565 10.8787 12.189 10.6254 11.963 10.3994L2.37422 0.810323C2.12568 0.56199 1.82995 0.441053 1.48703 0.447511C1.14411 0.45397 0.84849 0.581365 0.600156 0.829698C0.351823 1.07803 0.227656 1.37053 0.227656 1.7072C0.227656 2.04366 0.351823 2.33605 0.600156 2.58439L10.0161 12.0003Z"/>
+                                        </svg>
+                                    </i>
+                                </button>
+                                <a href="#n" class="more">
+                                    <span>더보기</span>
+                                    <i>
+                                        <svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.99988 9.25C4.89354 9.25 4.8045 9.21404 4.73275 9.14213C4.66092 9.07029 4.625 8.98125 4.625 8.875V5.375H1.125C1.01875 5.375 0.929708 5.33904 0.857875 5.26713C0.785958 5.19521 0.75 5.10612 0.75 4.99988C0.75 4.89354 0.785958 4.8045 0.857875 4.73275C0.929708 4.66092 1.01875 4.625 1.125 4.625H4.625V1.125C4.625 1.01875 4.66096 0.929708 4.73288 0.857875C4.80479 0.785958 4.89388 0.75 5.00013 0.75C5.10646 0.75 5.1955 0.785958 5.26725 0.857875C5.33908 0.929708 5.375 1.01875 5.375 1.125V4.625H8.875C8.98125 4.625 9.07029 4.66096 9.14213 4.73288C9.21404 4.80479 9.25 4.89388 9.25 5.00013C9.25 5.10646 9.21404 5.1955 9.14213 5.26725C9.07029 5.33908 8.98125 5.375 8.875 5.375H5.375V8.875C5.375 8.98125 5.33904 9.07029 5.26713 9.14213C5.19521 9.21404 5.10612 9.25 4.99988 9.25Z"/>
+                                        </svg>
+                                    </i>
+
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
             <section class="slogan"></section>
             <section class="wait"></section>
             <section class="review"></section>

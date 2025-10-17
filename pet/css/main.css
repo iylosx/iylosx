@@ -7,6 +7,9 @@
 }
 
 header {
+    transition: background-color .3s, color .3s, fill .3s;
+}
+header {
     position: fixed;
     left: 0;
     top: 0;
@@ -18,7 +21,7 @@ header {
     justify-content: space-between;
     color: var(--white);
     fill: var(--white);
-    padding: var(--ctn-mar);
+    padding: 0 var(--ctn-mar);
 }
 header .logo a{
     display: block;
@@ -51,6 +54,20 @@ header .util .login{
 header .util .login i {
     display: block;
     width: 17px;
+}
+
+/********************
+*헤더가 fixed 일때!!!!!!!!!!!!!!!!!!!!!!!!
+***********************/
+header.fixed {
+    background-color: var(--white);
+    color: var(--tit-c);
+    fill: var(--main-c);
+    border-bottom: 1px solid var(--line-c);
+}
+
+header.fixed .logo a{
+    background: url(../images/logo.svg) no-repeat center center / contain;
 }
 
 /****************************
@@ -106,7 +123,7 @@ header .util .login i {
     header.menu_pc {
         background-color: var(--white);
         color: var(--tit-c);
-        fill: #555;
+        fill: var(--main-c);
         border-bottom: 1px solid var(--line-c);
     }
     header.menu_pc .logo a{
@@ -131,7 +148,7 @@ header .util .login i {
         background-color: var(--main-c);
     }
     header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 {
-        display: block;
+        display: block ;
     }
 }
 
@@ -159,7 +176,7 @@ header .util .login i {
     }   
     header {
         padding-right: 0;
-        height: clamp(56px, 7vw, 80px);
+        height: var(--header-var);
     }
     header .gnb .gnb_wrap {
         display: none;
@@ -168,8 +185,8 @@ header .util .login i {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: var(--header-h);
-        height: var(--header-h);
+        width: var(--header-var);
+        height: var(--header-var);
     }
     header .gnb .gnb_open i {
         display: block;
@@ -180,6 +197,7 @@ header .util .login i {
         /* width: 151px;
         height: 20px; */
         width: clamp(151px, 22vw , 238px);
+        background-image: url(../images/logo_sw.svg);
     }
     header .util {
         display: none;
@@ -208,20 +226,98 @@ header .util .login i {
     }
 
 
-    /********************메뉴열림!!!!!**********************/
-    header.menu_mo .gnb .gnb_wrap {
+    /********************모바일 메뉴 스타일**********************/
+    header .gnb .gnb_wrap {
         display: block;
         position: absolute; /*header를 기준으로 들어감*/
-        right: 0;
+        right: -100%;
         top: 0;
         width: 100%;
         height: 100dvh;
         background-color: var(--white);
         color: #555;
-        padding: var(--ctn-mar);
-        padding-top: var(--header-h);
         fill: var(--main-c);
+        transition: .5s;
     }
+    header.menu_mo .gnb .gnb_wrap {   /********************메뉴열림!!!!!**********************/
+        display: block;
+        right: 0;
+    }
+    header .gnb .gnb_wrap ul.depth1 {
+        margin: var(--header-var) 0 0 0;
+        height: calc(100dvh - var(--header-var));
+        padding: 25px 0 0 var(--ctn-mar);
+        overflow-y: auto; /*주어진 공간보다 컨텐츠가 짧으면 그대로, 주어진 높이보다 컨텐츠가 길면 스크롤바*/
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a {
+        display: block;
+        padding: 14px 50px 14px 0;
+        font-size: 20px;
+        font-family: 'KKIM';
+        color: var(--tit-c);
+        position: relative;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.open > a {
+        color: var(--main-c);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > a::after {
+        content: "";
+        position: absolute;
+        right: var(--ctn-mar);
+        top: 26px;;
+        width: 11px;
+        height: 10px;
+        background: url("data:image/svg+xml,%3Csvg viewBox='0 0 8 5' fill='%231D1D1D' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.99957 3.67203L0.86092 0.533385C0.778143 0.450607 0.680677 0.41026 0.568524 0.412343C0.456302 0.414496 0.358803 0.456962 0.276025 0.539739C0.193248 0.622586 0.151858 0.720086 0.151858 0.832239C0.151858 0.944392 0.193248 1.04189 0.276025 1.12474L3.46592 4.32099C3.54127 4.39634 3.62568 4.45217 3.71915 4.48849C3.81262 4.52481 3.90609 4.54297 3.99957 4.54297C4.09304 4.54297 4.18651 4.52481 4.27998 4.48849C4.37346 4.45217 4.45787 4.39634 4.53321 4.32099L7.72957 1.12474C7.81234 1.04189 7.85266 0.943316 7.8505 0.82901C7.84835 0.714705 7.80589 0.616163 7.72311 0.533385C7.64033 0.450607 7.54283 0.409219 7.43061 0.409219C7.31846 0.409219 7.22099 0.450607 7.13821 0.533385L3.99957 3.67203Z' /%3E%3C/svg%3E%0A") no-repeat center center;
+
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.open > a::after {
+        transform: rotate(180deg);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
+        margin: 7px calc(var(--ctn-mar) + 0px) 9px 0;
+        padding: 18px 0 18px 16px;
+        border-top: 1px solid var(--line-c);
+        border-bottom: 1px solid var(--line-c);
+        display: none;
+    }
+    /* header .gnb .gnb_wrap ul.depth1 > li.open > ul.depth2 {
+        display: block;
+    } */
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a {
+        display: block;
+        padding: 5px 0 5px 0;
+    }
+    
+    header .gnb .gnb_wrap .gnb_logo {
+        position: absolute; /*gnb wrap 기준*/
+        left: var(--ctn-mar);
+        top: 0;
+        width: clamp(151px, 22vw , 238px);
+        height: var(--header-var);
+        background: url(../images/logo_sc.svg) no-repeat center center / contain;
+    }
+    header .gnb .gnb_wrap .gnb_close {
+        position: absolute; /*gnb wrap 기준*/
+        right: 0;
+        top: 0;
+        width: var(--header-var);
+        height: var(--header-var);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    header .gnb .gnb_wrap .gnb_close i {
+        display: block;
+        width: 28.57%;
+        margin-top: 6px;
+        
+    }
+
+        /**********픽스!!!!!*********/
+    header.fixed .logo a{
+        background: url(../images/logo_sc.svg) no-repeat center center / contain;
+    }
+    
 }
 
 
@@ -420,6 +516,97 @@ header .util .login i {
         height: 100%;
         background-color: var(--white);
     }
+}
+
+.find {
+    margin: 143px 0 0 0;
+} 
+.find h2 {
+    color: var(--tit-c);
+    text-align: center;
+    font-family: 'KKIM';
+    font-size: var(--titsize);
+}
+.find .tab_list {
+    margin: 26px 0 0 0;
+    font-size: 20px;
+    color: #aaa;
+}
+.find .tab_list ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 63px;
+}
+.find .tab_list ul li button{
+    display: block;
+    padding: 5px 5px;
+    border-bottom: 2px solid transparent;
+}
+.find .tab_list ul li.item1.active button {
+    border-bottom: 2px solid var(--main-c);
+    color: var(--main-c);
+}
+.find .tab_list ul li.item2.active button {
+    border-bottom: 2px solid #CF9942;
+    color: #CF9942;
+}
+.find .tab_ctn {
+    margin: 46px 0 0 0;
+    
+}
+.find .tab_ctn .tab_item{
+    position: relative;
+}
+
+.find .tab_ctn .tab_item .ctrl_btn .prev {
+    position: absolute;
+    left: -109px;
+    top: 177px;
+    z-index: 10;
+    transform: rotate(180deg);
+}
+
+.find .tab_ctn .tab_item .ctrl_btn .next {
+    position: absolute;
+    right: -109px;
+    top: 177px;
+    z-index: 10;
+}
+
+.find .tab_ctn .tab_item .ctrl_btn .prev,
+.find .tab_ctn .tab_item .ctrl_btn .next {
+    width: 45px;
+    height: 45px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    fill: #4d4d4d;
+
+}
+.find .tab_ctn .tab_item .ctrl_btn .prev i,
+.find .tab_ctn .tab_item .ctrl_btn .next i {
+    width: 10px;
+    margin: 8px 0 0 0;
+    display: block;
+}
+
+.find .tab_ctn .tab_item .ctrl_btn .more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    position: absolute;
+    right: 0;
+    top: -37px;
+    font-size: var(--btnsize);
+}
+.find .tab_ctn .tab_item .ctrl_btn .more i{
+    display: block;
+    width: 8.5px;
+    margin-bottom: 3px;
 }
 
 footer {

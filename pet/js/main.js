@@ -34,7 +34,9 @@ $(document).ready(function(){
         })
         
         $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
-            $(this).removeClass('over')
+            if(device_status == 'pc'){
+                $(this).removeClass('over')
+            }
         })
         $('header').on('mouseleave', function(){
             $(this).removeClass('menu_pc')
@@ -101,10 +103,101 @@ $(document).ready(function(){
 
         });
 
+        /***************************
+         * 모바일 메뉴
+         * header .gnb .gnb_wrap ul.depth1 > li > a
+         * 1. 닫혀있는 메뉴를 클릭하면 기존에 열려있던 다른 메뉴를 닫고 나만 open 추가
+         * 2. 열린 메뉴(open)를 클릭하면 나 자신(this)을 닫음(removeClass)
+         * ++ 링크이동 무시
+         * 열린메뉴와 닫힌메뉴 구분법? class = open ..
+         ***************************/
+        $('header .gnb .gnb_wrap ul.depth1 > li > a').on('click', function (e){
+            if(device_status == 'mo') {
+                e.preventDefault();
+                if($(this).parent().hasClass('open') == true){
+                    $(this).next().slideUp() 
+                    $(this).parent().removeClass('open')
+                }else{
+                    $('header .gnb .gnb_wrap ul.depth1 > li.open > ul.depth2').slideUp()
+                    $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
+                    $(this).parent().addClass('open')
+                    $(this).next().slideDown()
+                }
+            }
+        })
+
+
+        /********************************
+         * 열기를 클릭하면 header mo 추가
+         * header .gnb .gnb_open
+         * ******************************/
+
+        $('header .gnb .gnb_open').on('click', function(){
+            $('header').addClass('menu_mo')
+        })
+        $('header .gnb .gnb_close').on('click', function(){
+            $('header').removeClass('menu_mo')
+        })
+
+        
+
+        /**************************
+         * 헤더고정 = 스크롤을 내리면 header에 fixed
+         * *******************/
+
+        let scrolling //스크롤값
+
+        function scroll_chk(){
+            scrolling = $(window).scrollTop()
+            if(scrolling > 0){
+                $('header').addClass('fixed')
+            }else{
+                $('header').removeClass('fixed')
+            }
+        }
+
+        scroll_chk() // 1. 로딩되고 1번실행 ~
+        $(window).scroll(function(){
+            scroll_chk()
+        })
 
 
 
-
+        /****************************************************
+         * find 팝업 시작 !!
+         */
+        const find1_swiper = new Swiper('.find .item1 .swiper', { /* 팝업을 감싼는 요소의 class명 */
+            slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+            spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+            breakpoints: {
+                640: {    /* 640px 이상일때 적용 */
+                    slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                    spaceBetween: 24,
+                },
+            },
+            
+            navigation: {
+                nextEl: '.find .item1 .next',
+                prevEl: '.find .item1 .prev',
+            },
+            
+        });
+        const find2_swiper = new Swiper('.find .item2 .swiper', { /* 팝업을 감싼는 요소의 class명 */
+            slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+            spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+            breakpoints: {
+                640: {    /* 640px 이상일때 적용 */
+                    slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                    spaceBetween: 24,
+                },
+            },
+            
+            navigation: {
+                nextEl: '.find .item2 .next',
+                prevEl: '.find .item2 .prev',
+            },
+            
+        });
 
 })//맨끝
 
