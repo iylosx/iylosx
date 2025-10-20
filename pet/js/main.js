@@ -170,9 +170,13 @@ $(document).ready(function(){
             slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
             spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
             breakpoints: {
-                640: {    /* 640px 이상일때 적용 */
+                1100: {    /* 1100px 이상일때 적용 */
                     slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
                     spaceBetween: 24,
+                },
+                769: {    /* 800px 이상일때 적용 */
+                slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 18,
                 },
             },
             
@@ -186,9 +190,13 @@ $(document).ready(function(){
             slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
             spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
             breakpoints: {
-                640: {    /* 640px 이상일때 적용 */
+                1100: {    /* 1100px 이상일때 적용 */
                     slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
                     spaceBetween: 24,
+                },
+                769: {    /* 800px 이상일때 적용 */
+                slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 18,
                 },
             },
             
@@ -198,6 +206,51 @@ $(document).ready(function(){
             },
             
         });
+
+        /****************************************************
+         * find 탭 기능 시작 !!
+         * .find .tab_list ul li 를 클릭했을 때, 1번째를 클릭하면 active 클래스 추가하고,
+         * li에서 어떤 탭 tab_item을 열어야 하는지 단서를 제공해야 한다. (item1 / item2로?)
+         * .find .tab_list ul li.item1 에서 1번째 요소에도 active 클래스 추가
+         */
+
+        let tab_name
+        $('.find .tab_list ul li').on('click', function(){
+            $('.find .tab_list ul li').removeClass('active')
+            $(this).addClass('active')
+
+            $('.find .tab_list ul li button span').text('')
+            $(this).find('button span').text('선택됨')
+
+            tab_name = $(this).attr('data-tab')
+            $('.find .tab_ctn .tab_item').removeClass('active')
+            //find로 찾으려면 클래스명이면 .추가 해야해
+            //그런데 내가 가져온 이름은 .이 없어 .. -->>
+            $('.find .tab_ctn').find('.' + tab_name).addClass('active')
+
+            //선택된 tab_item에 title에 선택됨 추가
+            $('.find .tab_ctn .tab_item').attr('title', '')
+             $('.find .tab_ctn').find('.' + tab_name).attr('title', '선택됨')
+        })
+        
+    /*******************
+     * 입양 팝업 연결!!!!
+     * **/
+
+    const wait_swiper = new Swiper('.wait .swiper', { /* 팝업을 감싼는 요소의 class명 */
+	slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+	spaceBetween: 10, /* 팝업과 팝업 사이 여백 */
+	breakpoints: {
+		769: {    /* 640px 이상일때 적용 */
+			slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+			spaceBetween: 40,
+		},
+	},
+    centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+    loop: true
+});
+
+	
 
 })//맨끝
 

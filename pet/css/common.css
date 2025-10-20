@@ -7,6 +7,7 @@
     --white: #fff;
     --white50: rgba( 255, 255, 255, 0.5);
     --white30: rgba( 255, 255, 255, 0.3);
+    --white15: rgba( 255, 255, 255, 0.15);
     --dark: #312E2A;
     --light: #E7DFD2;
     --line-c: #ededed;
@@ -14,7 +15,8 @@
 
     /*font*/
     --basesize: 17px;
-    --titsize: 40px;
+    --titsize: clamp(24px, 4vw ,40px);
+    --titsize-sub: clamp(17px, 1.6vw, 20px);
     --btnsize: 15px;
     --bold: 700;
     --regular: 300;
@@ -32,12 +34,9 @@
     :root {
         /*font-size*/
         --basesize: 16px;
-        --titsize: 24px;
         --btnsize: 13px;
-
         /*display*/
         --header-h: 56px;
-
         /*margin*/
         --ctn-mar: 16px;
     }

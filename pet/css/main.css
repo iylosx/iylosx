@@ -529,19 +529,20 @@ header.fixed .logo a{
 }
 .find .tab_list {
     margin: 26px 0 0 0;
-    font-size: 20px;
-    color: #aaa;
+    
 }
 .find .tab_list ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 63px;
+    gap: clamp( 20px, 2vw, 63px);
 }
 .find .tab_list ul li button{
     display: block;
     padding: 5px 5px;
     border-bottom: 2px solid transparent;
+    font-size: var(--titsize-sub);
+    color: #aaa;
 }
 .find .tab_list ul li.item1.active button {
     border-bottom: 2px solid var(--main-c);
@@ -557,19 +558,89 @@ header.fixed .logo a{
 }
 .find .tab_ctn .tab_item{
     position: relative;
+    display: none;
 }
-
+.find .tab_ctn .tab_item.active {
+    display: block;
+}
+.find .tab_ctn .tab_item .list .swiper-slide {
+    width: 173px;
+}
+.find .tab_ctn .tab_item .list .swiper-slide a{
+    display: block;
+}
+.find .tab_ctn .tab_item .list .swiper-slide a .photo {
+    height: 380px;
+    position: relative;
+    border-radius: 20px;
+}
+.find .tab_ctn .tab_item.item1 .list .swiper-slide a .photo .local {
+    position: absolute;
+    left: 23px;
+    top: 20px;
+    padding: 8px 10px ;
+    background-color: #fff;
+    color: var(--main-c);
+    border-radius: 10px;
+    font-family: 'KKIM';
+    font-size: var(--btnsize);
+}
+.find .tab_ctn .tab_item.item2 .list .swiper-slide a .photo .local {
+    position: absolute;
+    left: 23px;
+    top: 20px;
+    padding: 8px 10px ;
+    background-color: #fff;
+    color: #CF9942;
+    border-radius: 10px;
+    font-family: 'KKIM';
+    font-size: var(--btnsize);
+}
 .find .tab_ctn .tab_item .ctrl_btn .prev {
     position: absolute;
-    left: -109px;
+    left: -30px;
     top: 177px;
     z-index: 10;
     transform: rotate(180deg);
 }
+.find .tab_ctn .tab_item .list .swiper-slide .txt {
+    padding: 16px 15px 7px 7px;
+}
 
+.find .tab_ctn .tab_item .list .swiper-slide .txt h4 {
+    display: flex;
+    align-items: center;
+    margin: 0 0 8px 0;
+}
+.find .tab_ctn .tab_item .list .swiper-slide .txt h4 strong{
+    font-size: var(--titsize-sub);
+    font-weight: 700;
+    color: var(--tit-c);
+    padding: 0 10px 0 0 ;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.find .tab_ctn .tab_item .list .swiper-slide .txt h4 span {
+    font-size: var(--btnsize);
+}
+.find .tab_ctn .tab_item .list .swiper-slide .txt ul li {
+    display: flex;
+    gap: 0 10px;
+}
+.find .tab_ctn .tab_item .list .swiper-slide .txt ul li span {
+    color: var(--tit-c);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.find .tab_ctn .tab_item .list .swiper-slide .txt ul li strong.mo_only {
+    display: none;
+}
 .find .tab_ctn .tab_item .ctrl_btn .next {
     position: absolute;
-    right: -109px;
+    right: -30px;
     top: 177px;
     z-index: 10;
 }
@@ -592,6 +663,9 @@ header.fixed .logo a{
     margin: 8px 0 0 4px;
     display: block;
 }
+.find .tab_ctn .tab_item .ctrl_btn .swiper-button-disabled i{
+    opacity: .3;
+}
 
 .find .tab_ctn .tab_item .ctrl_btn .more {
     display: flex;
@@ -607,6 +681,312 @@ header.fixed .logo a{
     display: block;
     width: 8.5px;
     margin-bottom: 3px;
+}
+@media screen and (max-width:1024px){ 
+    .find .tab_ctn .tab_item .ctrl_btn .prev,
+    .find .tab_ctn .tab_item .ctrl_btn .next {
+        display: none;
+    }
+}
+
+@media screen and (max-width:768px){ 
+    .find {
+        margin: 80px 0 0 0;
+    }
+    .find .tab_ctn .tab_item .list .swiper-slide a .photo {
+    height: 221px;
+    }
+    .find .tab_ctn .tab_item .list .swiper-slide .txt ul li strong.pc_only {
+        display: none;
+    }
+    .find .tab_ctn .tab_item .list .swiper-slide .txt ul li strong.mo_only {
+    display: block;
+    }
+    .find .tab_ctn .tab_item .ctrl_btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .find .tab_ctn .tab_item .ctrl_btn .more {
+    position: relative;
+    right: auto;
+    top: auto;
+    margin: 30px 0 0 0;
+    }
+    .find .tab_ctn .tab_item .ctrl_btn .more i{
+        display: block;
+        width: 8.5px;
+        margin-bottom: 3px;
+    }
+}
+.slogan {
+    margin: clamp(68px , 10vw ,158px) 0 0 0 ;
+    text-align: center;
+}
+.slogan .sub{
+    display: inline-block;
+    text-align: center;
+    color: var(--white);
+    padding: 8px 39px 8px 39px;
+    background-color: var(--main-c);
+    border-radius: 30px;
+    margin: 0 0 38px 0;
+}
+.slogan h2 {
+    font-family: 'KKIM';
+    font-size: clamp(24px, 3vw ,50px);
+    color: var(--tit-c);
+    line-height: 1.8;
+    margin: 0 0 58px 0;
+
+}
+.slogan h2 strong {
+    display: inline-block;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    position: relative; /*before 정렬 기준*/
+}
+.slogan h2 strong::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -55%);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 2em;
+    width: 90%;
+}
+.slogan h2 strong.place {
+    width: 2.92em;
+}
+.slogan h2 strong.place::before {
+    background-image: url(../images/slogan_place.png);
+    transform: translate(-50%, -65%);
+}
+.slogan h2 strong.animal {
+    width: 2.66em;
+}
+.slogan h2 strong.animal::before {
+    background-image: url(../images/slogan_animal.png);
+}
+.slogan h2 strong.center {
+    width: 2.22em;
+
+}
+.slogan h2 strong.center::before {
+    background-image: url(../images/slogan_center.png);
+    height: 2em;
+} 
+.slogan h2 strong.call {
+    width: 1.68em;
+
+}
+.slogan h2 strong.call::before {
+    background-image: url(../images/slogan_call.png);
+    height: 1.3em;
+}
+
+.slogan h2 br.mo {
+    display: none;
+}
+.slogan p{
+    font-size: clamp(15px, 0.8vw, 17px);
+}
+@media screen and (max-width:1024px){
+.slogan p {
+    display: none;
+}
+}
+
+@media screen and (max-width:768px){
+
+.slogan {
+    text-align: center;
+}
+.slogan .sub{
+    display: none
+}
+.slogan h2 {
+    font-family: 'KKIM';
+    font-size: clamp(24px, 3vw ,50px);
+    color: var(--tit-c);
+    line-height: 1.8;
+}
+.slogan h2 strong {
+    display: inline-block;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    position: relative; /*before 정렬 기준*/
+}
+.slogan h2 strong::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -55%);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 2em;
+    width: 90%;
+}
+.slogan h2 strong.place {
+    width: 2.92em;
+}
+.slogan h2 strong.place::before {
+    background-image: url(../images/slogan_place.png);
+    transform: translate(-50%, -65%);
+}
+.slogan h2 strong.animal {
+    width: 2.66em;
+}
+.slogan h2 strong.animal::before {
+    background-image: url(../images/slogan_animal.png);
+}
+.slogan h2 strong.center {
+    width: 2.22em;
+
+}
+.slogan h2 strong.center::before {
+    background-image: url(../images/slogan_center.png);
+    height: 2em;
+} 
+.slogan h2 strong.call {
+    width: 1.68em;
+
+}
+.slogan h2 strong.call::before {
+    background-image: url(../images/slogan_call.png);
+    height: 1.3em;
+    
+}
+
+
+}
+@media screen and (max-width:400px){
+    .slogan {
+    text-align: left;
+    }
+    .slogan h2 br.pc {
+        display: none;
+    }
+    .slogan h2 br.mo {
+        display: block;
+    }
+}
+
+.wait {
+    margin: 151px 0 0 0;
+    padding: clamp(41px, 13vw, 92px) 0 clamp(81px, 20vw, 159px) 0;
+    background-color: var(--dark);
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.wait strong {
+    padding: 0.5294em 1.8235em ;
+    background-color: var(--white);
+    color: var(--main-c);
+    border-radius: 20px;
+}
+.wait h2 {
+    margin: 34px 0 0 0;
+    font-size: var(--titsize);
+    font-family: 'KKIM';
+}
+.wait .list {
+    margin: 62px 0 0 0;
+
+}
+.wait .list .swiper-slide {
+    width: clamp(166px, 30vw, 320px);
+}
+.wait .list .swiper-slide a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.wait .list .swiper-slide a .photo {
+    border-radius: 50%;
+    position: relative;
+}
+.wait .list .swiper-slide a .cate {
+    padding: 0.2941em 1.3529em ;
+    background-color: var(--main-c);
+    border-radius: 30px;
+    margin-top: -20px;
+    z-index: 5;
+    font-size: var(--btnsize);
+}
+.wait .list .swiper-slide a .cate.cate2 {
+    background-color: var(--white);
+    color: var(--main-c);
+}
+.wait .list .swiper-slide a h3 {
+    margin: 9px 0 7px 0;
+    font-size: 28px;
+    font-family: 'KKIM';
+}
+.wait .more a {
+    margin: 57px 0 0 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: var(--btnsize);
+    padding: 0.2353em 1.7647em;
+    background-color: var(--white15);
+    border-radius: 30px;
+}
+.wait .more a i{
+    display: block;
+    width: 8.5px;
+    margin-bottom: 3px;
+    fill: white;
+}
+.wait .rolling {
+    position: absolute;
+    left: 0;
+    bottom: -50px;
+    font-family: 'KKIM';
+    font-size: clamp(50px, 20vw ,110px);
+    font-weight: var(--bold);
+    white-space: nowrap;
+    opacity: 0.04;
+    width: 100%;
+}
+.wait .rolling p {
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    transform: translateX(-50.19%);
+    animation: wait_roll 100s linear infinite;
+}
+@keyframes wait_roll {
+    0% {transform:  translateX(0);}
+    100% {transform: translateX(-50.19%);}
+}
+@media screen and (max-width:768px){
+    .wait .list .swiper-slide a h3 {
+    margin: 9px 0 7px 0;
+    font-size: 20px;
+    font-family: 'KKIM';
+}
+    .wait .more a {
+    margin: 36px 0 0 0;
+}
+.wait .rolling p {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    transform: translateX(-50.19%);
+    animation: wait_roll 100s linear infinite;
+}
+
 }
 
 footer {
