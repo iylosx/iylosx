@@ -948,7 +948,7 @@ header.fixed .logo a{
 .wait .rolling {
     position: absolute;
     left: 0;
-    bottom: -50px;
+    bottom: -190px;
     font-family: 'KKIM';
     font-size: clamp(50px, 20vw ,110px);
     font-weight: var(--bold);
