@@ -247,10 +247,44 @@ $(document).ready(function(){
 		},
 	},
     centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
-    loop: true
+    loop: true,
+    autoplay : true
 });
 
-	
+	//입양후기 팝업!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    const review_swiper = new Swiper('.review .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            769: {    /* 640px 이상일때 적용 */
+                slidesPerView: 3,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+            },
+        },
+
+        navigation: {
+            nextEl: '.review .next',
+            prevEl: '.review .prev',
+        },
+    });
+
+    //top버튼 !!!!!!!!!!!!!!
+
+    $('footer .top').on('click', function(){
+        // console.log('클릭')
+        // $(window).scrollTop(0)
+        $('html, body').animate({
+            scrollTop : 0
+        }, 500)
+    })
+    //천천히 나타나는 애니메이션 -- 사이트 모두 구현 후 막판에 준다 !!!!!!!!!!!!!!
+    AOS.init({
+        offset: 150, // 해당 콘텐츠가 하단에서 몇 px 위로 올라와에 나타나는 효과가 나타날지 셋팅하는 값
+        duration: 700, // 애니메이션 효과가 작동되는 시간
+        easing: 'ease', // 가속도
+        });
+    
 
 })//맨끝
 

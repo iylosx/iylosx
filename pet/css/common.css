@@ -58,7 +58,7 @@ body {
 
 #wrap {
     position: relative;
-    /* overflow: hidden ; */
+    overflow: hidden ;
 }
 .blind {
     position: absolute;
