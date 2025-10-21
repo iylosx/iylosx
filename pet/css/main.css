@@ -324,6 +324,27 @@ header.fixed .logo a{
 .visual {
     position: relative; /*ctrl_btn 정렬기준*/
 }
+.visual .spin img{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: 40;
+    right: 80px;
+    bottom: 70px;
+    animation: spin 8s linear infinite;
+}
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+.visual .spin i {
+    position: absolute;
+    width: 16px;
+    fill: var(--white);
+    right: 145px;
+    bottom: 127px;
+    z-index: 10;
+}
 .visual .swiper-slide {
     height: 100dvh; /*브라우저 높이와 동일하게*/
     background-position: center center;
@@ -332,7 +353,7 @@ header.fixed .logo a{
     color: var(--white);
     display: flex;
     align-items: flex-end;
-    border-radius: 0 0 140px 140px;
+    border-radius: 0 0 80px 80px;
 }
 .visual .swiper-slide.bg1 {
     background-image: url(../images/visual_bg01.jpg);
@@ -434,6 +455,9 @@ header.fixed .logo a{
     }
 }
 @media screen and (max-width:1024px){
+    .visual .spin {
+        display: none;
+    }
     .visual .ctrl_btn {
         left: 3%;
     }
@@ -960,7 +984,7 @@ header.fixed .logo a{
 .wait .rolling p {
     position: absolute;
     left: 0;
-    bottom: -20px;
+    bottom: 140px;
     transform: translateX(-50.19%);
     animation: wait_roll 100s linear infinite;
 }
@@ -980,7 +1004,7 @@ header.fixed .logo a{
 .wait .rolling p {
     position: absolute;
     left: 0;
-    bottom: 10px;
+    bottom: 140px;
     transform: translateX(-50.19%);
     animation: wait_roll 100s linear infinite;
 }
