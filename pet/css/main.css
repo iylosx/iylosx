@@ -878,7 +878,7 @@ header.fixed .logo a{
 }
 
 .wait {
-    margin: 151px 0 0 0;
+    margin: clamp(43px, 10vw, 151px) 0 0 0;
     padding: clamp(41px, 13vw, 92px) 0 clamp(81px, 20vw, 159px) 0;
     background-color: var(--dark);
     color: var(--white);
