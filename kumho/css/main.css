@@ -1,0 +1,162 @@
+/********************************************************
+* 파 일 명 : main.css
+* 작 성 자 : 김솔이
+* 작 성 일 : 25-10-23
+* 설    명 : main.css = main page에서만 연결하는 css, index.html의 스타일이 여기에서 선언된다 
+            default.css = 태그의 초기화 .. 즉 브라우저 스타일 제거
+            common.css = wrap, wrapper, blind, root 등 모든 페이지에서 반복되는 기본 스타일 정의 (변수가 너무 많으면 var.css 폴더를 따로 분리하기도 함)
+            layout.css 문서 구조에 영향을 끼치는 요소 (header, footer, container) 가 들어간다)
+            sub.css = 메인을 제외한 모든 페이지에서 호출되는 css
+**********************************************************/
+
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+@import url(layout.css); 
+.visual {
+    position: relative; /*스크롤다운 기준 정렬*/
+}
+.visual .popup .slide{
+    height: 100dvh;
+    position: relative;
+    /*txt를 slide의 하단에 배치하려고 플렉스 , 넓이가 100%*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.visual .popup .slide .photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+    overflow: hidden;
+}
+.visual .popup .slide .photo img {
+    transform: scale3d(1, 1, 1);
+    transition: 2s;
+}
+.visual .popup .slide.slick-active .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.visual .popup .slide .txt {
+    color: var(--white);
+    z-index: 10;
+}
+.visual .popup .slide .txt em {
+    font-weight: var(--bold);
+    color: var(--main-c);
+}
+.visual .popup .slide .txt h2 {
+    font-size: 6rem;
+    font-weight: var(--bold);
+    line-height: 1.2;
+    margin: 11px 0 11px 0;
+}
+.visual .popup .slide .txt .line {
+    display: block;
+    overflow: hidden;
+}
+.visual .popup .slide .txt .line span {
+    transform: translateY(100%);
+    display: block;
+    transition: 1s;
+    transition-delay: .3s;
+}
+.visual .popup .slide.slick-active .txt .line span {    /*현재 보이는 팝업일 때*/
+    transform: translateY(0%);
+}
+.visual .popup .slide .txt .more a{
+    margin-top: 36px;
+    font-size: var(--btnsize);
+    display: flex;
+    align-items: center;
+}
+.visual .popup .slide .txt .more i {
+    display: block;
+    fill: var(--white);
+    width: 8.6px;
+    margin-left: 8px;
+}
+.visual .scroll {
+    position: absolute;
+    right: 0;
+    bottom: 20%;
+    font-size: var(--btnsize);
+    z-index: 10;
+    color: var(--white);
+    transform: rotate(90deg);
+}
+.visual .scroll::before {
+    position: absolute;
+    content: "";
+    right: -62px;
+    top: 44%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 20px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+.visual .scroll::after {
+    position: absolute;
+    content: "";
+    right: -40px;
+    top: 42.5%;
+    transform: translateY(-50%);
+    width: 9px;
+    height: 5px;
+    background-color:  #fff;
+    border-radius: 20px;
+    animation: scroll 2s linear infinite;
+    
+}
+@keyframes scroll {
+    0% {
+        right: -40px;}
+    30%{
+        opacity: .3;
+        }
+    50%{
+        right: -55px;
+        opacity: 0;}
+    100% {
+        right: -55px;
+        opacity: 0;}
+
+}
+@media screen and (max-width:1024px){
+    .visual .popup .slide .txt h2 {
+        font-size: 4.4rem;
+    }
+}
+@media screen and (max-width:900px){
+    .visual .scroll {
+        display: none;
+    }
+}
+@media screen and (max-width:768px){
+            
+            .visual .popup .slide{
+                height: 500px;
+                justify-content: flex-end;
+            }
+            .visual .popup .slide .txt {
+                margin-bottom: 50px;
+            }
+            .visual .popup .slide .txt em {
+                color: var(--main-c);
+            }
+            .visual .popup .slide .txt h2 {
+                font-size: 3.2rem;
+            }
+            .visual .more {
+                display: none;
+            }
+
+}
+
+footer {
+    margin: 1000px 0 0 0;
+}
