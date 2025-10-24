@@ -5,14 +5,13 @@
 * 설    명 : 메인페이지에서만 적용되는 js를 저장
 *********************************************************/
 $(document).ready(function(){
-    console.log('욘결')
 
 /***********************************
  * 비주얼 slick 팝업 연결!!!!!!!!!!!
  */
 
 $('.visual .popup').slick({
-	autoplay: false, //팝업 자동 실행
+	autoplay: true, //팝업 자동 실행
 	autoplaySpeed: 2000, //팝업이 머무는 시간
 	speed: 1000, //팝업 전환 속도
 	fade: true,  //페이드 효과 적용

@@ -33,7 +33,17 @@
     /*margin*/
     --ctn-mar: 30px;
 }
-
+@media screen and (max-width:1024px){
+    :root {
+        /*font-size*/
+        --basesize: 16px;
+        --btnsize: 13px;
+        /*display*/
+        --header-h: 70px;
+        /*margin*/
+        --ctn-mar: 16px;
+    }
+}
 @media screen and (max-width:768px){
     :root {
         /*font-size*/
