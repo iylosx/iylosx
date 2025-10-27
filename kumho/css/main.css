@@ -12,7 +12,29 @@
 @import url(default.css);
 @import url(font.css);
 @import url(common.css);
-@import url(layout.css); 
+@import url(layout.css);
+
+/**tit 스타일**/
+
+section .tit strong {
+    font-weight: var(--bold);
+    color: var(--main-c);
+}
+section .tit h2 {
+    margin: 11px 0 0 0;
+    font-size: var(--titsize);
+    color: var(--tit-c);
+    font-weight: var(--bold);
+}
+@media screen and (max-width:768px){ 
+    section .tit strong {
+        font-size: var(--btnsize);
+    }
+    section .tit h2 {
+        margin: 6px 0 0 0;
+    }
+}
+
 .visual {
     position: relative; /*스크롤다운 기준 정렬*/
 }
@@ -157,6 +179,572 @@
 
 }
 
+.biz {
+    margin: 161px 0 0 0;
+}
+.biz .tit {
+    text-align: center;
+}
+.biz .list {
+    margin: 82px 0 0 0;
+}
+.biz .list ul{
+    display: flex;
+    text-align: center;
+}
+.biz .list ul li {
+    width: 25%;
+    height: 590px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid var(--white);
+    background-image: url(../images/main/biz01.jpg);
+    position: relative;
+    padding: 0 1% 0 1%;
+    transition: .5s;
+}
+.biz .list ul li::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: var(--black50);
+    
+}
+.biz .list ul li:last-child {
+    border-right: none
+}
+.biz .list ul li.biz02 {
+    background-image: url(../images/main/biz02.jpg);
+}
+.biz .list ul li.biz03 {
+    background-image: url(../images/main/biz03.jpg);
+}
+.biz .list ul li.biz04 {
+    background-image: url(../images/main/biz04.jpg);
+}
+.biz .list ul li .txt {
+    position: relative;
+    z-index: 1;
+}
+.biz .list ul li .txt h3 {
+    font-size: 3.2rem;
+    font-weight: var(--bold);
+    margin: 4px 0 0 0;
+}
+
+/* *******************
+* li에 마우스 오버
+*********************/
+@media screen and (min-width:1350px){ /*PC버전일때*/
+    .biz .list ul li .txt p {
+        opacity: 0;
+        white-space: nowrap;
+    }
+    .biz .list ul li .txt a {
+        display: inline-block;
+        margin: 9px 0 0 0;
+        padding: 7px 35px 7px 20px;
+        border-radius: 20px;
+        font-size: 13px;
+        background-color: transparent;
+        position: relative;
+        transform: translateY(-10px);
+        transition: .3s;
+    }
+    .biz .list ul li .txt a::after {
+        content: "";
+        position: absolute;
+        width: 8.6px;
+        height: 6.5px;
+        right: 15px;
+        top: 15px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 9 7' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.41667 6.5L4.65833 5.71458L6.58125 3.79167H0V2.70833H6.58125L4.65833 0.785417L5.41667 0L8.66667 3.25L5.41667 6.5Z'/%3E%3C/svg%3E%0A");
+    
+    }
+    .biz .list ul li.active {
+        width: 124.96%;
+    }
+    .biz .list ul li.active::before {
+        background-color: var(--black40);
+    }
+    .biz .list ul li .txt h3,
+    .biz .list ul li .txt strong{
+        display: block;
+
+    }
+    .biz .list ul li.active .txt h3 {
+        font-size: var(--titsize);
+    }
+    .biz .list ul li.active .txt p {
+        opacity: 1;
+        transition-delay: .1s;
+        transition-duration: .5s;
+        margin: 20px 0 22px 0;
+    }
+    .biz .list ul li.active .txt a {
+        background-color: var(--white10);
+
+    }
+    .biz .list ul li.active .txt a:hover{
+        background-color: var(--white);
+        color: var(--main-c);
+        transition: .3s;
+
+    }
+    .biz .list ul li.active .txt a:hover::after {
+        fill: var(--tit-c);
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 9 7' fill='%23CA0000' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.41667 6.5L4.65833 5.71458L6.58125 3.79167H0V2.70833H6.58125L4.65833 0.785417L5.41667 0L8.66667 3.25L5.41667 6.5Z'/%3E%3C/svg%3E%0A");
+        transition: .3s;
+        
+    }   
+    .biz .list.over ul li:not(.active) {
+        color: var(--white80);
+        filter: grayscale();
+    }
+    .biz .list.over ul li:not(.active)::before {
+        background-color: var(--black80);
+    }
+    .biz .list.over ul li:not(.active) .txt a {
+        display: none;
+    }
+    .biz .list.over ul li:not(.active) .txt p {
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+    }
+}
+@media screen and (max-width:1349px){ 
+    .biz .list {
+        margin: 40px 0 0 0;
+        overflow-x: auto;
+    }
+    .biz .list ul{
+        display: flex;
+        justify-content:center ;
+        text-align: center;
+        gap: 17px;
+        width: 1430px;  
+        /*li의 넓이 420 * 4 = 1,280px
+        li 사이의 여백 10 * 3 = 30px*/
+        margin: 0 var(--ctn-mar) 0 var(--ctn-mar);
+    }
+    .biz .list ul li {
+        width: 350px;
+        height: 464px;
+        border-right: none;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .biz .list ul li .txt h3 {
+        font-size: 2.8rem;
+        margin: 1px 0 0 0;
+    }
+    .biz .list ul li .txt p{
+        display: none;
+    }
+    .biz .list ul li .txt a {
+        position: absolute  ; /*txt 기준 정렬*/
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .biz .list ul li .txt a span {
+        display: none;
+    }
+    
+}
+@media screen and (max-width:1024px){ 
+    .biz .list {
+        margin: 28px 0 0 0;
+        overflow-x: auto;
+    }
+    .biz .list ul{
+        display: flex;
+        justify-content:center ;
+        text-align: center;
+        gap: 10px;
+        width: 1024px;  
+        /*li의 넓이 212 * 4 = 848px
+        li 사이의 여백 10 * 3 = 30px*/
+        margin: 0 var(--ctn-mar) 0 var(--ctn-mar);
+    }
+    .biz .list ul li {
+        width: 250px;
+        height: 296px;
+        border-right: none;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .biz .list ul li .txt h3 {
+        font-size: 2.2rem;
+        margin: 1px 0 0 0;
+    }
+    .biz .list ul li .txt p{
+        display: none;
+    }
+    .biz .list ul li .txt a {
+        position: absolute  ; /*txt 기준 정렬*/
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .biz .list ul li .txt a span {
+        display: none;
+    }
+    
+}
+@media screen and (max-width:768px){ 
+    .biz {
+        margin: 110px 0 0 0;
+    }
+    
+}
+
+
+.news {
+    margin: 161px 0 0 0;
+}
+
+.news .wrapper {
+    position: relative;
+}
+
+.news .list {
+    margin: 60px 0 0 0;
+}
+.news .list .swiper-slide a {
+    display: block;
+    padding: 37px 0 0 0;
+    border-top: 1px solid var(--tit-c);
+    position: relative;
+}
+.news .list .swiper-slide a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -1px;
+    width: 0;
+    height: 5px;
+    background-color: var(--main-c);
+    transition: .5s;
+}
+
+.news .list .swiper-slide a .date {
+    font-size: 35px;
+    color: var(--tit-c);
+}
+.news .list .swiper-slide a h3 {
+    font-size: 28px;
+    color: var(--tit-c);
+    margin: 6px 0 20px 0;
+    font-weight: var(--bold);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+.news .list .swiper-slide a p {
+    height: 4.5em;
+    overflow: hidden;
+    margin: 0 0 29px 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    word-break: break-all;
+}
+.news .list .swiper-slide a .photo {
+    height: 129px;
+}
+.news .list .swiper-slide a .photo img{
+    transition: .5s;
+}
+
+.news .ctn_wrap {
+    margin: 80px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.news .ctn_wrap .more a{
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 120px;
+    font-size: var(--btnsize);
+    padding: 0 17px 0 0 ;
+
+}
+.news .ctn_wrap .more a::after {
+    content: "";
+    position: absolute;
+    width: 8.6px;
+    height: 6.5px;
+    right: 0;
+    top: 8px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 9 7' fill='%233F3F3F' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.41667 6.5L4.65833 5.71458L6.58125 3.79167H0V2.70833H6.58125L4.65833 0.785417L5.41667 0L8.66667 3.25L5.41667 6.5Z'/%3E%3C/svg%3E%0A");
+}
+
+
+.news .ctn_wrap .scrollbar {
+    width: 89.89%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: var(--black10);
+}
+.news .ctn_wrap .scrollbar .swiper-scrollbar-drag{
+    background-color: var(--main-c);
+    width: 250px;
+    height: 7px;
+    top: -1px;
+}
+@media screen and (min-width:1025px){ 
+    .news .list .swiper-slide a:hover::after {
+        width: 30%;
+        transition: .5s;
+    }
+    .news .list .swiper-slide a:hover .photo img {
+        transform: scale3d(1.2, 1.2, 1);
+        transition: .5s;
+    }
+    .news .ctn_wrap .more a:hover {
+        color: var(--main-c);
+        transition: .3s;
+    }
+    .news .ctn_wrap .more a:hover::after {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 9 7' fill='%23CA0000' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.41667 6.5L4.65833 5.71458L6.58125 3.79167H0V2.70833H6.58125L4.65833 0.785417L5.41667 0L8.66667 3.25L5.41667 6.5Z'/%3E%3C/svg%3E%0A");
+        transition: .3s;
+    }
+}
+@media screen and (max-width:1024px){ 
+    .news {
+        margin: 110px 0 0 0;
+    }
+    .news .list .swiper-slide a {
+        padding: 26px 0 0 0;
+    }
+    .news .list .swiper-slide a .date {
+        font-size: 28px;
+    }
+    .news .list .swiper-slide a h3 {
+        font-size: 23px;
+        margin: 6px 0 13px 0;
+    
+    }
+}
+@media screen and (max-width:768px){ 
+    .news {
+        margin: 75px 0 0 0;
+    }
+    .news .list .swiper-slide {
+        width: 272px;
+    
+    }
+    .news .list .swiper-slide a {
+        padding: 26px 0 0 0;
+    }
+    .news .list .swiper-slide a .date {
+        font-size: 24px;
+    }
+    .news .list .swiper-slide a h3 {
+        font-size: 20px;
+        margin: 6px 0 13px 0;
+    
+    }
+    .news .list .swiper-slide a p {
+        height: 3em;
+        margin: 0 0 27px 0;
+        -webkit-line-clamp: 2;
+    }
+    .news .ctn_wrap .more a{
+        right: auto;
+        left: 0;
+        top: 96px;
+    }
+    .news .ctn_wrap {
+        margin: 48px 0 0 0;
+    }
+    .news .ctn_wrap .scrollbar {
+        height: 4px;
+    }
+    .news .ctn_wrap .scrollbar .swiper-scrollbar-drag{
+        width: 160px;
+        height: 6px;
+    }
+}
+
+.service {
+    margin: 202px 0 0 0;
+}
+.service .list {
+    background: url(../images/main/service_bg01.jpg) no-repeat center center  / cover;
+    color: var(--white);
+    transition: .3s;
+}
+
+/*[] == 속성선택자*/
+.service .list[data-bg="bg01"] {
+    background-image: url(../images/main/service_bg02.jpg);
+    transition: .3s;
+}
+.service .list[data-bg="bg02"] {
+    background-image: url(../images/main/service_bg03.jpg);
+    transition: .3s;
+}
+.service .list[data-bg="bg03"] {
+    background-image: url(../images/main/service_bg04.jpg);
+    transition: .3s;
+}
+.service .list ul {
+    display: flex;
+}
+.service .list ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33.33%;
+    height: 396px;
+    text-align: center;
+    position: relative;
+
+}
+
+
+.service .list ul li a {
+    display: block;
+    margin: 50px 0 0 0;
+    transition: .5s;
+}
+
+
+.service .list ul li a h3 {
+    font-size: 3.5rem;
+    font-weight: var(--bold);
+    line-height: 1.3;
+    margin: 11px 0 21px 0;
+}
+.service .list ul li a .more span{
+    font-size: 13px;
+    padding: 7px 35px 7px 20px;
+    border-radius: 20px;
+    background-color: var(--white10);
+    position: relative;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: .3s;
+
+}
+.service .list ul li a .more span::after {
+    content: "";
+    position: absolute;
+    width: 8.6px;
+    height: 6.5px;
+    right: 15px;
+    top: 15px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 9 7' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.41667 6.5L4.65833 5.71458L6.58125 3.79167H0V2.70833H6.58125L4.65833 0.785417L5.41667 0L8.66667 3.25L5.41667 6.5Z'/%3E%3C/svg%3E%0A");
+    transition: .3s;
+}
+@media screen and (min-width:1025px){
+    
+    .service .list ul li a .more:hover span{
+        background-color: var(--white);
+        color: var(--main-c);
+    }
+    .service .list ul li a .more:hover span::after {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 9 7' fill='%23CA0000' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.41667 6.5L4.65833 5.71458L6.58125 3.79167H0V2.70833H6.58125L4.65833 0.785417L5.41667 0L8.66667 3.25L5.41667 6.5Z'/%3E%3C/svg%3E%0A");
+        transition: .5s;
+    }
+    .service .list ul li:hover a .more span{
+        opacity: 1;
+        transform: translateY(0px);
+        transition: .5s;
+    }
+    
+    .service .mobile_only {
+        display: none;
+    }
+    .service .list ul li::after {
+        content: "";
+        position: absolute;
+        background-color: var(--white30);
+        width: 1px;
+        height: 30%;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .service .list ul li:last-child::after {
+        display: none;
+    }
+}
+
+@media screen and (max-width:1024px){ /*모바일*/
+    .service .pc_only {
+        display: none;
+    }
+    .service .mobile_only {
+        display: block;
+    }
+    .service {
+        margin: 91px 0 0 0;
+    }
+    .service .list {
+        padding: 44px 0 0 0;
+    }
+    .service .list .tit strong,
+    .service .list .tit h2{
+        color: var(--white);
+    }
+    .service .list ul {
+        display: flex;
+    }
+    .service .list ul li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        height: auto;
+        text-align: center;
+        position: relative;
+    }
+    
+    
+    .service .list ul li a {
+        display: block;
+        margin: 50px 0 0 0;
+        transition: .5s;
+    }
+    
+    
+    .service .list ul li a h3 {
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1.3;
+    }
+
+
+}
 footer {
     margin: 1300px 0 0 0;
 }
