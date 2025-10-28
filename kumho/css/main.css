@@ -805,7 +805,7 @@ section .tit h2 {
         margin: 91px 0 0 0;
     }
     .service .list {
-        padding: 44px 0 63px0;
+        padding: 44px 0 63px;
         position: relative;
     }
     .service .list::before {
