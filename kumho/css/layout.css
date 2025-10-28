@@ -363,3 +363,62 @@ header.up:not(.menu_pc, .menu_mo) {
     
 
 }/*Mobile menu*/
+
+
+footer {
+    padding: 76px 0 94px 0;
+    background-color: var(--tit-c);
+    color: #666;
+}
+footer .wrapper {
+    display: flex;
+    gap: 0 54px;
+    position: relative;
+}
+footer .f_logo {
+    width: 103px;
+    height: 36px;
+    background: url(../images/common/logo_wc.svg) no-repeat center center / contain;
+}
+footer .f_util {
+    position: absolute; /*wrapper를 기준으로*/
+    right: 0;
+    top: 0;
+    display: flex;
+    gap: 16px;
+    color: #878787;
+    font-size: var(--btnsize);
+}
+footer .f_util .family_site {
+    width: 190px;
+    /*여는 버튼, 바로가기 사이트 등의 넓이가 같음
+    그래서 감싸는 family_site에 넓이를 주고 내부요소는 그에 100% 꽉차게*/
+    
+}
+footer .f_util .family_site .open{
+    display: block;
+    width: 100%;
+    line-height: 42px;
+    height: 42px;
+    background-color: #1D1A1A;
+    border: 1px solid #1D1A1A;
+    border-radius: 10px;
+    text-align: left;
+    font-weight: var(--bold);
+    padding-left: 14px;
+
+}
+footer .f_util .top {
+    width: 70px;
+    height: 42px;
+    border: 1px solid #878787;
+    border-radius: 10px;
+    font-weight: var(--bold);
+
+}
+footer .f_util .family_site .family_wrap {
+    display: none;
+}
+footer .f_util .family_site .close {
+    display: none;
+}
