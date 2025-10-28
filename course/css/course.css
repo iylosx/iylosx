@@ -653,7 +653,6 @@
 
 
 @media screen and (max-width:1260px){
-
     .web_video .tit { padding-bottom:200px; }
     .web_video .tit::after { width:300px; height:300px; left:calc(50% - 150px); top:auto; bottom:-50px; background-position:center bottom; background-size:300px auto; }
     .web_video .tit .course_h2 br { display:none; }
@@ -674,14 +673,14 @@
     .web_video .what .colgroup .program { margin:10px 0; }
     .web_video .what .colgroup .subject { font-size:20px; margin-top:20px; }
 
-    .web_video .how ul { display: flex; flex-direction: column; align-items: center}
+    .web_video .how ul { display: flex; flex-direction: column; align-items: center; text-align:  center;}
     .web_video .how ul li { width:auto; margin-bottom:20px; display: flex; flex-direction: column; align-items: center}
     .web_video .how ul li img { max-width:100%; }
     .web_video .portfolio .step { border-radius:10px; padding:20px 10px 20px 0; position:relative; }
     .web_video .portfolio .step ul { display:block; margin:0 15px 0 160px; }
     .web_video .portfolio .step ul li { width:auto; height:116px; }
-    .web_video .portfolio .step ul li strong { font-size:20px; white-space:nowrap; }
-    .web_video .portfolio .step ul li span { font-size:13px; }
+    .web_video .portfolio .step ul li strong { font-size:24px; white-space:nowrap; }
+    .web_video .portfolio .step ul li span { font-size:15px; }
     .web_video .portfolio .step img { width:150px; position:absolute; left:0; top:10px; }
     .web_video .portfolio .step img.mobile { display:block; }
     .web_video .portfolio .step img.pc { display:none; }
