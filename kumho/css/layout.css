@@ -364,6 +364,47 @@ header.up:not(.menu_pc, .menu_mo) {
 
 }/*Mobile menu*/
 
+/*********서브에서 이미 선택된 메뉴 표시********/
+@media screen and (min-width:1025px){
+        header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a span{
+            position: relative;
+        }
+        header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a span::after {
+            position: absolute;
+            content: "";
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -8px;
+            height: 1px;
+            width: 130%;
+            background-color: var(--white);
+        }
+        header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a,
+        header.fixed .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li.active > a{
+            color: var(--main-c);
+        }
+        header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::after {
+            width: 100%;
+        }
+}/*********서브에서 이미 선택된 메뉴 표시--끝!!********/
+@media screen and (max-width:1024px){
+    header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a,
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li.active > a {
+        color: var(--main-c);
+        font-weight: var(--bold);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::after {
+        transform: rotate(0deg);
+    }
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li.active > a {
+        text-decoration: underline;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li:has(.active) > ul.depth2 {
+        display: block;
+    }
+    
+}
+
 
 footer {
     padding: 76px 0 94px 0;

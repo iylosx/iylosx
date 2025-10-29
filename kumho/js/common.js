@@ -49,7 +49,8 @@ $(document).ready(function(){
             if(device_status =='mo'){
                 e.preventDefault();
                 let gnb_open = $(this).parent().hasClass('open');
-                if(gnb_open){
+                let gnb_active = $(this).parent().find('active').length;
+                if((gnb_open) || (gnb_active == true)){
                     $(this).next().slideUp();
                     $(this).parent().removeClass('open');
                 }else{
