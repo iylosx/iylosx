@@ -1,0 +1,59 @@
+@import url(common.css);
+
+.cont .cont_head{
+    margin: 100px 0 0 0;
+    height: 200dvh;
+    background-color: lightpink;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.cont .cont_head .photo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 80%;
+    height: 70dvh;
+    background-color: lightgrey;
+}
+.cont .cont_head .photo[data-status="end"] {
+    top: auto;
+    bottom: 0;
+}
+.cont .cont_head .photo[data-status="ing"] {
+    position: fixed;    
+}
+.cont .cont_head .photo .img {
+    position: absolute;
+    border: 1px solid seagreen;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    background: url(../images/swiper02.jpg) no-repeat center center / cover;
+}
+.txt {
+    margin: 70px 0 0 0;
+    text-align: center;
+}
+
+.txt strong {
+    color: darkcyan;
+    font-weight: 700;
+}
+
+.txt h2 {
+    margin: 15px 0 18px 0;
+    font-size: 40px;
+    color: #1d1d1d;
+}
+
+footer {
+    margin: 100px 0 0 0;
+    background-color: #1d1d1d;
+    height: 300px;
+    padding: 50px 0 70px 0;
+}
