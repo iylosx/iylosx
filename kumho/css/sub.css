@@ -21,6 +21,18 @@
     flex-direction: column;
     justify-content: flex-end;
 }
+.sub_visual.bg2 {
+    background: url(../images/sub/sub_visual01.jpg) no-repeat center center / cover;
+}
+.sub_visual.bg3 {
+    background: url(../images/sub/sub_visual02.jpg) no-repeat center center / cover;
+}
+.sub_visual.bg4 {
+    background: url(../images/sub/sub_visual03.jpg) no-repeat center center / cover;
+}
+.sub_visual.bg5 {
+    background: url(../images/sub/sub_visual04.jpg) no-repeat center center / cover;
+}
 .sub_visual .breadcrumb ol {
     display: flex;
     gap: 0 3.2941em;

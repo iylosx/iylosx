@@ -380,10 +380,13 @@ header.up:not(.menu_pc, .menu_mo) {
             background-color: var(--white);
         }
         header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a,
-        header.fixed .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li.active > a{
+        header.menu_pc .gnb .gnb_wrap ul.depth1 > li:has(.active) > a,
+        header.fixed .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li.active > a,
+        header.menu_pc .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li.active > a{
             color: var(--main-c);
         }
-        header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::after {
+        header.fixed .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::after,
+        header.menu_pc .gnb .gnb_wrap ul.depth1 > li:has(.active) > a::after  {
             width: 100%;
         }
 }/*********서브에서 이미 선택된 메뉴 표시--끝!!********/
@@ -403,7 +406,7 @@ header.up:not(.menu_pc, .menu_mo) {
         display: block;
     }
     
-}
+} /***모바일 선택된 메뉴 표시***/
 
 
 footer {
