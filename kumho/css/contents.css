@@ -167,3 +167,324 @@
     }
 
 }
+
+/*#################################
+     ::       연    혁        ::
+####################################*/
+
+.ctn_history .his_head {
+    background: url(../images/contents/his_head_bg01.jpg) no-repeat center center / cover;
+    color: rgb(255, 255, 255 ,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(25px, 4vw, 5rem);
+    padding: 4.16em 0  3.86em 0;
+}
+
+.ctn_history .his_head.bg2{
+    background-image: url(../images/contents/his_head_bg02.jpg);
+}
+.ctn_history .his_head.bg3{
+    background-image: url(../images/contents/his_head_bg03.jpg);
+}
+.ctn_history .his_head.bg4{
+    background-image: url(../images/contents/his_head_bg04.jpg);
+}
+
+.ctn_history .his_head h3 {
+    font-weight: var(--bold);
+    line-height: 1.3;
+    white-space: nowrap;
+    position: relative;
+}
+.ctn_history .his_head h3 strong {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    overflow: hidden;
+    color: var(--white);
+    transition: width .5s;
+}
+
+.ctn_history .his_cont {
+    margin: 106px 0;
+}
+.ctn_history .his_cont .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.ctn_history .his_cont.tit_right .wrapper {
+    flex-direction: row-reverse;
+}
+
+.ctn_history .his_cont .his_tit {
+    max-width: 40%;
+}
+.ctn_history .his_cont .his_tit strong{
+    font-weight: var(--bold);
+    color: var(--main-c);
+}
+.ctn_history .his_cont .his_tit h4{
+    font-weight: var(--bold);
+    color: var(--tit-c);
+    font-size: 4.5rem;
+    line-height: 1.3;
+    margin: 14px 0 0 0;
+}
+.ctn_history .his_cont .his_year {
+    width: 50%;
+    position: relative;
+    padding: 0 0 0 64px;
+}
+.ctn_history .his_cont.tit_right .his_year {
+    padding: 0  64px 0 0;
+    text-align: right;
+}
+.ctn_history .his_cont .his_year::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 85%;
+    background-color: var(--light2);
+    border-radius: 5px;
+}
+.ctn_history .his_cont.tit_right .his_year::before {
+    left: auto;
+    right: 0;
+}
+
+.ctn_history .his_cont .his_year .year_tit{
+    font-size: 3.2rem;
+    font-weight: var(--bold);
+    color: var(--tit-c);
+    line-height: 1.3;
+    margin: 13px 0 22px 0;
+    position: relative;
+
+}
+.ctn_history .his_cont .his_year .year_tit::before {
+    position: absolute;
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    left: -77px;
+    top: 5px;
+    background-color: var(--main-c);
+    border-radius: 50%;
+    border: 10px solid #fff;
+}
+.ctn_history .his_cont .his_year .year_tit:first-child:after {
+    content: "";
+    position: absolute;
+    left: -64px;
+    top: -44px;
+    width: 5px;
+    height: 50px;
+    background-color: white;
+}
+.ctn_history .his_cont.tit_right .his_year .year_tit:first-child:after {
+    left: auto;
+    right: -64px;
+}
+.ctn_history .his_cont.tit_right .his_year .year_tit::before {
+    left: auto;
+    right: -77px;
+}
+/*.year_list + .year_tit == list 바로 다음에 나오는 tit에만 스타일을 준다,
+  반복적인 구조이지만 특정 순서에서만 스타일이 바뀔 때 사용한다*/
+.ctn_history .his_cont .his_year .year_list + .year_tit {  /*인접형제 선택자*/
+    margin-top: 76px ;
+
+}
+
+.ctn_history .his_cont .his_year .year_list {
+    position: relative;
+}
+.ctn_history .his_cont .his_year .year_list:last-child::after {
+    content: "";
+    position: absolute;
+    left: -64px;
+    bottom: 30px;
+    width: 5px;
+    height: 100%;
+    background-color: white;
+}
+.ctn_history .his_cont.tit_right .his_year .year_list:last-child::after {
+    left: auto;
+    right: -64px;
+}
+
+
+.ctn_history .his_cont .his_year .year_list dl dt {
+    color: var(--tit-c);
+    float: left;
+}
+.ctn_history .his_cont.tit_right .his_year .year_list dl dt {
+    float: right;
+}
+.ctn_history .his_cont .his_year .year_list dl dd {
+    margin: 0  0 12px 96px;
+}
+.ctn_history .his_cont.tit_right .his_year .year_list dl dd {
+    margin: 0 96px 12px 0 ;
+}
+
+
+.ctn_history .his_bar {
+    position: fixed;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+    z-index: 99;
+    background-image: linear-gradient(90deg, rgba(202, 0, 0, .8), rgba(109, 0, 0, .8));
+    color: var(--white);
+    border-radius: 50px;
+    padding: 10px 13px;
+    backdrop-filter: blur(9px);
+    max-width: 85%;
+    overflow: hidden;
+    transition: bottom 0.5s;
+}
+.ctn_history .his_bar ul {
+    display: flex;
+    gap: 48px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    scrollbar-width: none;
+    position: relative;
+}
+
+.ctn_history .his_bar ul::-webkit-scrollbar {
+    display: none;
+}
+.ctn_history .his_bar ul li a {
+    display: block;
+    padding: 0.4em 1.0588em;
+    white-space: nowrap;
+}
+.ctn_history .his_bar ul li.active a {
+    background-color: var(--white);
+    color: var(--main-c);
+    font-weight: var(--bold);
+    border-radius: 30px;
+}
+
+.ctn_history .his_bar.hide {
+    bottom: -10%;
+} 
+
+
+@media screen and (max-width:1024px){ 
+
+
+    .ctn_history .his_head {
+        font-size: clamp(25px, 4vw, 5rem);
+        padding: 4.16em 0  3.86em 0;
+    }
+    
+    
+    .ctn_history .his_cont {
+        margin: 48px 0;
+    }
+    .ctn_history .his_cont .wrapper {
+        display: block;
+        
+    }
+    
+    .ctn_history .his_cont .his_tit {
+        max-width: 100%;
+    
+    }
+    .ctn_history .his_cont .his_tit h4{
+        font-size: 2.8rem;
+        margin: 7px 0 0 0;
+    }
+    .ctn_history .his_cont .his_year {
+        width: 100%;
+        padding: 0 0 0 30px;
+    }
+    .ctn_history .his_cont.tit_right .his_year {
+        padding: 0 0 0 30px;
+        text-align: left;
+    }
+    
+    .ctn_history .his_cont.tit_right .his_year::before {
+        left: 0;
+        right: auto;
+    }
+    
+    .ctn_history .his_cont .his_year .year_tit{
+        font-size: 2.8rem;
+        margin: 28px 0 34px 0;
+        position: relative;
+    
+    }
+    .ctn_history .his_cont .his_year .year_tit::before {
+        width: 8px;
+        height: 8px;
+        left: -42px;
+        top: 3px;
+    }
+    .ctn_history .his_cont .his_year .year_tit:first-child:after {
+        content: "";
+        position: absolute;
+        left: -30px;
+        top: -13px;
+        width: 5px;
+        height: 24px;
+        background-color: white;
+    }
+    .ctn_history .his_cont.tit_right .his_year .year_tit:first-child:after {
+        left: -31px;
+        right: auto;
+    }
+    .ctn_history .his_cont.tit_right .his_year .year_tit::before {
+        left: -42px;
+        right: auto;
+    }
+    /*.year_list + .year_tit == list 바로 다음에 나오는 tit에만 스타일을 준다,
+      반복적인 구조이지만 특정 순서에서만 스타일이 바뀔 때 사용한다*/
+    .ctn_history .his_cont .his_year .year_list + .year_tit {  /*인접형제 선택자*/
+        margin-top: 76px ;
+    
+    }
+    
+    .ctn_history .his_cont .his_year .year_list {
+        position: relative;
+    }
+    .ctn_history .his_cont .his_year .year_list:last-child::after {
+        content: "";
+        position: absolute;
+        left: -30px;
+        bottom: 40px;
+        width: 5px;
+        height: 100%;
+        background-color: white;
+    }
+    .ctn_history .his_cont.tit_right .his_year .year_list:last-child::after {
+        left: -31px;
+        right: auto;
+    }
+    
+    .ctn_history .his_cont .his_year .year_list dl dt {
+        color: var(--tit-c);
+        float: left;
+    }
+    .ctn_history .his_cont.tit_right .his_year .year_list dl dt {
+        float: left;
+    }
+    .ctn_history .his_cont .his_year .year_list dl dd {
+        margin: 0  0 12px 96px;
+    }
+    .ctn_history .his_cont.tit_right .his_year .year_list dl dd {
+        margin: 0  0 12px 96px;
+    }
+
+    .ctn_history .his_bar ul {
+        gap: 20px;
+}
+}
