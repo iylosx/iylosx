@@ -45,3 +45,25 @@ img {
     height: 100%;
     vertical-align: top;
 }
+fieldset {
+    border: none;
+}
+legend  {
+    display: none;
+}
+input, select, textarea {
+    font-weight: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    line-height: inherit;
+}
+.ctn_pr05 .search .sch_wrap input[type="submit"] {
+    cursor: pointer;
+}
+table caption {
+    display: none;
+}
+table th {
+    font-weight: inherit;
+}

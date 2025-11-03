@@ -186,3 +186,45 @@
         font-size: 25px;
     }
 }
+
+
+/***********************
+*테이블 공통스타일
+*************************/
+.table_wrap {
+    overflow-x: auto;
+}
+.table_wrap table {
+    width: 100%;
+    border-collapse: collapse; /*테이블에는 각각의 테두리를 th나 td의 border로 준다, 이 때 각 셀 사이의 여백을 삭제하고, 각 border를 중첩시켜 2px로 늘지 않게 한다
+                                이건 오직 테이블에만 들어가는 속성*/
+    min-width: 600px;
+    border-top: 3px solid var(--tit-c);
+}
+.table_wrap table th,
+.table_wrap table td {
+    border: 1px solid var(--light2);
+    padding: 20px 20px ;
+}
+.table_wrap table th:first-child,
+.table_wrap table td:first-child {
+    border-left: 0;
+} 
+.table_wrap table th:last-child,
+.table_wrap table td:last-child {
+    border-right: 0;
+} 
+.table_wrap table thead th,
+.table_wrap table thead td {
+    background-color: var(--light);
+    font-weight: var(--bold);
+    color: var(--tit-c);
+    text-align: center;
+}
+.table_wrap  table tbody th {
+    text-align: left;
+    background-color: var(--light);
+}
+.table_wrap.count table tbody td {
+    text-align: right;
+}
