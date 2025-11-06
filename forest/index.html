@@ -6,6 +6,7 @@
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/fullpage.min.js"></script>
+    <script src="js/count.js"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/fullpage.min.css">
     <!--라이브러리-->
@@ -42,10 +43,90 @@
         <!--풀페이지에서 가득차게 보여질 페이지 영역은 반드시 section 클래스를 줘야함, 태그는 상관없음
         모바일에 풀페이지를 하지 않을 거라면 respinsive 클래스 줘야함-->
         <section class="visual section fp-auto-height-responsive">
-            <h2>visual</h2>
+            <h2 class="blind">팝업</h2>
+            <div class="swiper"> 
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <div class="video">
+                            <video autoplay loop muted aria-label="나무가 우거진 숲의 영상">
+                                <source src="images/main/visual_bg01.mp4">
+                            </video>
+                            <div class="bg_b" aria-hidden="true"></div>
+                        </div>
+                        <div class="txt">
+                            <div class="wrapper">
+                                <strong>2025 생명의숲 후원의 달</strong>
+                                <h3>지금 지구와<br class="mo_on"> 우리를 위한 힘 모으기<br>
+                                   <span class="pc_on">2025. 11. 01 - 11. 30</span></h3>
+                                <a href="#n">자세히보기</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="swiper-slide"> 
+                        <div class="photo">
+                            <img src="images/main/visual_bg02.jpg" alt="">
+                            <div class="bg_b" aria-hidden="true"></div>
+                        </div>
+                        <div class="txt"> 
+                            <div class="wrapper">
+                                <strong>숲의 상처와 회복</strong>
+                                <h3>산불피해 복원 현장<br>
+                                    기록 사진전</h3>
+                                <a href="#n">자세히보기</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="swiper-slide"> 
+                        <div class="photo"><img src="images/main/visual_bg03.jpg" alt=""></div>
+                        <div class="txt"> 
+                            <div class="wrapper">
+                                <strong>도심 속 나무 심기</strong>
+                                <h3>누구나 일상에서 <br>
+                                    숲을 누릴 수 있도록</h3>
+                                <a href="#n">자세히보기</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="swiper-slide"> 
+                        <div class="photo"><img src="images/main/visual_bg04.jpg" alt=""><div class="bg_b" aria-hidden="true"></div></div>
+                        <div class="txt"> 
+                            <div class="wrapper">
+                                <strong>나무 할아버지 박상진 교수의</strong>
+                                <h3>우리가 지켜야 할 <br> 
+                                     고목 나무 이야기</h3>
+                                <a href="#n">자세히보기</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div><!--swiper-->
+            <div class="paging">
+                <ul>
+                    <!-- <li><span>문구</span></li> -->
+                </ul>
+            </div>
         </section><!--visual-->
         <section class="tree section fp-auto-height-responsive">
-            <h2>tree</h2> 
+            <div class="wrapper">
+                <div class="tit">
+                    <h2>
+                        <strong data-start="0" data-end="102302">102,302</strong>
+                        <span>그루</span>
+                    </h2>
+                    <p>한 해 동안 자라난 102,302그루의 나무, 그 속엔 우리의 시간이 있습니다. <br> 숲은 그렇게, 사람의 마음으로 자랍니다.</p>
+                    <div class="more">
+                        <a href="#n">자세히보기</a>
+                    </div>
+                </div>
+                <div class="photo">
+                    <img src="images/main/tree01.png" alt="나무" class="tree_image">
+                    <img src="images/main/tree_cloud01.png" alt="구름1" class="cloud_01">
+                    <img src="images/main/tree_cloud02.png" alt="구름2" class="cloud_02">
+                    <img src="images/main/tree02.png" alt="잎1" class="leaf_01">
+                    <img src="images/main/tree03.png" alt="잎2" class="leaf_02">
+                    <img src="images/main/tree_sun01.png" alt="태양" class="sun">
+                </div>
+            </div>
         </section><!--tree-->
         <section class="work section fp-auto-height-responsive">
             <h2>work</h2>
@@ -58,5 +139,17 @@
             <h2>footer에요</h2>
         </footer>
     </div><!--fullpage-->
+    <aside class="quick">
+        <button class="quick_open" title="열기"><span class="blind">퀵메뉴열기</span></button>
+        <div class="quick_wrap">
+            <ul>
+                <li class="kakao"><a href="#n"><span>같이가치</span></a></li>
+                <li class="naver"><a href="#n"><span>해피빈</span></a></li>
+                <li class="green"><a href="#n"><span>그린짐</span></a></li>
+                <li class="top"><a href="#Main"><span>TOP</span></a></li>
+            </ul>
+        </div>
+        <button class="quick_close" title="닫기"><span class="blind">퀵메뉴닫기</span></button>
+    </aside>
 </body>
 </html>

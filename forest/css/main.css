@@ -3,23 +3,375 @@
 @import url(common.css);
 @import url(layout.css);
 
-
-
-h2 {
-    font-size: 120px;
-    text-align: center;
+#fp-nav{
+    transition: .5s;
+    /* top: 20%; */
+}
+#fp-nav.fp-left {
+    left: 30px;
 }
 
+#fp-nav ul li {
+    width: auto;
+    height: auto;
+    margin: 18px 0;
+}
+#fp-nav ul li:last-child {
+    display: none;
+}
+#fp-nav ul li a {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+#fp-nav ul li a span {
+    display: none;
+}
+/*라이브러리 쓸 때 내가 준 스타일과 라이브러리 스타일이 충돌될 때, 
+내 스타일을 우선시 하려면 ...
+1. !important 를 준다
+2. 선택자를 조정한다 (부모선택자를 불러준다) or 더 디테일하게 선택자를 작성해준다*/
+
+body #fp-nav ul li .fp-tooltip {
+    position: relative;
+    top: auto;
+    left: auto;
+    color: var(--white50);
+    font-size: 15px;
+    font-family: inherit;
+    max-width: 100%;
+    overflow: visible;
+    opacity: 1;
+    width: auto;
+    border-radius: 30px;
+    padding: 3px 10px;
+    transition: .5s;
+}
+body #fp-nav ul li .fp-tooltip::before {
+    position: absolute;
+    content: "";
+    left: -13px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 3px;
+    border: 1px solid var(--white50);
+    border-radius: 50%;
+}
+body #fp-nav ul li .fp-tooltip.fp-left {
+    left: auto;
+}
+
+
+/*액티브된 스타일*/
+body #fp-nav ul li a.active + .fp-tooltip {
+    color: var(--white);
+}
+body #fp-nav ul li a.active + .fp-tooltip::before {
+    border: 1px solid var(--white);
+    background-color: var(--white);
+    width: 5px;
+    height: 5px;
+    left: -13.6px;
+}
+
+/*다크가 들어갔을 때 스타일*/
+
+body #fp-nav.dark ul li .fp-tooltip {
+    color: rgba(95, 108, 55, 0.8);
+}
+body #fp-nav.dark ul li .fp-tooltip::before {
+    border: 1px solid rgba(95, 108, 55, 0.8);
+}
+
+/*다크액티브!!*/
+body #fp-nav.dark ul li a.active + .fp-tooltip {
+    color: var(--main1-c);
+    font-weight: var(--bold);
+}
+body #fp-nav.dark ul li a.active + .fp-tooltip::before {
+    border: 1px solid rgba(95, 108, 55, 1);
+    background-color: rgba(95, 108, 55, 1);
+}
+
+body #fp-nav.hide {
+    opacity: 0;
+}
+
+.mo_on {
+    display: none;
+}
 .visual {
-    background-color: maroon;
     color: #fff;
 }
-.tree {
-    color: #1d1d1d;
-    
+.visual .swiper {
+    height: 100%; /*visual 높이와 넓이를 따라감*/
+    width: 100%;
+}
+.visual .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.visual .swiper-slide .video,
+.visual .swiper-slide .photo {
+    position: absolute; /*swiper 슬라이드 기준 정렬*/
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+.visual .swiper-slide .video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.visual .swiper-slide .bg_b {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black40);
+}
+.visual .swiper-slide .photo {
+    overflow: hidden;
+}
+.visual .swiper-slide .photo img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: 5s;
+    transform: scale3d(1.2, 1.2, 1);
+}
+.visual .swiper-slide.swiper-slide-active .photo img{
+    transform: scale3d(1, 1, 1);
+}
+
+.visual .swiper-slide .txt {
+    margin: var(--header-h) 0 0 0;
+}
+
+.visual .swiper-slide .txt strong,
+.visual .swiper-slide .txt h3,
+.visual .swiper-slide .txt a{
+    transition: transform 1.3s, opacity 1.3s;
+    opacity: 0;
+    transform: translateY(100px);
+}
+.visual .swiper-slide.swiper-slide-active .txt strong,
+.visual .swiper-slide.swiper-slide-active .txt h3,
+.visual .swiper-slide.swiper-slide-active .txt a{
+    opacity: 1;
+    transform: translateY(0);
+}
+.visual .swiper-slide .txt strong {
+    display: block;
+    font-size: 20px;
+}
+.visual .swiper-slide .txt h3 {
+    font-size: 50px;
+    font-family: 'Gow';
+    line-height: var(--titline);
+    margin: 18px 0 45px 0 ;
+    transition-delay: .3s;
+}
+.visual .swiper-slide .txt a {
+    display: inline-block;
+    padding: 8px 43px;
+    border: 1px solid var(--white);
+    border-radius: 30px;
+    font-size: var(--btnsize);
+    transition-delay: .5s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.visual .swiper-slide .txt a::before {
+    position: absolute;
+    content: "";
+    width: 130%;
+    height: 0%;
+    left: 50%;
+    bottom: -50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    transition: 1s;
+    border-radius: 50%;
+    z-index: -1;
+}
+.visual .swiper-slide .txt a:hover {
+    color: var(--main3-c);
+    transition: 1s;
+}
+.visual .swiper-slide .txt a:hover::before {
+    height: 230%;
+}
+.visual .paging {
+    position: absolute;
+    left: 50%;
+    bottom: 3%;
+    transform: translateX(-50%);
+    width: calc(100% - var(--wrapper-mar) - var(--wrapper-mar));
+    color: var(--white);
+    z-index: 10;
+    white-space: nowrap;
+}
+.visual .paging ul{
+    display: flex;
+    gap: 0 4px;
+}
+.visual .paging ul li.swiper-pagination-bullet {
+    margin: 0;
+    width: 25%;
+    border-radius: 0;
+    height: auto;
+    display: block;
+    background: transparent;
+    opacity: 1;
+    color: var(--white50);
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--white50);
+    font-size: 13px;
+
+}
+.visual .paging ul li.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    color: var(--white);
+    font-weight: var(--bold);
+    border-bottom: 2px solid  var(--main3-c);
+}
+.tree .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: calc(var(--header-h) + 30px);
+}
+.tree .photo {
+    position: relative;
+    width: 50%;
+    text-align: center;
+}
+.tree .photo .cloud_01,
+.tree .photo .cloud_02,
+.tree .photo .leaf_01,
+.tree .photo .leaf_02,
+.tree .photo .sun {
+    position: absolute;
+}
+.tree .photo .tree_image {
+    width: 80%;
+}
+.tree .photo .cloud_01 {
+    z-index: -1;
+    left: -5%;
+    bottom: 30%;
+    width: 50%;
+    animation: tree_cloud 3s infinite linear ;
+}
+.tree .photo .cloud_02 {
+    right: -6%;
+    top: 10%;
+    width: 36%;
+    animation: tree_cloud 3s .2s infinite linear ;
+}
+.tree .photo .leaf_01 {
+    left: 13%;
+    top: 0%;
+    width: 10%;
+}
+.tree .photo .leaf_02 {
+    right: 12%;
+    bottom: 10%;
+    width: 15%;
+    animation: tree_leaf 3s .2s infinite linear ;
+
+}
+.tree .photo .sun {
+    z-index: -1;
+    right: 5%;
+    top: -8%;
+    width: 29%
+}
+
+@keyframes tree_cloud {
+    0% { transform:  translateY(0); }
+    50% {transform: translateY(10%);}
+    100% { transform:  translateY(0); }    
+}
+@keyframes tree_leaf {
+    0% { transform:  translate(0, 0); }
+    50% {transform: translate(10%, 10%);}
+    100% { transform:  translate(0, 0); }    
+}
+
+.tree .tit h2 {
+    font-family: 'Gow';
+    color: var(--main1-c);
+    display: flex;
+    align-items: center;
+    line-height: var(--titline);
+    position: relative;
+}
+.tree .tit h2 strong {
+    font-size: 90px;
+    margin: 0 20px 30px 0;
+}
+.tree .tit h2 strong::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    width: 80px;
+    height: 80px;
+    background: url(../images/main/tit_deco.png) no-repeat center center / contain;
+    z-index: -1;
+}
+.tree .tit h2 span {
+    font-size: 40px;
+    position: relative;
+} 
+.tree .tit .more {
+    margin-top: 48px;
+}
+.tree .tit .more a {
+    display: inline-block;
+    padding: 8px 43px;
+    border: 1px solid var(--main3-c);
+    border-radius: 30px;
+    color: var(--main3-c);
+    font-size: var(--btnsize);
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    margin-bottom: 0;
+}
+.tree .tit .more a::before {
+    position: absolute;
+    content: "";
+    width: 130%;
+    height: 0%;
+    left: 50%;
+    bottom: -50%;
+    transform: translateX(-50%);
+    background-color: var(--main3-c);
+    transition: 1s;
+    border-radius: 50%;
+    z-index: -1;
+}
+.tree .tit .more a:hover {
+    color: var(--white);
+    transition: 1s;
+}
+.tree .tit .more a:hover::before {
+    height: 230%;
 }
 .work {
-    background-color: saddlebrown;
+    background-color: olive;
     color: #fff;
     
 }
@@ -32,34 +384,233 @@ footer {
     color: #fff;
 }
 
+aside.quick {
+    position: fixed;
+    right: var(--ctn-mar);
+    bottom: 5%;
+    z-index: 100;
+    font-size: 13px;
+    text-align: center;
 
-
-#fp-nav ul li {
-    width: auto;
-    height: auto;
-    margin: 30px 0;
 }
-#fp-nav ul li a {
+aside.quick .quick_open,
+aside.quick .quick_close {
+    display: block;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--main1-c);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+aside.quick .quick_open {
+    background-size: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 25 22' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.0784 13.1765L0 6.58824L12.0784 0L24.1569 6.58824L12.0784 13.1765ZM12.0784 17.5686L0.631373 11.3373L2.93725 10.0745L12.0784 15.0706L21.2196 10.0745L23.5255 11.3373L12.0784 17.5686ZM12.0784 21.9608L0.631373 15.7294L2.93725 14.4667L12.0784 19.4627L21.2196 14.4667L23.5255 15.7294L12.0784 21.9608ZM12.0784 10.6784L19.5726 6.58824L12.0784 2.49804L4.58431 6.58824L12.0784 10.6784Z'/%3E%3C/svg%3E%0A");
+}
+aside.quick .quick_close {
+    display: none;
+    background-size: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.59216 15.9216L0 14.3294L6.36863 7.96078L0 1.59216L1.59216 0L7.96078 6.36863L14.3294 0L15.9216 1.59216L9.55294 7.96078L15.9216 14.3294L14.3294 15.9216L7.96078 9.55294L1.59216 15.9216Z' /%3E%3C/svg%3E%0A");
+}
+aside.quick .quick_wrap {
     position: absolute;
-    z-index: 1;
-    left: 0;
-    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 83px;
     width: 100%;
-    height: 100%;
-    border: 1px solid #fff;
-}
-#fp-nav ul li a span {
     display: none;
 }
-#fp-nav ul li .fp-tooltip {
+aside.quick ul {
+    padding: 10px 0 20px 0;
+    background-color: var(--white);
+    border-radius: 40px;
+    color: var(--main1-c);
+    box-shadow: 0px 1px 4.8px rgba(0, 0, 0, 0.09);
+}
+aside.quick ul li a,
+aside.quick ul li button {
+    display: block;
+    width: 100%;
+    height: 63px;
+    padding-top: 38px;
     position: relative;
-    top: auto;
-    left: auto;
-    color: var(--white80);
-    font-size: inherit;
-    font-family: inherit;
-    max-width: 100%;
-    overflow: visible;
-    opacity: 1;
-    width: auto;
+    
+}
+aside.quick ul li a::before,
+aside.quick ul li button::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 16px;
+    left: 0;
+    top: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+aside.quick ul li.kakao a::before {background-size: 18px; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 19 15' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.721109 7.81834C0.493391 7.36291 0.316276 6.90114 0.189766 6.43305C0.0632552 5.96497 0 5.49055 0 5.00981C0 3.5929 0.48074 2.4037 1.44222 1.44222C2.4037 0.480739 3.5929 0 5.00981 0C5.80683 0 6.56589 0.167626 7.287 0.502879C8.00811 0.838131 8.61536 1.30306 9.10875 1.89766C9.60214 1.30306 10.2094 0.838131 10.9305 0.502879C11.6516 0.167626 12.4107 0 13.2077 0C14.6246 0 15.8138 0.480739 16.7753 1.44222C17.7368 2.4037 18.2175 3.5929 18.2175 5.00981C18.2175 5.49055 18.1542 5.96497 18.0277 6.43305C17.9012 6.90114 17.7241 7.36291 17.4964 7.81834C17.3572 7.57797 17.1928 7.36291 17.003 7.17314C16.8132 6.98337 16.5918 6.83156 16.3388 6.7177C16.4527 6.42673 16.5412 6.14208 16.6045 5.86376C16.6677 5.58543 16.6994 5.30079 16.6994 5.00981C16.6994 4.02303 16.3641 3.19439 15.6936 2.52388C15.0231 1.85338 14.1945 1.51812 13.2077 1.51812C12.183 1.51812 11.3954 1.79961 10.8451 2.36258C10.2948 2.92555 9.716 3.55494 9.10875 4.25075C8.5015 3.54229 7.92272 2.90974 7.3724 2.35309C6.82207 1.79645 6.03455 1.51812 5.00981 1.51812C4.02303 1.51812 3.19439 1.85338 2.52388 2.52388C1.85338 3.19439 1.51813 4.02303 1.51813 5.00981C1.51813 5.30079 1.54975 5.58543 1.61301 5.86376C1.67626 6.14208 1.76482 6.42673 1.87868 6.7177C1.62566 6.83156 1.40427 6.98337 1.2145 7.17314C1.02473 7.36291 0.860271 7.57797 0.721109 7.81834ZM0 14.4222V13.2267C0 12.67 0.281486 12.2241 0.844457 11.8888C1.40743 11.5536 2.13803 11.3859 3.03625 11.3859C3.20071 11.3859 3.35885 11.3891 3.51066 11.3954C3.66248 11.4018 3.80796 11.4176 3.94713 11.4429C3.77001 11.6959 3.63717 11.9679 3.54862 12.2589C3.46006 12.5498 3.41578 12.8598 3.41578 13.1887V14.4222H0ZM4.55438 14.4222V13.1887C4.55438 12.3664 4.97502 11.7022 5.81632 11.1962C6.65761 10.6901 7.75509 10.4371 9.10875 10.4371C10.4751 10.4371 11.5757 10.6901 12.4107 11.1962C13.2456 11.7022 13.6631 12.3664 13.6631 13.1887V14.4222H4.55438ZM14.8017 14.4222V13.1887C14.8017 12.8598 14.7606 12.5498 14.6784 12.2589C14.5961 11.9679 14.4728 11.6959 14.3083 11.4429C14.4475 11.4176 14.5898 11.4018 14.7353 11.3954C14.8808 11.3891 15.0294 11.3859 15.1813 11.3859C16.0921 11.3859 16.8259 11.5536 17.3825 11.8888C17.9392 12.2241 18.2175 12.67 18.2175 13.2267V14.4222H14.8017ZM9.10875 11.9552C8.38764 11.9552 7.74244 12.0501 7.17314 12.2399C6.60384 12.4296 6.26859 12.651 6.16738 12.9041H12.0691C11.9552 12.651 11.6168 12.4296 11.0538 12.2399C10.4909 12.0501 9.84251 11.9552 9.10875 11.9552ZM3.03625 10.6269C2.61877 10.6269 2.26137 10.4782 1.96407 10.1809C1.66677 9.88363 1.51813 9.52623 1.51813 9.10875C1.51813 8.67861 1.66677 8.31806 1.96407 8.02709C2.26137 7.73611 2.61877 7.59062 3.03625 7.59062C3.46639 7.59062 3.82694 7.73611 4.11791 8.02709C4.40889 8.31806 4.55438 8.67861 4.55438 9.10875C4.55438 9.52623 4.40889 9.88363 4.11791 10.1809C3.82694 10.4782 3.46639 10.6269 3.03625 10.6269ZM15.1813 10.6269C14.7638 10.6269 14.4064 10.4782 14.1091 10.1809C13.8118 9.88363 13.6631 9.52623 13.6631 9.10875C13.6631 8.67861 13.8118 8.31806 14.1091 8.02709C14.4064 7.73611 14.7638 7.59062 15.1813 7.59062C15.6114 7.59062 15.9719 7.73611 16.2629 8.02709C16.5539 8.31806 16.6994 8.67861 16.6994 9.10875C16.6994 9.52623 16.5539 9.88363 16.2629 10.1809C15.9719 10.4782 15.6114 10.6269 15.1813 10.6269ZM9.10875 9.86781C8.4762 9.86781 7.93853 9.64642 7.49574 9.20363C7.05296 8.76085 6.83156 8.22318 6.83156 7.59062C6.83156 6.94542 7.05296 6.40459 7.49574 5.96813C7.93853 5.53167 8.4762 5.31344 9.10875 5.31344C9.75395 5.31344 10.2948 5.53167 10.7312 5.96813C11.1677 6.40459 11.3859 6.94542 11.3859 7.59062C11.3859 8.22318 11.1677 8.76085 10.7312 9.20363C10.2948 9.64642 9.75395 9.86781 9.10875 9.86781ZM9.10875 6.83156C8.89368 6.83156 8.71341 6.90431 8.56792 7.04979C8.42243 7.19528 8.34969 7.37556 8.34969 7.59062C8.34969 7.80569 8.42243 7.98597 8.56792 8.13146C8.71341 8.27694 8.89368 8.34969 9.10875 8.34969C9.32382 8.34969 9.5041 8.27694 9.64958 8.13146C9.79507 7.98597 9.86781 7.80569 9.86781 7.59062C9.86781 7.37556 9.79507 7.19528 9.64958 7.04979C9.5041 6.90431 9.32382 6.83156 9.10875 6.83156Z' fill='%235F6C37'/%3E%3C/svg%3E%0A");}
+aside.quick ul li.naver a::before {background-size: 12px; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.0725 12.145C5.36404 12.145 4.6967 12.0343 4.07047 11.8129C3.44425 11.5915 2.87179 11.2784 2.35309 10.8736L1.29041 11.9173C1.15124 12.0564 0.97413 12.126 0.759063 12.126C0.543995 12.126 0.36688 12.0564 0.227719 11.9173C0.0885573 11.7781 0.0189766 11.601 0.0189766 11.3859C0.0189766 11.1709 0.0885573 10.9938 0.227719 10.8546L1.27143 9.81088C0.866596 9.29219 0.553483 8.71657 0.33209 8.08402C0.110697 7.45146 0 6.78096 0 6.0725C0 4.37726 0.588273 2.94137 1.76482 1.76482C2.94137 0.588273 4.37726 0 6.0725 0H12.145V6.0725C12.145 7.76774 11.5567 9.20363 10.3802 10.3802C9.20363 11.5567 7.76774 12.145 6.0725 12.145ZM6.0725 10.6269C7.3376 10.6269 8.41294 10.1841 9.29852 9.29852C10.1841 8.41294 10.6269 7.3376 10.6269 6.0725V1.51813H6.0725C4.8074 1.51813 3.73206 1.96091 2.84648 2.84648C1.96091 3.73206 1.51813 4.8074 1.51813 6.0725C1.51813 6.56589 1.59403 7.03714 1.74584 7.48625C1.89766 7.93537 2.1064 8.34336 2.37207 8.71024L6.30022 4.78209C6.43938 4.64293 6.6165 4.57335 6.83156 4.57335C7.04663 4.57335 7.22374 4.64293 7.36291 4.78209C7.51472 4.93391 7.59063 5.11418 7.59063 5.32293C7.59063 5.53167 7.51472 5.71195 7.36291 5.86376L3.43476 9.79191C3.80164 10.0576 4.20963 10.2632 4.65875 10.4086C5.10786 10.5541 5.57911 10.6269 6.0725 10.6269Z' fill='%235F6C37'/%3E%3C/svg%3E%0A");}
+aside.quick ul li.green a::before {background-size: 18px; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 19 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.31344 15.1812V12.145H0L2.92239 7.59062H1.51813L6.83156 0L9.10875 3.26397L11.3859 0L16.6994 7.59062H15.2951L18.2175 12.145H12.9041V15.1812H9.86781V12.145H8.34969V15.1812H5.31344ZM12.6953 10.6269H15.4469L12.5056 6.0725H13.777L11.3859 2.65672L10.0386 4.57335L12.145 7.59062H10.7407L12.6953 10.6269ZM2.77058 10.6269H10.8925L7.95118 6.0725H9.22261L6.83156 2.65672L4.44052 6.0725H5.71195L2.77058 10.6269ZM2.77058 10.6269H5.71195H4.44052H9.22261H7.95118H10.8925H2.77058ZM12.6953 10.6269H10.7407H12.145H10.0386H13.777H12.5056H15.4469H12.6953Z' fill='%235F6C37'/%3E%3C/svg%3E%0A");}
+aside.quick ul li.top a::before {background-size: 12px; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.1812 7.59065L13.8339 8.93799L7.59062 2.6947L1.34734 8.93799L0 7.59065L7.59062 2.73248e-05L15.1812 7.59065Z' fill='%235F6C37'/%3E%3C/svg%3E%0A");}
+
+aside.quick ul li a::after{
+    content: "";
+    position: absolute;
+    width: 57%;
+    height: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -8px;
+    background-color: var(--main1-c);
+    
+}
+aside.quick ul li:last-child a::after{
+    display: none;
+}
+/***퀵메뉴 열림*****/
+aside.quick.open .quick_open {
+    display: none;
+}
+aside.quick.open .quick_close {
+    display: block;
+}
+
+@media screen and (max-width:1539px){
+    #fp-nav{
+        display: none !important;
+    }
+}
+
+@media screen and (max-width:1024px){
+    .mo_on {
+        display: block;
+    }
+    .pc_on {
+        display: none;
+    }
+    .visual .swiper-slide .txt strong {
+        font-size: 17px;
+    }
+    .visual .swiper-slide .txt h3 {
+        font-size: 45px;
+        margin: 12px 0 32px 0 ;
+    }
+    aside.quick {
+        display: none;
+    }
+    .tree .photo {
+        width: 60%;
+    }
+    .tree .wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+        padding-top: calc(var(--header-h) + 30px);
+        gap: 30px 0 ;
+        text-align: center;
+    }
+    .tree .tit h2 {
+        justify-content: center;
+        gap: 0 5px;
+    }
+    
+    .tree .tit h2 strong {
+        font-size: 60px;
+        margin: 0 0 18px 0;
+    }
+    .tree .tit h2 strong::before {
+        left: 95px;
+        top: -5px;
+        width: 50px;
+        height: 50px;
+    }
+    .tree .tit h2 span {
+        font-size: 28px;
+    } 
+    .tree .tit .more {
+        margin-top: 33px;
+    }
+    .tree .tit .more a {
+        display: inline-block;
+        padding: 8px 43px;
+        border: 1px solid var(--main3-c);
+        border-radius: 30px;
+        color: var(--main3-c);
+        font-size: var(--btnsize);
+        overflow: hidden;
+        z-index: 1;
+        position: relative;
+        margin-bottom: 62px;
+    }
+    .tree .tit .more a::before {
+        position: absolute;
+        content: "";
+        width: 130%;
+        height: 0%;
+        left: 50%;
+        bottom: -50%;
+        transform: translateX(-50%);
+        background-color: var(--main3-c);
+        transition: 1s;
+        border-radius: 50%;
+        z-index: -1;
+    }
+    .tree .tit .more a:hover {
+        color: var(--white);
+        transition: 1s;
+    }
+    .tree .tit .more a:hover::before {
+        height: 230%;
+    }
+    
+
+}
+
+@media screen and (max-width:768px){
+    .visual .swiper-slide {
+        height: 600px;
+    }
+    .visual .swiper-slide .txt {
+        text-align: center;
+    }
+    .visual .swiper-slide .txt strong {
+        font-size: 17px;
+    }
+    .visual .swiper-slide .txt h3 {
+        font-size: 28px;
+        margin: 10px 0 29px 0 ;
+    }
+    .visual .swiper-slide .txt a {
+        padding: 4px 28px;
+    }
+    .visual .paging {
+        width: auto;
+    }
+    .visual .paging ul{
+        gap: 0 5px;
+    }
+    .visual .paging ul li.swiper-pagination-bullet {
+        width: 7px;
+        border-radius: 50%;
+        height: 7px;
+        background: var(--white50);
+        text-align: center;
+        padding-bottom: 0;
+        border-bottom: none;
+        transition: .3s;
+    }
+    .visual .paging ul li.swiper-pagination-bullet span {
+        display: none;
+    }
+    .visual .paging ul li.swiper-pagination-bullet.swiper-pagination-bullet-active {
+        width: 22px;
+        border-radius: 10px;
+        background-color: var(--white);
+        border-bottom: none;
+    }
+    .tree .photo {
+        width: 70%;
+    }
+
+    .tree .tit h2 strong::before {
+    left: 77px;
+    }
 }

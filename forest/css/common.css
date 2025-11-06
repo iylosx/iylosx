@@ -40,6 +40,7 @@
 
     /*margin*/
     --ctn-mar: 30px;
+    --wrapper-mar: 330px;
 }
 @media screen and (max-width:1024px){
     :root {
@@ -50,6 +51,7 @@
         --header-h: 70px;
         /*margin*/
         --ctn-mar: 16px;
+        --wrapper-mar: 16px;
     }
 }
 @media screen and (max-width:768px){
@@ -61,6 +63,7 @@
         --header-h: 56px;
         /*margin*/
         --ctn-mar: 16px;
+        --wrapper-mar: 16px;
     }
 }
 
@@ -110,10 +113,11 @@ body {
 @media screen and (max-width:1360.8px){
     :root {
         --ctn-mar: 4%;
+        --wrapper-mar: 4%;
     }
     .wrapper {
         width: auto;
-        margin: 0 var(--ctn-mar);
+        margin: 0 var(--wrapper-mar);
         
     }
    
