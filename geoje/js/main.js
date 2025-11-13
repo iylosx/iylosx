@@ -37,5 +37,9 @@ $(document).ready(function(){
     // 슬라이드 변경될 때마다 실행
     visual_swiper.on('slideChange', function () {
         paging_bar_ani();
+        $('.visual .ctrl_btn .play').hide()
+        $('.visual .ctrl_btn .stop').show()
+        
+
     });
 })

@@ -310,6 +310,10 @@ header .header_menu.open_pc ul.depth1 > li.on > .depth2_wrap > .wrapper > ul.dep
     border-radius: 10px;
     
 }
+header .header_menu.open_pc ul.depth1 > li.on > .depth2_wrap > .wrapper > ul.depth2 > li > a:hover {
+    font-weight: 600;
+    color: var(--tit-c);
+}
 header .header_menu.open_pc ul.depth1 > li.on > .depth2_wrap > .wrapper > ul.depth2 > li > ul.depth3 {
     display: block;
     margin: 17px 0 0 0;
