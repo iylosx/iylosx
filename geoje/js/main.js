@@ -46,20 +46,26 @@ $(document).ready(function(){
     });
 
     //스팟팝업
+
+    let window_w = $(window).width();
+    let isCenter = window_w < 1451 ? true : false;
+
     const spot_swiper = new Swiper('.spot .swiper', { /* 팝업을 감싼는 요소의 class명 */
-        slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
         spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        centeredSlides: isCenter,
         breakpoints: {
-            640: {    /* 640px 이상일때 적용 */
+            769: {    /* 769px 이상일때 적용 */
                 slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
                 spaceBetween: 24,
+                 centeredSlides: isCenter,
             },
         },
 
-        // autoplay: {  /* 팝업 자동 실행 */
-        //     delay: 4000,
-        //     disableOnInteraction: true,
-        // },
+        autoplay: {  /* 팝업 자동 실행 */
+            delay: 5000,
+            disableOnInteraction: true,
+        },
 
         loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
        
