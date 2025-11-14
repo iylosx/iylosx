@@ -70,6 +70,8 @@ header .header_top .header_pop .close {
     top: 50%;
     transform: translateY(-50%);
     z-index: 3;
+    display: flex;
+    align-items: center;
 }
 header .header_top .header_pop .close button{
    display: block;
@@ -78,10 +80,12 @@ header .header_top .header_pop .close button{
 }
 header .header_top .header_pop .close span {
     font-size: 12px;
-    padding-right: 20px;
+    padding-right: 15px;
     position: relative;
+    margin-top: 5px;
+    display: block;
 }
-header .header_top .header_pop .close span::after {
+header .header_top .header_pop .close button::after {
     content: "";
     position: absolute;
     right: 0;
@@ -400,8 +404,10 @@ header .header_menu.open_pc ul.depth1 > li.on > .depth2_wrap > .wrapper > ul.dep
 } 
 
 @media screen and (max-width:1024px){
-    
-    
+    header .header_top .header_pop .close span {
+        display: none;
+    }
+        
     /************************************메뉴  스타일*/
 
     
