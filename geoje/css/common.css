@@ -89,6 +89,36 @@ body {
 }
 
 
+@media screen and (max-width:1500px){
+    :root {
+        --ctn-mar: 5%;
+        --wrapper-mar: 5%;
+    }
+    .wrapper {
+        width: auto;
+        margin: 0 var(--ctn-mar);
+        
+    }
+    
+    html {
+        font-size:9px;
+    }
+}
+
+@media screen and (max-width:1024px){
+    :root {
+        --ctn-mar: 4%;
+    }
+    .wrapper {
+        width: auto;
+        margin: 0 var(--ctn-mar);
+        
+    }
+    
+    
+}
+
+
 #wrap {
     position: relative;
     /* overflow: hidden ; */

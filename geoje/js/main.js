@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+    //비주얼팝업
     let visual_time = 8000
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
@@ -42,4 +44,80 @@ $(document).ready(function(){
         
 
     });
-})
+
+    //스팟팝업
+    const spot_swiper = new Swiper('.spot .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            640: {    /* 640px 이상일때 적용 */
+                slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+            },
+        },
+
+        // autoplay: {  /* 팝업 자동 실행 */
+        //     delay: 4000,
+        //     disableOnInteraction: true,
+        // },
+
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+       
+    });
+
+    function syncMapToSlide() {
+        // 실제 슬라이드 index (duplicate 제외된!)
+        let real = spot_swiper.realIndex;
+    
+        // data-name 가진 원본 슬라이드 리스트만 추출
+        let originalSlides = $('.spot .swiper-slide[data-name]')
+            .filter(function () {
+                return !$(this).hasClass('swiper-slide-duplicate');
+            });
+    
+        // 현재 real index에 해당하는 슬라이드의 data-name 가져오기
+        let name = originalSlides.eq(real).data('name');
+    
+        // 버튼 active 조정
+        $('.spot .spot_map .txt button').removeClass('active');
+        $('.spot .spot_map .txt button[data-name="' + name + '"]').addClass('active');
+    }
+    
+    
+    /* --------------------------------------
+        2) 슬라이드 바뀔 때마다 싱크
+    --------------------------------------- */
+    spot_swiper.on('slideChange', function () {
+        syncMapToSlide();
+    });
+    
+    
+    /* --------------------------------------
+        3) 버튼 클릭 → 해당 슬라이드 이동
+    --------------------------------------- */
+    $('.spot .spot_map .txt button').on('click', function () {
+        let name = $(this).data('name');
+    
+        // name 같은 원본 슬라이드 index 찾기 (duplicate 제외)
+        let originalSlides = $('.spot .swiper-slide[data-name]')
+            .filter(function () {
+                return !$(this).hasClass('swiper-slide-duplicate');
+            });
+    
+        let targetIndex = originalSlides.index(
+            originalSlides.filter('[data-name="' + name + '"]')
+        );
+    
+        // loop 상태에서도 올바르게 이동
+        spot_swiper.slideToLoop(targetIndex);
+    });
+    
+    
+    /* --------------------------------------
+        4) 페이지 로드 시 1회 초기 싱크 실행
+    --------------------------------------- */
+    $(document).ready(function () {
+        setTimeout(syncMapToSlide, 100); 
+    });
+    
+}) // js end

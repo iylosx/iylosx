@@ -16,7 +16,7 @@
 </head>
 <body>
     <div id="wrap">
-        <header class="">
+        <header>
             <div class="header_top">
                 <div class="header_go">
                     <div class="list">
@@ -58,13 +58,14 @@
                     </div>
                 </div><!--header_pop-->
             </div><!--header_top-->
-            <div class="header_menu ">
+            <div class="header_menu">
                 <h1 class="logo"><span class="blind">거제관광문화</span></h1>
                 <nav class="gnb">
-                    <div class="gnb_open"><button><span class="">메뉴열기</span></button></div>
+                    <div class="gnb_open"><button><span class="blind">메뉴열기</span></button></div>
                     <div class="gnb_wrap">
+                        <div class="gnb_logo"><span class="blind">거제관광문화</span></div>
                         <ul class="depth1">
-                            <li class="">
+                            <li class="open">
                                 <a href="#n"><span>둘러보기</span></a>
                                 <div class="depth2_wrap">
                                     <div class="wrapper">
@@ -74,7 +75,7 @@
                                                 <div class="photo"><img src="images/common/depth2_left.png" alt=""></div>
                                             </div>
                                             <ul class="depth2">
-                                                <li>
+                                                <li class="">
                                                     <a href="#n"><span>한눈에 거제</span></a>
                                                     <ul class="depth3">
                                                         <li><a href="#n"><span>360VR체험</span></a></li>
@@ -340,7 +341,7 @@
                                 </div><!--depth2_wrap-->
                             </li>
                         </ul><!--depth1-->
-                        <div class="gnb_close"><button><span>메뉴 닫기</span></button></div>
+                        <div class="gnb_close"><button><span class="blind">메뉴 닫기</span></button></div>
                     </div><!--gnb_wrap-->
                 </nav>
                 <div class="util">
@@ -420,7 +421,134 @@
                     <div class="play"><button><span class="blind">다시재생</span></button></div>
                 </div>
             </section><!--visual-->
-            <section class="spot"></section><!--spot-->
+            <section class="spot">
+                <div class="spot_wrap">
+                    <div class="spot_map">
+                        <div class="map">
+                            <img src="images/main/spot_map_bg.png">
+                            <div class="txt">
+                                <button class="castle" data-name="castle"><span>거제 매미성</span></button>
+                                <button class="park" data-name="park"><span>거제포로수용소유적공원 <br>&평화파크</span></button>
+                                <button class="plant" data-name="plant"><span>거제 식물원</span></button>
+                                <button class="island" data-name="island"><span>지심도</span></button>
+                                <button class="cape" data-name="cape"><span>공곶이&내도</span></button>
+                                <button class="beach" data-name="beach"><span>학동 흑진주 <br>몽돌해변</span></button>
+                                <button class="botania" data-name="botania"><span>외도 보타니아</span></button>
+                                <button class="wind" data-name="wind"><span>바람의 언덕</span></button>
+                            </div>
+                        </div>
+                    </div><!--spot_map-->
+                    <div class="spot_list">
+                        <div class="tit">
+                                <h2>거제, 어디 가볼까?</h2>
+                                <p>거제의 대표 관광 명소들을 살펴보세요</p>
+                        </div>
+                        <div class="list">
+                            <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                                <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                                    <li class="swiper-slide"  data-name="beach">  
+                                        <div class="photo">
+                                            <img src="images/main/spot_list01.jpg" alt="">
+                                            <div class="cate"><span>동부면</span></div>
+                                        </div>
+                                        <div class="list_tit">
+                                            <h3>학동 흑진주 몽돌해변</h3>
+                                            <p>거제시 동부면 학동리 276-5번지</p>
+                                            <span>흑진주 같은 검은 몽돌로 이루어진 해변으로 전국에서 가장 아름다운 해변으로 꼽히고 있다.</span>
+                                            <a href="#n" class="more">더 알아보기</a>
+                                        </div>
+                                    </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                    <li class="swiper-slide" data-name="wind"> 
+                                        <div class="photo">
+                                            <img src="images/main/spot_list02.jpg" alt="">
+                                            <div class="cate"><span>남부면</span></div>
+                                        </div>
+                                        <div class="list_tit">
+                                            <h3>바람의 언덕</h3>
+                                            <p>거제시 남부면 갈곶리 14-47번지</p>
+                                            <span>거제시 남부면 갈곶리 도장포 마을의 북쪽에 자리 잡은 나지막한 언덕이 바로 바람의 언덕이다.</span>
+                                            <a href="#n" class="more">더 알아보기</a>
+                                        </div>
+                                    </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                    <li class="swiper-slide" data-name="botania"> 
+                                        <div class="photo">
+                                            <img src="images/main/spot_list03.jpg" alt="">
+                                            <div class="cate"><span>일운면</span></div>
+                                        </div>
+                                        <div class="list_tit">
+                                            <h3>외도 보타니아</h3>
+                                            <p>거제시 일운면 외도길 17</p>
+                                            <span>외도는 거제의 60여개의 무인도 중 하나로 한 부부가 꽃과 나무에 대한 사랑과 정성으로 척박하고 외로운 바위섬을 식물원으로</span>
+                                            <a href="#n" class="more">더 알아보기</a>
+                                        </div>
+                                    </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                    <li class="swiper-slide" data-name="cape"> 
+                                        <div class="photo">
+                                            <img src="images/main/spot_list04.jpg" alt="">
+                                            <div class="cate"><span>일운면</span></div>
+                                        </div>
+                                        <div class="list_tit">
+                                            <h3>공곶이&내도</h3>
+                                            <p>거제시 일운면 와현리 94-2</p>
+                                            <span>거제시의 동남쪽에 위치하며 와현해수욕장 너머, 예구마을에서도 능선을 하나 더 넘어 산비탈에서 서면 마치 산 뒤에 숨어 있는 공곶이가 보이고, 맞은편에 내도가 자리 잡고 있으며, 저 멀리 해금강이 보인다.</span>
+                                            <a href="#n" class="more">더 알아보기</a>
+                                        </div>
+                                    </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                    <li class="swiper-slide" data-name="island"> 
+                                        <div class="photo">
+                                            <img src="images/main/spot_list05.jpg" alt="">
+                                            <div class="cate"><span>일운면</span></div>
+                                        </div>
+                                        <div class="list_tit">
+                                            <h3>지심도</h3>
+                                            <p>거제시 일운면 옥림리 산1번지</p>
+                                            <span>일운면 지세포 동쪽 6㎞ 지점에 위치하고 있고, 남북이 긴 사각형 모양으로 하늘에서 내려다본 섬의 모양이 ‘마음 심(心)’자를 닮았다고 하여 붙여진 이름이다. 섬 전체가 거의 동백나무로 뒤덮여 있다. 남쪽 해안에 해식애가 발달해 있고, 면적은 0.36㎢, 해안선은 3.7㎞m이다.</span>
+                                            <a href="#n" class="more">더 알아보기</a>
+                                        </div>
+                                    </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                    <li class="swiper-slide" data-name="plant"> 
+                                        <div class="photo">
+                                            <img src="images/main/spot_list06.jpg" alt="">
+                                            <div class="cate"><span>거제면</span></div>
+                                        </div>
+                                        <div class="list_tit">
+                                            <h3>거제 식물원</h3>
+                                            <p>경남 거제시 거제면 거제남서로 3595</p>
+                                            <span>거제 식물원은 지역의 식물 생태계를 비롯하여 열대, 난대, 온대 등 다양한 환경의 식물을 한눈에 관찰하고 체험해볼 수 있는 고품격 체험연구·전시·교육·휴식의 공간이다.</span>
+                                            <a href="#n" class="more">더 알아보기</a>
+                                        </div>
+                                    </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                    <li class="swiper-slide" data-name="park"> 
+                                        <div class="photo">
+                                            <img src="images/main/spot_list07.jpg" alt="">
+                                            <div class="cate"><span>거제면</span></div>
+                                        </div>
+                                        <div class="list_tit">
+                                            <h3>거제포로수용소유적공원</h3>
+                                            <p> 거제시 계룡로 61(고현동)</p>
+                                            <span>1950년 6월 25일 새벽 4시, 북한군의 남침으로 시작된 한국전쟁으로 수많은 포로들이 생겼고, 이들을 수용하기 위한 장소가 필요하여 1951년부터 거제도 고현, 수월지구를 중심으로 포로수용소가 설치되었다.</span>
+                                            <a href="#n" class="more">더 알아보기</a>
+                                        </div>
+                                    </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                    <li class="swiper-slide" data-name="castle"> 
+                                        <div class="photo">
+                                            <img src="images/main/spot_list08.jpg" alt="">
+                                            <div class="cate"><span>장목면</span></div>
+                                        </div>
+                                        <div class="list_tit">
+                                            <h3>거제 매미성</h3>
+                                            <p>  경남 거제시 장목면 복항길 29</p>
+                                            <span>매미성은 2003년 태풍 매미로 경작지를 잃은 시민 백순삼 씨가 자연재해로부터 작물을 지키기 위해 오랜시간 홀로 쌓아올린 벽이다.
+                                                바닷가 근처에 네모 반듯한 돌을 쌓고 시멘트로 메우길 반복한 것이 이제는 유럽 중세시대를 연상케 하는 성이 되었다.</span>
+                                            <a href="#n" class="more">더 알아보기</a>
+                                        </div>
+                                    </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                                </ul>
+                            </div>
+                        </div><!--list-->
+                    </div><!--spot_list-->
+                </div><!--spot_wrap-->
+            </section><!--spot-->
             <section class="parking"></section><!--parking-->
             <section class="service"></section><!--service-->
             <section class="video"></section><!--video-->

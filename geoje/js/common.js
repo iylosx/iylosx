@@ -60,6 +60,11 @@ $(document).ready(function(){
 
 
     /*팝업 여닫기*/
+    if(device_status == 'mo'){
+        $('header .header_top .header_pop .close button').on('click', function(){
+            $('header .header_top .header_pop').slideUp()
+        })
+        }else{
     $('header .header_top .header_pop .close button').on('click', function(){
         $('header .header_top').slideUp()
         $('header .header_menu .util .popup button').fadeIn()
@@ -68,6 +73,7 @@ $(document).ready(function(){
         $('header .header_top').slideDown()
         $('header .header_menu .util .popup button').fadeOut()
     })
+    }
 
     //퀵메뉴
 
@@ -105,5 +111,58 @@ $(document).ready(function(){
         $(this).removeClass('on')
         }
      })
-    
+
+
+     //모바일 메뉴 ...
+     /********************
+      * 1. gnb_open을 누르면 gnb_wrap이 오른쪽에서 나옴
+      * 2. 1차 li를 클릭하면 li에 open클래스 추가
+      * 3. 2차 li를 클릭하면 li에 select 클래스 추가
+      * 4. 1차 li 클릭 시 이동하지 않도록 
+      * ******************************/
+
+
+     //메뉴 여닫기!!
+     $('header .header_menu .gnb .gnb_open').on('click',function(){
+        $('header .header_menu').addClass('open_mo')
+     })
+
+     $('header .header_menu .gnb .gnb_wrap .gnb_close').on('click',function(){
+        $('header .header_menu').removeClass('open_mo')
+     })
+
+     //메뉴 1차 li 여닫기!!
+     
+    $('header .header_menu .gnb .gnb_wrap ul.depth1 > li > a').on('click', function(e){
+        if(device_status == 'mo'){   // 모바일일 때만 작동
+            e.preventDefault();      // a 태그 링크 이동 막기
+
+                // 다른 li들 열려 있는 것 닫고
+                $('header .header_menu .gnb .gnb_wrap ul.depth1 > li').removeClass('open');
+                // 현재 것만 열기
+                $(this).parent().addClass('open');
+        }
+    });
+
+//메뉴 2차 li 여닫기!!    
+
+$(document).on('click', 'header .header_menu.open_mo .gnb_wrap ul.depth1 > li.open > .depth2_wrap ul.depth2 > li > a', function(e){
+    if(device_status === 'mo'){
+        e.preventDefault();
+
+        let parentLi = $(this).parent();       // 선택한 depth2 li
+        let isSelect = parentLi.hasClass('select');
+
+        if(isSelect){
+            // 이미 열려 있으면 닫기
+            parentLi.removeClass('select');
+        } else {
+            // 열려 있는 select 모두 닫고 현재 li만 열기
+            parentLi.siblings().removeClass('select');
+            parentLi.addClass('select');
+        }
+    }
+});
+
+
 })//js end
