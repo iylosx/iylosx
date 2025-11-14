@@ -384,7 +384,7 @@
 }
 .spot .spot_list .list {
     width: 100%;
-    margin-top: 5px;
+    margin-top: 10px;
 
 }
 .spot .spot_list .list .swiper {
@@ -503,6 +503,10 @@
     text-align: center;
     }
 
+    .spot .spot_list .list {
+        margin-top: 0px;
+    }
+
 .spot .spot_list .list .swiper-slide .photo img {
     width: 100%;
     height: 100%;
@@ -548,13 +552,15 @@
 }
 
 @media screen and (max-width:768px){ 
-
+ .spot .spot_list .list {
+        margin-top: 30px;
+    }
 .spot .spot_list .list .swiper {
-    height: 437px;
+    height: 450px;
 }
 .spot .spot_list .list .swiper-slide {
     width: 266px;
-    height: 360px;
+    height: 410px;
 }
 .spot .spot_list .list .swiper-slide .photo {
     width: 229px;
@@ -564,7 +570,7 @@
 
 }
 .spot .spot_list .list .swiper-slide .list_tit span {
-    display: none;
+    margin: 13px 0 4px 0;
 }
 
 .spot .spot_list .list .swiper-slide .list_tit .more {
