@@ -709,3 +709,145 @@
         font-size: 11px;
     }
 }
+
+.service {
+    margin: 97px 0 0 0;
+}
+.service .tit {
+    text-align: center;
+}
+
+.service .tit h2 {
+    font-size: var(--titsize);
+    color: var(--tit-c);
+    font-weight: 700;
+}
+.service .service_box {
+    display: flex;
+    justify-content: space-between;
+    margin: 79px 0 0 0;
+    height: 221px;
+}
+.service .service_box .left {
+    background-color: var(--main3-c);
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    width: 50%;
+    position: relative;
+
+}
+.service .service_box .left .txt {
+    padding: 47px 0 0 39px;
+}
+.service .service_box .left .txt h3 {
+    font-size: 2.8rem;
+    color: var(--tit-c);font-weight: 700;
+    margin-bottom: 10px;
+}
+.service .service_box .left .photo {
+    width: 299px;
+    height: 249px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+}
+.service .service_box .left .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.service .service_box .left .more a {
+    display: block;
+    padding: 9px 25px;
+    background-color: var(--white);
+    border-radius: 10px;
+    position: absolute;
+    left: 39px;
+    bottom: 46px;
+    overflow: hidden;
+
+}
+
+
+
+.service .service_box .right {
+    background-color: #BADEFF;
+    border-radius:  0 10px 10px 0 ;
+    display: flex;
+    width: 50%;
+    position: relative;
+
+}
+.service .service_box .right .txt {
+    padding: 47px  0 0 39px ;
+}
+.service .service_box .right .txt h3 {
+    font-size: 2.8rem;
+    color: var(--tit-c);font-weight: 700;
+    margin-bottom: 10px;
+}
+.service .service_box .right .photo {
+    width: 367px;
+    height: 241px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+}
+.service .service_box .right .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.service .service_box .right .more a {
+    display: block;
+    padding: 9px 25px;
+    background-color: var(--white);
+    border-radius: 10px;
+    position: absolute;
+    left: 39px;
+    bottom: 46px;
+    overflow: hidden;
+
+}
+.service .service_box .more a span {
+    z-index: 0;
+    position: relative;
+    transition: .5s;
+
+}
+.service .service_box .more a span::before {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 230%;
+    height: 0%;
+    background-color: var(--black);
+    border-radius: 50%;
+    z-index: -1;
+    transition: .7s;
+} 
+.service .service_box .more a span:hover {
+    color: var(--white);
+}
+.service .service_box  .more a:hover span::before {
+    height: 360%;
+    
+}
+
+.video {
+    margin: 184px 0 0 0;
+    width: 100%;
+    height: 829px;
+    background: url(../images/main/video_bg.png) no-repeat center center / cover;
+}
+.video .tit h2 {
+    font-size: var(--titsize);
+    font-weight: 700;
+    color: var(--tit-c);
+    line-height: 1.3;
+    margin: 0 0 14px 0 ;
+}
