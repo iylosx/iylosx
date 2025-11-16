@@ -837,6 +837,132 @@
     height: 360%;
     
 }
+@media screen and (max-width:1400px){
+    .mo_only {
+        display: block;
+    }
+    .pc_only {
+        display: none;
+    }
+
+
+    .service {
+        margin: 87px 0 0 0;
+    }
+
+    .service .service_box {
+        display: flex;
+        flex-direction: column;
+        margin: 79px 0 0 0;
+        height: auto;
+        gap: 39px 0;
+    }
+    .service .service_box .left {
+        border-radius: 10px ;
+        width: 100%;
+    }
+    .service .service_box .left .txt {
+        padding: 36px 0 36px 39px;
+        width: 50%;
+    }
+    .service .service_box .left .photo {
+        width: auto;
+        height: 145%;
+        position: absolute;
+        bottom: -40px;
+        right: 80px;
+        overflow: hidden;
+    }
+    .service .service_box .left .photo::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 40px;
+        background-color: var(--white);
+    }
+    .service .service_box .left .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .service .service_box .left .more a {
+        padding: 4px 18px;
+        border-radius: 10px;
+        left: auto;
+        right: 30px;
+        bottom: 20px;
+
+    }
+
+    .service .service_box .right {
+        border-radius:  10px;
+        width: 100%;
+
+    }
+    .service .service_box .right .txt {
+        padding: 37px 0 36px 39px ;
+    }
+    
+    .service .service_box .right .photo {
+        width: auto;
+        height: 122%;
+    }
+    .service .service_box .right .more a {
+        left: auto;
+        padding: 4px 18px;
+        right: 30px;
+        bottom: 20px;
+        overflow: hidden;
+
+    }
+
+}/*service media*/
+@media screen and (max-width:586px){ 
+    .service .service_box {
+        gap: 23px 0 ;
+    }
+    .service .service_box .left .txt,
+    .service .service_box .right .txt {
+        padding-left: 20px;
+        width: 50%;
+    } 
+    .service .service_box .left .txt h3,
+    .service .service_box .right .txt h3 {
+        font-size: 20px;
+        
+    }
+    .service .service_box .left .photo {
+        width: auto;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 17%;
+        overflow: hidden;
+    }
+    .service .service_box .left .photo::after {
+        display: none;
+    
+    }
+    .service .service_box .right {
+        overflow: hidden;
+    }
+    .service .service_box .right .photo {
+        width: auto;
+        height: 100%;
+        right: 0%;
+    }
+}
+@media screen and (max-width:470px){
+    
+    .service .service_box .left .photo {
+        right: 4%;
+    }
+    .service .service_box .right .photo {
+        right: -20%;
+    }
+}
 
 .video {
     margin: 184px 0 0 0;
