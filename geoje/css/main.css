@@ -723,6 +723,7 @@
     color: var(--tit-c);
     font-weight: 700;
     line-height: 1.3;
+    margin: 7px 0 0 0;
 }
 .service .service_box {
     display: flex;
@@ -765,8 +766,8 @@
     background-color: var(--white);
     border-radius: 10px;
     position: absolute;
-    left: 39px;
-    bottom: 46px;
+    left: 38px;
+    bottom: 26px;
     overflow: hidden;
 
 }
@@ -808,8 +809,8 @@
     background-color: var(--white);
     border-radius: 10px;
     position: absolute;
-    left: 39px;
-    bottom: 46px;
+    left: 38px;
+    bottom: 26px;
     overflow: hidden;
 
 }
@@ -969,9 +970,8 @@
 .community {
     margin: clamp(114px, 28vw ,184px) 0 0 0;
     width: 100%;
-    height: 829px;
     background: url(../images/main/video_bg.png) no-repeat center center / cover;
-
+    padding: 0 0 150px 0;
 }
 .community .tit {
     text-align: center;
@@ -983,114 +983,115 @@
     line-height: 1.3;
     margin: 0 0 14px 0 ;
 }
-.community .list {
-    margin: 23px 0 0 0;
+.community .comm_box {
+    margin: 40px 0 0 0;
 }
-.community .list ul{
+.community .comm_box{
     display: flex;
     justify-content: space-between;
 }
-.community .list ul li {
+.community .comm_box .qna,
+.community .comm_box .review,
+.community .comm_box .report {
     width: calc(33.33% - 24px);
-}
-.community .list ul li:nth-child(2) {
-    transform: translateY(74px);
-}
-.community .list ul li a{
     display: block;
     border-radius: 10px;
     border: 1px solid #f4f4f4;
     background-color: var(--white);
     padding: 31px 33px;
+    position: relative;
+    transition: .3s;
 }
-.community .list ul li a:hover{
+.community .comm_box .review {
+    transform: translateY(40px);
+}
+
+.community .comm_box .qna:hover,
+.community .comm_box .review:hover,
+.community .comm_box .report:hover{
     box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.02);
 }
 
-.community .list ul li a .photo {
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    height: auto;
-}
-.community .list ul li a .photo::after {
-    position: absolute;
-    left: 0;
-    top: 0;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: var(--black50);
-    opacity: 1;
-    transition: .5s;
-}
-.community .list ul li a .photo img {
-    vertical-align: top;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: .5s;
-
-}
-.community .list ul li a:hover .photo img {
-    transform: scale3d(1.2 , 1.2, 1);
-}
-.community .list ul li a:hover .photo::after {
-    opacity: 0;
-}
-
-.community .list ul li a .txt h3 {
-    line-height: 1.3;
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin: 34px 0 16px 0;
-    transform: .5s;
-}
-.community .list ul li a:hover .txt h3 {
+.community .comm_box .qna:hover .txt h3,
+.community .comm_box .review:hover .txt h3,
+.community .comm_box .report:hover .txt h3{
     color: var(--main1-c);
 }
 
-@media screen and (max-width:1024px){
-    .pc_only {
-        display: none;
-    }
-    .community {
-        height: auto;
-        padding-bottom: 100px;
-    }
-    .community .list {
-        margin: 30px 0 0 0;
-    }
-    .community .list ul {
-        gap: 0 16px;
-    }
-    .community .list ul li {
-        width: auto;
-    }
-    .community .list ul li:nth-child(2) {
-        transform: translateY(0);
-    }
-    .community .list ul li a{
-        padding: 20px 23px;
-    }
 
-    .community .list ul li a .photo::after {
-        display: none;
-    }
-    .community .list ul li a .txt h3 {
-        font-size: 22px;
-        margin: 20px 0 10px 0;
-        color: var(--main1-c);
-    }
-
+.community .comm_box .txt h3 {
+    line-height: 1.3;
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    color: var(--tit-c);
+    transition: .3s;
 }
 
-@media screen and (max-width:600px){
-    .community .list ul {
-        flex-direction: column;
-        gap: 16px 0;
-    }
-    .community .list ul li a .photo {
-        height: 180px;
-    }
+.community .comm_box .txt .more a {
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-color: var(--main1-cw);
+    border-radius: 10px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 15 15' fill='%234D4D4D' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.66667 15V8.33333H0V6.66667H6.66667V0H8.33333V6.66667H15V8.33333H8.33333V15H6.66667Z' /%3E%3C/svg%3E%0A");
+}
+
+.community .comm_box .list {
+    margin: 32px 0 0 0;
+}
+.community .comm_box .list ul li {
+    position: relative;
+}
+.community .comm_box .list ul li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 17px 0;
+    border-top: 1px solid #f4f4f4;
+}
+.community .comm_box .list ul li a h4 {
+    width: 229px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+.community .comm_box .list ul li:nth-child(3)::before,
+.community .comm_box .list ul li:nth-child(4)::before {
+    position: absolute;
+    content: "답변완료";
+    background-color: var(--main1-cw);
+    border-radius: 10px;
+    width: 59px;
+    height: auto;
+    padding: 3px 0 ;
+    text-align: center;
+    font-size: 13px;
+    right: 81px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.community .comm_box .review .list ul li:nth-child(3)::before,
+.community .comm_box .review .list ul li:nth-child(4)::before {
+    display: none;
+}
+
+.community .comm_box .list ul li a:hover h4 {
+    color: var(--main1-c);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.community .comm_box .list ul li:first-child a {
+    border: none;
+}
+.community .comm_box .list ul li a .date {
+    font-size: 15px;
 }

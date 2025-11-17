@@ -686,3 +686,307 @@ aside .quick_close,
 aside .quick_wrap {
     display: none;
 }
+
+
+footer {
+    background-color: var(--dark);
+    padding: 0 0 93px 0;
+    color: rgba(244, 244, 244, 0.7);
+    
+}
+footer .wrapper {
+    position: relative;
+}
+footer .f_button {
+    height: 58px;
+    border-bottom: 1px solid #525357;
+}
+footer .f_button .list {
+    display: flex;
+}
+footer .f_button .list .inner{
+    width: 33.34%;
+    display: flex;
+
+}
+footer .f_button  .list .inner .tour ,
+footer .f_button  .list .inner .city {
+    width: 50%;
+}
+footer .f_button .list .related {
+    width: 16.66%;
+}
+footer .f_button .list .banner {
+    display: flex;
+}
+footer .f_button  .list .inner .tour ,
+footer .f_button  .list .inner .city ,
+footer .f_button .list .related {
+    border-right: 1px solid #525357; 
+    line-height: 58px;
+}
+footer .f_button .list .inner .tour button,
+footer .f_button .list .inner .city button,
+footer .f_button .list .related button{
+    display: block;
+    padding-left: 40px;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    position: relative;
+}
+footer .f_button  .list .inner .tour button{
+    padding-left: 0;
+}
+footer .f_button .list .tour button span::before,
+footer .f_button .list .city button span::before,
+footer .f_button .list .related button span::before{
+    content: "";
+    width: 9.58px;
+    height: 4.79px;
+    position: absolute;
+    right: 19.71px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-position: center  center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 5' fill='%23B8B8BA' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 4.79167L4.79167 0L9.58333 4.79167H0Z' /%3E%3C/svg%3E%0A");
+}
+
+footer .f_button .list .banner {
+    width: 50%;
+}
+footer .f_button .list .banner .tit{
+    padding-left: 47px;
+    line-height: 58px;
+}
+footer .f_button .list .banner .ctrl_btn {
+    display: flex;
+    height: 100%;
+    margin-left: 37px;
+    align-items: center;
+    gap: 0 7px;
+}
+footer .f_button .list .banner .ctrl_btn button{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #525357;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='%23B8B8BA' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.86875 6.75L7.06875 10.95L6 12L0 6L6 0L7.06875 1.05L2.86875 5.25H12V6.75H2.86875Z' /%3E%3C/svg%3E%0A");
+}
+footer .f_button .list .banner .ctrl_btn button.next {
+    transform: rotate(180deg);
+}
+footer .f_button .list .banner .banner_list {
+    width: 100%;
+    overflow: hidden;
+    margin-left: 34px;
+}
+footer .f_button .list .banner .banner_list ul li {
+    width: auto;
+    line-height: 58px;
+    font-size: 15px;
+}
+footer .f_button .list .banner .banner_list ul li a:hover{
+    text-decoration: underline;
+}
+footer .f_logo {
+    width: 252px;
+    height: 46.28px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../images/common/logo_w.svg);
+    opacity: 80%;
+    margin: 91px 0 0 0;
+}
+footer .f_nav {
+    margin: 37px  0 40px 0;
+}
+footer .f_nav ul {
+    display: flex;
+    gap: 0 43px ;
+}
+footer .f_nav ul li a {
+    display: block;
+}
+footer .f_nav ul li a span{
+    position: relative;
+}
+footer .f_nav ul li a span::before {
+    content: "";
+    width: 1px;
+    height: 12px;
+    background-color:rgba(237, 237, 237, 0.1);
+    position: absolute;
+    right: -23px;
+    top: 3px;
+}
+footer .f_nav ul li:last-child a span::before {
+    display: none;
+}
+footer .f_info {
+    display: flex;
+    gap: 0 53px ;
+    margin: 0 0 10px 0;
+}
+footer .f_util {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 85px;
+    gap: 0 86px;
+}
+footer .f_util span {
+    position: relative;
+    padding-left: 51px;
+}
+footer .f_util .youtube span::after,
+footer .f_util .instagram span::after {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: rgba(237, 237, 237, 0.1);
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='12' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.7' d='M15.8462 3.47803C15.8462 1.56024 14.286 0 12.3682 0H3.47806C1.56026 0 0 1.56024 0 3.47803V7.61429C0 9.53208 1.55214 11.0923 3.47806 11.0923H12.3682C14.286 11.0923 15.8462 9.54021 15.8462 7.61429V3.47803ZM10.621 5.85088L6.63913 7.82558C6.48473 7.90684 5.94842 7.79307 5.94842 7.62242V3.57554C5.94842 3.39677 6.48473 3.283 6.63913 3.37239L10.4503 5.44457C10.6129 5.53396 10.7754 5.76962 10.6129 5.85088H10.621Z' fill='%23EDEDED'/%3E%3C/svg%3E%0A");
+    
+}
+footer .f_util .instagram span::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.7'%3E%3Cpath d='M12.9777 3.03125C12.4251 3.03125 11.9863 3.47819 11.9863 4.02265C11.9863 4.56711 12.4332 5.01406 12.9777 5.01406C13.5222 5.01406 13.9691 4.56711 13.9691 4.02265C13.9691 3.47819 13.5222 3.03125 12.9777 3.03125Z' fill='%23EDEDED'/%3E%3Cpath d='M8.5499 4.30664C6.24205 4.30664 4.37305 6.1838 4.37305 8.48353C4.37305 10.7833 6.25017 12.6604 8.5499 12.6604C10.8496 12.6604 12.7268 10.7833 12.7268 8.48353C12.7268 6.1838 10.8496 4.30664 8.5499 4.30664ZM8.5499 11.1652C7.07092 11.1652 5.87638 9.96251 5.87638 8.49166C5.87638 7.02081 7.07905 5.81812 8.5499 5.81812C10.0207 5.81812 11.2235 7.02081 11.2235 8.49166C11.2235 9.96251 10.0207 11.1652 8.5499 11.1652Z' fill='%23EDEDED'/%3E%3Cpath d='M11.8724 16.9676H5.09512C2.28344 16.9676 0 14.6841 0 11.8724V5.09515C0 2.28347 2.28344 0 5.09512 0H11.8724C14.6841 0 16.9676 2.28347 16.9676 5.09515V11.8724C16.9676 14.6841 14.6841 16.9676 11.8724 16.9676ZM5.09512 1.59274C3.16108 1.59274 1.59271 3.1611 1.59271 5.09515V11.8724C1.59271 13.8065 3.16108 15.3749 5.09512 15.3749H11.8724C13.8065 15.3749 15.3748 13.8065 15.3748 11.8724V5.09515C15.3748 3.1611 13.8065 1.59274 11.8724 1.59274H5.09512Z' fill='%23EDEDED'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+@media screen and (max-width:1280px){ 
+    footer {
+        overflow: hidden;
+    }
+    footer .f_button {
+        height: 166px;
+    }
+    footer .f_button .list {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    footer .f_button .list .inner {
+        display: flex;
+        height: 53px;
+        width: 100%;
+    }
+    
+    footer .f_button .list .inner .tour,
+    footer .f_button .list .inner .city {
+        width: 50%;
+        line-height: 53px;
+        
+    }
+    footer .f_button .list .inner .city {
+        border: none;
+    }
+    footer .f_button .list .related {
+        width: 100%;
+        border-right: none;
+    }
+    
+    footer .f_button .list .inner .tour button,
+    footer .f_button .list .inner .city button,
+    footer .f_button .list .related button{
+        padding-left: 13px;
+    }
+    
+    footer .f_button .inner,
+    footer .f_button .list .related{
+        position: relative;
+    }
+    footer .f_button .inner::after,
+    footer .f_button .list .related::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: -10%;
+        width: 150%;
+        height: 1px;
+        background-color: #525357;
+    }
+
+
+    footer .f_button .list .banner {
+        height: 53px;
+        width: 100%;
+    }
+    footer .f_button .list .banner .tit{
+        padding-left: 13px;
+        line-height: 53px;
+    }
+    footer .f_button .list .banner .ctrl_btn {
+        margin-left: 25px;
+        gap: 0 5px;
+    }
+    footer .f_button .list .banner .ctrl_btn button{
+        width: 27px;
+        height: 27px;
+        background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 12 12' fill='%23B8B8BA' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.86875 6.75L7.06875 10.95L6 12L0 6L6 0L7.06875 1.05L2.86875 5.25H12V6.75H2.86875Z' /%3E%3C/svg%3E%0A");
+    }
+    
+    footer .f_button .list .banner .banner_list {
+        width: 100%;
+    }
+    footer .f_button .list .banner .banner_list ul li {
+        width: auto;
+        line-height: 53px;
+    }
+
+    footer .f_logo {
+        width: 200px;
+        margin-top: 60px;
+        
+    }
+    footer .f_nav {
+        margin: 50px  0 40px 0;
+    }
+    footer .f_nav ul {
+        flex-direction: column;
+        gap: 10px 0 ;
+    }
+    footer .f_nav ul li a span::before {
+        display: none;
+    }
+    footer .f_info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px 0 ;
+        margin: 0 0 10px 0;
+    }
+    
+    footer .f_util {
+        position: relative;
+        right: auto;
+        top: 50px;
+        gap: 0 30px;
+        
+    }
+    footer .f_util span {
+        position: relative;
+        padding-left: 41px;
+    }
+    footer .f_util .youtube span::after,
+    footer .f_util .instagram span::after {
+        position: absolute;
+        content: "";
+        width: 25px;
+        height: 25px;
+        background-image: url("data:image/svg+xml,%3Csvg width='14' height='10' viewBox='0 0 16 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.7' d='M15.8462 3.47803C15.8462 1.56024 14.286 0 12.3682 0H3.47806C1.56026 0 0 1.56024 0 3.47803V7.61429C0 9.53208 1.55214 11.0923 3.47806 11.0923H12.3682C14.286 11.0923 15.8462 9.54021 15.8462 7.61429V3.47803ZM10.621 5.85088L6.63913 7.82558C6.48473 7.90684 5.94842 7.79307 5.94842 7.62242V3.57554C5.94842 3.39677 6.48473 3.283 6.63913 3.37239L10.4503 5.44457C10.6129 5.53396 10.7754 5.76962 10.6129 5.85088H10.621Z' fill='%23EDEDED'/%3E%3C/svg%3E%0A");
+        
+    }
+    footer .f_util .instagram span::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.7'%3E%3Cpath d='M12.9777 3.03125C12.4251 3.03125 11.9863 3.47819 11.9863 4.02265C11.9863 4.56711 12.4332 5.01406 12.9777 5.01406C13.5222 5.01406 13.9691 4.56711 13.9691 4.02265C13.9691 3.47819 13.5222 3.03125 12.9777 3.03125Z' fill='%23EDEDED'/%3E%3Cpath d='M8.5499 4.30664C6.24205 4.30664 4.37305 6.1838 4.37305 8.48353C4.37305 10.7833 6.25017 12.6604 8.5499 12.6604C10.8496 12.6604 12.7268 10.7833 12.7268 8.48353C12.7268 6.1838 10.8496 4.30664 8.5499 4.30664ZM8.5499 11.1652C7.07092 11.1652 5.87638 9.96251 5.87638 8.49166C5.87638 7.02081 7.07905 5.81812 8.5499 5.81812C10.0207 5.81812 11.2235 7.02081 11.2235 8.49166C11.2235 9.96251 10.0207 11.1652 8.5499 11.1652Z' fill='%23EDEDED'/%3E%3Cpath d='M11.8724 16.9676H5.09512C2.28344 16.9676 0 14.6841 0 11.8724V5.09515C0 2.28347 2.28344 0 5.09512 0H11.8724C14.6841 0 16.9676 2.28347 16.9676 5.09515V11.8724C16.9676 14.6841 14.6841 16.9676 11.8724 16.9676ZM5.09512 1.59274C3.16108 1.59274 1.59271 3.1611 1.59271 5.09515V11.8724C1.59271 13.8065 3.16108 15.3749 5.09512 15.3749H11.8724C13.8065 15.3749 15.3748 13.8065 15.3748 11.8724V5.09515C15.3748 3.1611 13.8065 1.59274 11.8724 1.59274H5.09512Z' fill='%23EDEDED'/%3E%3C/g%3E%3C/svg%3E%0A");
+    }
+}
