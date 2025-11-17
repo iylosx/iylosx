@@ -599,8 +599,8 @@ aside {
 }
 aside .quick_open ,
 aside .quick_close {
-    width:  clamp( 50px, 6vw ,62px);
-    height: clamp( 50px, 6vw ,62px);
+    width:  62px;
+    height: 62px;
     background-color: var(--main1-c);
     border-radius: 12px;
     position: relative;

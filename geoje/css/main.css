@@ -1152,6 +1152,9 @@
 }
 
 @media screen and (max-width:1024px){
+    .community {
+        padding-bottom: 60px;
+    }
     .community .comm_box {
         flex-direction: column;
         gap: 16px 0;
