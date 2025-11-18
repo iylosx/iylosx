@@ -164,5 +164,34 @@ $(document).on('click', 'header .header_menu.open_mo .gnb_wrap ul.depth1 > li.op
     }
 });
 
+    //푸터 사이트 여닫기!!
+    $('footer .f_button .list .inner .tour button').on('click', function(){
+        if($('footer .f_button  .list .inner .tour').hasClass('open')){
+            $('footer .f_button  .list .inner .tour').removeClass('open')
+            $('footer .f_button  .list .inner .tour .tour_wrap').slideUp()
+        }else{
+            $('footer .f_button  .list .inner .tour').addClass('open')
+            $('footer .f_button  .list .inner .tour .tour_wrap').slideDown()
+        }
+    })
+    $('footer .f_button .list .inner .city button').on('click', function(){
+        if($('footer .f_button  .list .inner .city').hasClass('open')){
+            $('footer .f_button  .list .inner .city').removeClass('open')
+            $('footer .f_button  .list .inner .city .city_wrap').slideUp()
+        }else{
+            $('footer .f_button  .list .inner .city').addClass('open')
+            $('footer .f_button  .list .inner .city .city_wrap').slideDown()
+        }
+    })
+    $('footer .f_button .list .related button').on('click', function(){
+        if($('footer .f_button  .list .related').hasClass('open')){
+            $('footer .f_button  .list .related').removeClass('open')
+            $('footer .f_button  .list .related .related_wrap').slideUp()
+        }else{
+            $('footer .f_button  .list .related').addClass('open')
+            $('footer .f_button  .list .related .related_wrap').slideDown()
+        }
+    })
+
 
 })//js end

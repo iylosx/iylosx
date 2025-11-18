@@ -715,19 +715,13 @@ footer .f_button  .list .inner .city {
 }
 footer .f_button .list .related {
     width: 16.66%;
-}
-footer .f_button .list .banner {
-    display: flex;
-}
-footer .f_button  .list .inner .tour ,
-footer .f_button  .list .inner .city ,
-footer .f_button .list .related {
+    position: relative;
     border-right: 1px solid #525357; 
     line-height: 58px;
     position: relative;
 }
-
-footer .f_button  .list .inner .tour .tour_wrap {
+footer .f_button .list .related .related_wrap {
+    display: none;
     position: absolute;
     bottom: 58px;
     left: 0;
@@ -738,9 +732,74 @@ footer .f_button  .list .inner .tour .tour_wrap {
     background-color: var(--dark);
     color: rgba(244, 244, 244, 0.7);
     border-bottom: 1px solid #525357;
-
+    line-height: 1.5;
+}
+footer .f_button .list .banner {
+    display: flex;
+}
+footer .f_button  .list .inner .tour, 
+footer .f_button  .list .inner .city {
+    border-right: 1px solid #525357; 
+    line-height: 58px;
+    position: relative;
 }
 
+footer .f_button  .list .inner .tour .tour_wrap,
+footer .f_button  .list .inner .city .city_wrap {
+    display: none;
+    position: absolute;
+    bottom: 58px;
+    left: 0;
+    width: 100%;
+    height: 256px;
+    overflow-y: auto;
+    padding: 12px 16px;
+    background-color: var(--dark);
+    color: rgba(244, 244, 244, 0.7);
+    border-bottom: 1px solid #525357;
+    line-height: 1.5;
+
+}
+.tour_wrap::-webkit-scrollbar,
+.city_wrap::-webkit-scrollbar,
+.related_wrap::-webkit-scrollbar {
+    width: 10px;
+}
+.tour_wrap::-webkit-scrollbar-thumb ,
+.city_wrap::-webkit-scrollbar-thumb ,
+.related_wrap::-webkit-scrollbar-thumb  {
+    height: 5px;
+    background: #525357;
+    border-radius: 10px;
+    border: 3px solid var(--dark)
+}
+
+footer .f_button  .list .inner .tour .tour_wrap ul li a,
+footer .f_button  .list .inner .city .city_wrap ul li a,
+footer .f_button  .list .related .related_wrap ul li a {
+    display: block;
+    padding: 11.5px 0 11.5px 14px;
+    position: relative;
+    
+}
+footer .f_button  .list .inner .tour .tour_wrap ul li a::after,
+footer .f_button  .list .inner .city .city_wrap ul li a::after,
+footer .f_button  .list .related .related_wrap ul li a::after {
+    content: "";
+    width: 3px;
+    height: 3px;
+    position: absolute;
+    left: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(244, 244, 244, 0.7);
+}
+footer .f_button  .list .inner .tour .tour_wrap ul li a:hover,
+footer .f_button  .list .inner .city .city_wrap ul li a:hover,
+footer .f_button  .list .related .related_wrap ul li a:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
 
 footer .f_button .list .inner .tour button,
 footer .f_button .list .inner .city button,
@@ -748,7 +807,6 @@ footer .f_button .list .related button{
     display: block;
     padding-left: 40px;
     width: 100%;
-    height: 100%;
     text-align: left;
     position: relative;
 }
@@ -768,8 +826,13 @@ footer .f_button .list .related button span::before{
     background-position: center  center;
     background-repeat: no-repeat;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 5' fill='%23B8B8BA' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 4.79167L4.79167 0L9.58333 4.79167H0Z' /%3E%3C/svg%3E%0A");
+    transition: .5s;
 }
-
+footer .f_button .list .tour.open button span::before,
+footer .f_button .list .city.open span::before,
+footer .f_button .list .related.open span::before{
+    transform: rotate(-180deg);
+}
 
 
 footer .f_button .list .banner {
@@ -884,9 +947,7 @@ footer .f_util .instagram span::after {
 }
 
 @media screen and (max-width:1280px){ 
-    footer {
-        overflow: hidden;
-    }
+    
     footer .f_button {
         height: 166px;
     }
@@ -913,25 +974,54 @@ footer .f_util .instagram span::after {
     footer .f_button .list .related {
         width: 100%;
         border-right: none;
+        position: relative;
+
     }
+
+    footer .f_button .list .related .related_wrap {
+        bottom: 58px;
+        height: 150px;
+        width: 100vw;
+        left: -16px;
+    }
+    footer .f_button  .list .inner .tour .tour_wrap{
+        bottom: 53px;
+        left: -8.7%;
+        height: 170px;
+        width: 108.7%;
     
+    }
+    footer .f_button  .list .inner .city .city_wrap {
+        bottom: 53px;
+        left: auto;
+        right: -8.7%;
+        height: 170px;
+        width: 108.7%;
+    }
     footer .f_button .list .inner .tour button,
     footer .f_button .list .inner .city button,
     footer .f_button .list .related button{
         padding-left: 13px;
     }
     
-    footer .f_button .inner,
-    footer .f_button .list .related{
+    footer .f_button {
         position: relative;
     }
-    footer .f_button .inner::after,
-    footer .f_button .list .related::after {
+    footer .f_button::after{
         content: "";
         position: absolute;
-        bottom: 0;
+        bottom: 56px;
         left: -10%;
-        width: 150%;
+        width: 110%;
+        height: 1px;
+        background-color: #525357;
+    }
+    footer .f_button::before {
+        content: "";
+        position: absolute;
+        bottom: 112px;
+        left: -10%;
+        width: 110%;
         height: 1px;
         background-color: #525357;
     }
@@ -1008,4 +1098,6 @@ footer .f_util .instagram span::after {
     footer .f_util .instagram span::after {
         background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.7'%3E%3Cpath d='M12.9777 3.03125C12.4251 3.03125 11.9863 3.47819 11.9863 4.02265C11.9863 4.56711 12.4332 5.01406 12.9777 5.01406C13.5222 5.01406 13.9691 4.56711 13.9691 4.02265C13.9691 3.47819 13.5222 3.03125 12.9777 3.03125Z' fill='%23EDEDED'/%3E%3Cpath d='M8.5499 4.30664C6.24205 4.30664 4.37305 6.1838 4.37305 8.48353C4.37305 10.7833 6.25017 12.6604 8.5499 12.6604C10.8496 12.6604 12.7268 10.7833 12.7268 8.48353C12.7268 6.1838 10.8496 4.30664 8.5499 4.30664ZM8.5499 11.1652C7.07092 11.1652 5.87638 9.96251 5.87638 8.49166C5.87638 7.02081 7.07905 5.81812 8.5499 5.81812C10.0207 5.81812 11.2235 7.02081 11.2235 8.49166C11.2235 9.96251 10.0207 11.1652 8.5499 11.1652Z' fill='%23EDEDED'/%3E%3Cpath d='M11.8724 16.9676H5.09512C2.28344 16.9676 0 14.6841 0 11.8724V5.09515C0 2.28347 2.28344 0 5.09512 0H11.8724C14.6841 0 16.9676 2.28347 16.9676 5.09515V11.8724C16.9676 14.6841 14.6841 16.9676 11.8724 16.9676ZM5.09512 1.59274C3.16108 1.59274 1.59271 3.1611 1.59271 5.09515V11.8724C1.59271 13.8065 3.16108 15.3749 5.09512 15.3749H11.8724C13.8065 15.3749 15.3748 13.8065 15.3748 11.8724V5.09515C15.3748 3.1611 13.8065 1.59274 11.8724 1.59274H5.09512Z' fill='%23EDEDED'/%3E%3C/g%3E%3C/svg%3E%0A");
     }
+
+    
 }
