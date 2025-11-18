@@ -970,7 +970,7 @@
 }
 
 .community {
-    margin: clamp(114px, 28vw ,196px) 0 0 0;
+    margin: clamp(114px, 28vw ,150px) 0 0 0;
     width: 100%;
     background: url(../images/main/video_bg.png) no-repeat center center / cover;
     padding: 0 0 180px 0;
@@ -1035,7 +1035,7 @@
     font-size: 1.8rem;
 }
 
-.community .comm_box .txt .more a {
+.community .comm_box  .more a {
     position: absolute;
     right: 14px;
     top: 14px;
@@ -1122,7 +1122,7 @@
         font-size: 2.5rem;
     }
     
-    .community .comm_box .txt .more a {
+    .community .comm_box .more a {
         width: 28px;
         height: 28px;
         background-size: 12px;
