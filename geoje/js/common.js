@@ -98,19 +98,32 @@ $(document).ready(function(){
 
     /*header_menu 1차 메뉴에 마우스를 오버하면 open_pc클래스를 주고 fixed 스타일과 동일한 스타일이 들어감*/
 
-    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
+    $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter focusin', function(){
         if(device_status == 'pc'){
+        
         $('header .header_menu').addClass('open_pc')
         $(this).addClass('on')
-        
         }
     })
+    $('ul.depth1 > li').find('> a').on('focusin', function () {
+        if(device_status == 'pc'){
+            $('ul.depth1 > li').removeClass('on');     // 이전 모든 on 제거
+            $(this).parent().addClass('on'); // 현재만 on
+        }
+    });
      $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
         if(device_status == 'pc'){
         $('header .header_menu').removeClass('open_pc')
         $(this).removeClass('on')
         }
      })
+     $('header .header_menu .util .search button, header .header_menu .util .popup button').on('focusin', function () {
+        if (device_status == 'pc') {
+            $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('on');
+            $('header .header_menu').removeClass('open_pc');
+        }
+    });
+    
 
 
      //모바일 메뉴 ...
