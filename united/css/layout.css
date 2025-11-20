@@ -1,0 +1,65 @@
+@import url(common.css);
+@import url(default.css);
+@import url(font.css);
+@import url(layout.css);
+
+
+
+
+header {
+    width: 100%;
+    height: var(--header-h);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 var(--ctn-mar);
+    color: var(--tit-c);
+    align-items: center;
+}
+header .logo a{
+    display: block;
+    width: clamp(115px, 18vw , 204px);
+    height: 40px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../images/common/logo.svg);
+}
+
+/*PC!!!!!!!!!!!!!!!!*/
+
+@media screen and (min-width:1025px){
+header .gnb .gnb_open{
+    display: none;
+}
+header .gnb {
+    margin-right: 100px;
+} 
+header .gnb .gnb_wrap .gnb_list ul.depth1 {
+    display: flex;
+    justify-content: space-between;
+}
+header .gnb .gnb_wrap .gnb_list ul.depth1 > li > a {
+    display: block;
+    padding: 0 23.5px;
+    font-size: 20px;
+    line-height: var(--header-h);
+    
+}
+header .gnb .gnb_wrap .gnb_list ul.depth1 > li > ul.depth2{
+    display: none;
+}
+header .gnb .gnb_wrap .gnb_close {
+    display: none;
+}
+header .util .lang button{
+    font-weight: 700;
+    display: block;
+    padding: 5px 11px 5px 25px;
+    border: 1px solid var(--tit-c);
+    border-radius: 30px;
+    font-size: var(--btnsize);
+}
+header .util .lang .lang_wrap {
+    display: none;
+}
+}
