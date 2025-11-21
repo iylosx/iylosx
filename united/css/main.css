@@ -12,6 +12,7 @@
     flex-direction: column;
     justify-content: flex-end;
     padding-top: var(--header-h);
+    position: relative;
 }
 .visual .swiper {
     width: 100%;
@@ -124,7 +125,7 @@
     position: absolute;
     padding: 30px 120px 23px 48px;
     background-color: var(--white);
-    right: var(--ctn-mar);
+    right: 0;
     bottom: -83px;
     color: var(--tit-c);
     border-radius: 0 0 0 30px;
@@ -222,4 +223,77 @@
     .visual .scroll strong span {
         display: none;
     }
+}
+
+.global {
+    margin: 197px 0 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.global .tit h2{
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--tit-c);
+    margin: 0 0 11px 0;
+}
+.global .global_wrap {
+    display: flex;
+}
+.global .global_wrap .earth_bg {
+    position: relative;
+    margin: 67px 0 0 0;
+
+}
+.global .global_wrap .earth_bg .photo{
+    width: 150%;
+}
+.global .global_wrap .earth_bg .photo img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+
+.global .global_count {
+    position: relative;
+    width: 100%;
+} 
+
+.global .global_count .contries,
+.global .global_count .usd,
+.global .global_count .certification {
+    position: absolute;
+    top: 20%;
+    left: 34%;
+}
+.global .global_count .usd{
+    top: 50%;
+    transform: translateY(-50%);
+    left: 38%;
+}
+
+
+.global .global_count .certification {
+    top: auto;
+    bottom: 20%;
+    left: 34%;
+}
+.global .global_count .tit {
+    display: flex;
+    gap:0 11px ;
+    align-items: flex-end;
+    
+}
+.global .global_count .tit strong {
+    font-size: 70px;
+    color: var(--main1-c);
+    font-weight: 700;
+}
+.global .global_count .tit span {
+    margin-bottom: 23px;
+    color: var(--tit-c);
+}
+.global .global_count p {
+    width: 70%;
 }
