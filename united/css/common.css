@@ -4,6 +4,7 @@
     /*color root*/
     --main1-c: #3875F2;
     --main2-c: #07004D;
+    --light:#F2F3F5;
     --txt-c: #444444;
     --tit-c: #111111;
     --white: #fff;
@@ -91,7 +92,7 @@ body {
 }
 
 
-@media screen and (max-width:1500px){
+@media screen and (max-width:1600px){
     :root {
         --ctn-mar: 5%;
         --wrapper-mar: 5%;

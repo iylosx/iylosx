@@ -9,20 +9,27 @@
     <!--라이브러리연결-->
 
     <script src="js/main.js"></script>
+    <script src="js/common.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>KUP | 한국유나이티드제약</title>
 </head>
 <body>
     <div id="wrap">
-        <header>
+        <!--메뉴 열림 : menu_pc
+            메뉴고정됨 : fixed
+            li오버함 : over
+            모바일메뉴열림 : menu_mo
+        -->
+        <header class="">
             <h1 class="logo"><a href="#n"><span class="blind">한국유나이티드제약</span></a></h1>
             <nav class="gnb">
-                <div class="gnb_open"><button><span>메뉴열기</span></button></div>
+                <div class="gnb_open"><button><span class="blind">메뉴열기</span></button></div>
                 <div class="gnb_wrap">
+                    <div class="gnb_logo"><span class="blind">한국유나이티드제약</span></div>
                     <div class="gnb_list">
                         <ul class="depth1">
-                            <li>
+                            <li class="">
                                 <a href="#n">
                                     <span>기업소개</span>
                                 </a>
@@ -42,7 +49,7 @@
                                     <li><a href="#n"><span>일반의약품</span></a></li>
                                 </ul>
                             </li>
-                            <li>
+                            <li class="">
                                 <a href="#n"><span>연구개발</span></a>
                                 <ul class="depth2"> 
                                     <li><a href="#n"><span>소개</span></a></li>
@@ -61,7 +68,7 @@
                                     <li><a href="#n"><span>홍보센터</span></a></li>
                                 </ul>
                             </li>
-                            <li>
+                            <li class="">
                                 <a href="#n"><span>ESG</span></a>
                                 <ul class="depth2"> 
                                     <li><a href="#n"><span>환경경영</span></a></li>
@@ -80,7 +87,7 @@
                                 </ul>
                             </li>
                         </ul>
-                        <div class="gnb_close"><button><span>메뉴닫기</span></button></div>
+                        <div class="gnb_close"><button><span class="blind">메뉴닫기</span></button></div>
                     </div><!--gnb_list-->
                 </div><!--gnb_wrap-->
             </nav><!--gnb-->
@@ -103,9 +110,9 @@
                         <li class="swiper-slide bg1"> 
                             <div class="wrapper">
                                 <div class="txt">
-                                    <strong>For the Best Global Pharmaceutical Company</strong>
-                                    <h2>KOREA UNITED PHARM</h2>
-                                    <p>세계로 뻗어가는 혁신의 힘으로, <br> 더 밝은 미래를 만들어가겠습니다.</p>
+                                    <em><strong  class="line">For the Best Global Pharmaceutical Company</strong></em>
+                                    <h2><strong class="line">KOREA UNITED PHARM</h2></strong>
+                                    <p><strong class="line">세계로 뻗어가는 혁신의 힘으로, <br> 더 밝은 미래를 만들어가겠습니다.</p></strong>
                                 </div>
                                 <div class="more"><a href="#n"><span>Learn More</span></a></div>
                             </div>
@@ -113,9 +120,9 @@
                         <li class="swiper-slide bg2"> 
                             <div class="wrapper">
                                 <div class="txt">
-                                    <strong>for a Healthier Tomorrow</strong>
-                                    <h2>Pioneering Therapeutics</h2>
-                                    <p>연구 중심의 기술력으로 <br> 미래 의약품의 기준을 만들어갑니다.</p>
+                                    <em><strong class="line">for a Healthier Tomorrow</strong></em>
+                                    <h2><strong class="line">PROGRESSIVE PHARMA</h2></strong>
+                                    <p><strong class="line">연구 중심의 기술력으로 <br> 미래 의약품의 기준을 만들어갑니다.</p></strong>
                                 </div>
                                 <div class="more"><a href="#n"><span>Learn More</span></a></div>
                             </div>
@@ -123,9 +130,10 @@
                         <li class="swiper-slide bg3"> 
                             <div class="wrapper">
                                 <div class="txt">
-                                    <strong>Advanced Technology You Can Trust</strong>
-                                    <h2>Innovating Medicine</h2>
-                                    <p>혁신적인 기술과 철저한 품질 검증을 통해 <br> 더욱 안전한 의약품을 제공합니다.</p>
+
+                                    <em><strong class="line">Advanced Technology You Can Trust</strong></em>
+                                    <h2><strong class="line">INNOVATING MEDICINE</strong></h2>
+                                    <p><strong class="line">혁신적인 기술과 철저한 품질 검증을 통해 <br> 더욱 안전한 의약품을 제공합니다.</strong></p>
                                 </div>
                                 <div class="more"><a href="#n"><span>Learn More</span></a></div>
                             </div>
@@ -133,7 +141,7 @@
                     </ul>
                 </div><!--swiper-->
                 <div class="scroll">
-                    <span>SCROLL DOWN</span>
+                    <strong><span>SCROLL DOWN</span></strong>
                 </div>
             </section>
         </div>
