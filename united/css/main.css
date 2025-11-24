@@ -231,54 +231,65 @@
     overflow: hidden;
 }
 
+.global_wrap {
+    display: flex;
+}
 .global .tit h2{
     font-size: 40px;
     font-weight: 700;
     color: var(--tit-c);
     margin: 0 0 11px 0;
 }
-.global .global_wrap {
-    display: flex;
-}
-.global .global_wrap .earth_bg {
-    position: relative;
-    margin: 67px 0 0 0;
-
-}
-.global .global_wrap .earth_bg .photo{
-    width: 150%;
-}
-.global .global_wrap .earth_bg .photo img {
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
+.global_wrap .earth{
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;	
+	z-index: -1;
+    margin: 100px 0 0  5%;
+    width: 50vw;
+    height: 50vw;
 }
 
+.global_wrap .earth .earth_img {
+	animation: rotate-day 80s linear infinite;
+	background-image: url(../images/main/earth_img\ 3.svg);  /* 지도는 인터넷에 세계지도를 다운받으면 많음 */
+	background-size: 200%;
+	border-radius: 50%;
+	height: 100%;
+	width: 100%; /* 넓이/높이 */
+	position: absolute;
+	z-index: 3;
+}
+@keyframes rotate-day {
+	0% { background-position: 100% 0; }
+	100% { background-position: -100% 0; }
+}
 
 .global .global_count {
     position: relative;
-    width: 100%;
+    width: 50%;
 } 
 
-.global .global_count .contries,
-.global .global_count .usd,
-.global .global_count .certification {
+.global .global_count  .contries ,
+.global .global_count  .usd ,
+.global .global_count  .certification {
     position: absolute;
-    top: 20%;
-    left: 34%;
-}
-.global .global_count .usd{
+    right:0%;
+    top: 0%;
+
+} 
+.global .global_count  .usd {
+    right:0%;
     top: 50%;
-    transform: translateY(-50%);
-    left: 38%;
+
 }
-
-
-.global .global_count .certification {
+.global .global_count  .certification {
+    right:0%;
     top: auto;
-    bottom: 20%;
-    left: 34%;
+    bottom: 0;
+
 }
+
 .global .global_count .tit {
     display: flex;
     gap:0 11px ;
