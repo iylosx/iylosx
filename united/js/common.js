@@ -91,4 +91,14 @@ $(document).ready(function(){
         $('header .gnb .gnb_wrap .gnb_close').on('click', function(){
             $('header').removeClass('menu_mo')
         })
+
+        //탑버튼
+
+    $('aside.top').on('click', function(){
+       $('html, body').animate({
+                scrollTop: 0
+            }, 500)
+    })
+
+    
 })
