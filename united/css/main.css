@@ -228,23 +228,24 @@
 .global {
     margin: 197px 0 0 0;
     position: relative;
+    height: clamp(650px, 75vw, 1600px);
 }
 
 .global .tit h2{
-    font-size: 40px;
+    font-size: var(--titsize);
     font-weight: 700;
     color: var(--tit-c);
     margin: 0 0 11px 0;
 }
 .global .earth {
-	border-radius: 50%;
-	overflow: hidden;
-	position: absolute;
-    left: 0;
-    top: 110%;	
-	z-index: -1;
-    width: 58vw;
-    height: 58vw;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    left: -20vw;
+    top: 10%;
+    z-index: -1;
+    width: 67vw;
+    height: 67vw;
     background: url(../images/main/earth_wrap.svg) no-repeat center center / contain ;
 }
 .global .earth .earth_img {
@@ -264,28 +265,19 @@
 	0% { background-position: 100% 0; }
 	100% { background-position: -100% 0; }
 }
-
 .global .global_count {
-    position: absolute;
-    left: 60%;
-    top: 200%;
-    z-index: 4;
     display: flex;
     flex-direction: column;
-    gap: 5.7vw 0;
-    margin-top: 40px;
+    gap: 7vw 0;
+    position: absolute;
+    right: 0;
+    top: 20vw;
+    width: 50%;
 }
 .global .global_count .usd {
-    margin: 3% 0 2% 10%;
-}
-.global .global_count .tit {
-    display: flex;
-    gap:0 11px ;
-    align-items: flex-end;
-    
+    margin-left: 70px;
 }
 .global .global_count .tit strong {
-
     font-size: clamp(50px , 4vw, 70px) ;
     color: var(--main1-c);
     font-weight: 700;
@@ -313,3 +305,106 @@
     margin: 0 0 0 10%;
 }
  }
+@media screen and (max-width:1024px){
+    .global {
+        overflow: hidden;
+        position: relative;
+    }
+    .global::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 560px;
+        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+        z-index: -1;
+    } 
+    .global .earth {
+        left: auto;
+        right: -20vw;
+        top: 2vw;
+        width: 130vw;
+        height: 130vw;
+    }
+    .global .global_count{
+        position: relative;
+        width: auto;
+        margin-top: 50px;
+        top: auto;
+    }
+    .global .global_count .usd {
+        margin: 0px;    
+    }
+    .global .global_count p {
+    width: 100%;
+    }
+}
+
+ 
+ .partners {
+    margin: 140px 0 0 0;
+    overflow: hidden;
+ }
+  .partners .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+ .partners .tit h2 {
+    font-size: var(--titsize);
+    font-weight: 700;
+    color: var(--tit-c);
+    line-height: 1.3;
+    margin: 0 0 11px 0;
+ }
+.partners .partner_wrap {
+    width: 70%;
+    overflow: hidden;
+    
+} 
+.partners .partner_wrap .list ul {
+    display: flex;
+    gap: 0 clamp(20px, 1.4vw ,50px);
+    animation: roll 40s infinite linear;
+}
+
+@keyframes roll {
+    0% {transform: translateX(0%);}
+    100% {transform: translateX(-195.2%);}
+}
+.partners .partner_wrap .list ul li a {
+    display: block;
+    background: url(../images/main/partner_logo_01.jpg) no-repeat center center / contain;
+    width: clamp(130px, 2vw ,200px);
+    height: clamp(70px, 1.2vw ,100px);
+    filter: grayscale(1);
+    transition: .4s;
+}
+.partners .partner_wrap .list ul li a.on{
+    filter: grayscale(0);
+}
+.partners .partner_wrap .list ul li.bg2 a {background-image: url(../images/main/partner_logo_02.jpg);}
+.partners .partner_wrap .list ul li.bg3 a {background-image: url(../images/main/partner_logo_03.jpg);}
+.partners .partner_wrap .list ul li.bg4 a {background-image: url(../images/main/partner_logo_04.jpg);}
+.partners .partner_wrap .list ul li.bg5 a {background-image: url(../images/main/partner_logo_05.jpg);}
+.partners .partner_wrap .list ul li.bg6 a {background-image: url(../images/main/partner_logo_06.jpg);}
+
+@media screen and (max-width:1024px){
+    .partners .wrapper {
+    flex-direction: column;
+    gap: 17px 0;
+    }
+    .partners .tit {
+        text-align: center;
+    }
+    .partners .tit br {
+        display: none;
+    }
+    .partners .partner_wrap {
+    width: 100%;
+    }
+    .partners .partner_wrap .list ul li a {
+    filter: grayscale(0);
+}
+}
