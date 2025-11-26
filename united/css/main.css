@@ -646,12 +646,12 @@
 @media screen and (max-width:450px){
     .product .swiper .swiper-slide .photo img.box {
         position: absolute;
-        right: 46%;
+        right: 41%;
     }
 }
 
 .news {
-    margin: clamp(120px, 20vw, 230px) 0 0 0;
+    margin: clamp( 20vw, 230px) 0 0 0;
 }
 .news .tit {
     text-align: center;
