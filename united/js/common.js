@@ -55,12 +55,22 @@ $(document).ready(function(){
             }else{
                 $('header').removeClass('fixed')
             }
-        }
 
+            
+            if(scrolling > 100){
+                $('aside.top, aside.chat').addClass('show')
+            }else{
+                $('aside.top, aside.chat').removeClass('show')
+            }
+            
+        }
+        
+        
         scroll_chk()  //문서로딩 후 1번
         $(window).scroll(function(){
             scroll_chk()  // 스크롤할때마다
             
+
         })
 
         //모바일메뉴!!!!

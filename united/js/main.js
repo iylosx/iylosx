@@ -83,9 +83,42 @@ $('.news .news_wrap .recent , .news .news_wrap .news_inner .news_gr1 , .news .ne
 	$('.cursor').toggleClass('on');
 	}
 });
+function recruit_width_scroll(){
 
-$('#category').on('change', function(){
-    this.dataset.selected = "true";
-});
+	let winTop = $(window).scrollTop()
+	let winH   = $(window).height()
+
+	let sec = $('.recruit')
+	if(sec.length === 0) return; // recruit 없을 경우 안전 처리
+
+	let secTop = sec.offset().top 
+	let secH   = sec.outerHeight()
+
+	// recruit 섹션이 화면에 들어왔을 때만 진행
+	if(winTop + winH > secTop && winTop < secTop + secH){
+
+		// 스크롤 progress 0~1
+		let progress = (winTop + winH - secTop) / ((winH + secH) * 0.53);
+		if(progress < 0) progress = 0
+		if(progress > 1) progress = 1
+
+		// width 80% → 100%
+		let startW = 20
+		let endW   = 100
+		let currentW = startW + (endW - startW) * progress
+
+		$('.recruit_wrap').css({
+			width: currentW + '%'
+		})
+	}
+}
+
+// 문서 로딩 후 1회
+recruit_width_scroll()
+
+// 스크롤할 때마다 실행
+$(window).on('scroll', function(){
+	recruit_width_scroll()
+})
 
 })
