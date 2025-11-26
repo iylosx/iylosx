@@ -343,7 +343,7 @@
 
  
  .partners {
-    margin: 230px 0 0 0;
+    margin: clamp(90px, 25vw, 230px) 0 0 0;
     overflow: hidden;
  }
   .partners .wrapper {
@@ -403,6 +403,7 @@
     }
     .partners .partner_wrap {
     width: 100%;
+    margin-top: 20px;
     }
     .partners .partner_wrap .list ul li a {
     filter: grayscale(0);
@@ -410,7 +411,7 @@
 }
 
 .product {
-    margin: clamp(200px, 60vw, 270px) 0 0 0;
+    margin: clamp(130px, 40vw, 270px) 0 0 0;
     position: relative;
 }
 .product::before {
@@ -651,7 +652,7 @@
 }
 
 .news {
-    margin: clamp( 20vw, 230px) 0 0 0;
+    margin: clamp(30px , 20vw, 230px) 0 0 0;
 }
 .news .tit {
     text-align: center;
