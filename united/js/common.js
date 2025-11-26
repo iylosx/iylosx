@@ -62,7 +62,7 @@ $(document).ready(function(){
             }else{
                 $('aside.top, aside.chat').removeClass('show')
             }
-            
+
         }
         
         
@@ -108,6 +108,19 @@ $(document).ready(function(){
        $('html, body').animate({
                 scrollTop: 0
             }, 500)
+    })
+
+
+    $('footer .footer_wrap .family button').on('click', function(){
+        if($('footer .footer_wrap .family .family_wrap').hasClass('open')){
+            $('footer .footer_wrap .family .family_wrap').removeClass('open')
+            $('footer .footer_wrap .family').removeClass('open')
+            $('footer .footer_wrap .family .family_wrap').slideUp()
+        }else{
+            $('footer .footer_wrap .family .family_wrap').addClass('open')
+            $('footer .footer_wrap .family').addClass('open')
+            $('footer .footer_wrap .family .family_wrap').slideDown()
+        }
     })
 
     
