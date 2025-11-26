@@ -20,19 +20,31 @@ $(document).ready(function(){
     })
 
     
-    $('header .gnb .gnb_wrap .gnb_list ul.depth1 > li').on('mouseenter', function(){
+    $('header .gnb .gnb_wrap .gnb_list ul.depth1 > li').on('mouseenter focusin', function(){
         if(device_status =='pc'){
             $('header').addClass('menu_pc')
             $(this).addClass('over')
         }
         
     })
+    $('ul.depth1 > li').find('> a').on('focusin', function () {
+        if(device_status == 'pc'){
+            $('ul.depth1 > li').removeClass('over');     // 이전 모든 on 제거
+            $(this).parent().addClass('over'); // 현재만 on
+        }
+    });
     $('header .gnb .gnb_wrap .gnb_list ul.depth1 > li').on('mouseleave', function(){
         if(device_status =='pc'){
             $(this).removeClass('over')
             $('header').removeClass('menu_pc')
         }
     })
+    $('header .util .lang button').on('focusin', function () {
+        if(device_status == 'pc'){
+            $('header .gnb .gnb_wrap .gnb_list ul.depth1 > li').removeClass('over')
+            $('header').removeClass('menu_pc')
+        }
+    });
 
     let scrolling = $(window).scrollTop()// 현재스크롤값
         let prev_scroll  // 이전에 스크롤된값
@@ -123,5 +135,13 @@ $(document).ready(function(){
         }
     })
 
-    
+    $('header .util .lang button.sel').on('click', function(){
+        if($('header .util .lang').hasClass('open')){
+            $('header .util .lang').removeClass('open')
+            $('header .util .lang .lang_wrap').slideUp()
+        }else{
+        $('header .util .lang').addClass('open')
+        $('header .util .lang .lang_wrap').slideDown()
+    }
+    })
 })

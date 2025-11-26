@@ -948,7 +948,7 @@
     border-radius: 10px;
     z-index: 999;
     backdrop-filter: blur(10px);
-    font-size: 15px;
+    font-size: 13px;
     transition: .5s;
 }
 .ctn_nav.down {

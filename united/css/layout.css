@@ -15,7 +15,7 @@ header {
     align-items: center;
     z-index: 100;
     position: fixed;
-    transition: transform .5s;
+    transition: transform .2s;
     color: var(--tit-c);
     background-color: var(--white);
 }
@@ -90,22 +90,22 @@ header .gnb .gnb_wrap .gnb_list ul.depth1 > li > a {
     line-height: var(--header-h);
     
 }
-header .gnb .gnb_wrap .gnb_list ul.depth1 > li > ul.depth2{
+header .gnb .gnb_wrap .gnb_list ul.depth1 > li > ul.depth2 {
     display: none;
 }
-
-header .util .lang button{
+header .util .lang button.sel{
     font-weight: 700;
     display: block;
     padding: 5px 11px 5px 25px;
     border: 1px solid var(--tit-c);
     border-radius: 30px;
     font-size: var(--btnsize);
+    position: relative;
 }
 header .util .lang button span {
     position: relative;
 }
-header .util .lang button span::before {
+header .util .lang button.sel span::before {
     position: absolute;
     left: -14px;
     top: 50%;
@@ -121,10 +121,32 @@ header .util .lang button span::before {
 
 header .util .lang .lang_wrap {
     display: none;
+    position: absolute;
+    padding: 11px 18px;
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 15px;
+    color: var(--txt-c);
 }
 
-
-
+header .util .lang .lang_wrap button {
+    display: block;
+    padding: 5px 0;
+}
+header .util .lang .lang_wrap button.selected span{
+    position: relative;
+    font-weight: 600;
+    color: var(--tit-c);
+}
+header .util .lang .lang_wrap button.selected span::after{
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: var(--tit-c);
+    content: "";
+}
 /*메뉴열림 : menu_pc*/
 header::before {
     content: "";
@@ -135,7 +157,7 @@ header::before {
     height: 0px;
     background-color: var(--white);
     z-index: -1;
-    transition: height .5s;
+    transition: height .2s;
     border-bottom: 1px solid var(--light);
 }
 header.menu_pc {
@@ -158,6 +180,7 @@ header.menu_pc .gnb .gnb_wrap .gnb_list ul.depth1 > li.over > a {
     font-weight: 700;
     
 }
+
 header.menu_pc .gnb .gnb_wrap .gnb_list ul.depth1 > li.over > ul.depth2{
     position: absolute;
     left: 0;
@@ -406,9 +429,6 @@ footer .footer_wrap .family .family_wrap {
     border: 1px solid var(--dark);
     color: var(--dark);
 }
-/* footer .footer_wrap .family .family_wrap.open {
-    display: block
-} */
 footer .footer_wrap .family .family_wrap ul li a {
     display: block;
     padding: 14px 0;
