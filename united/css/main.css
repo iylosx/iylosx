@@ -651,7 +651,7 @@
 }
 
 .news {
-    margin: clamp(150px, 30vw, 230px) 0 0 0;
+    margin: clamp(120px, 20vw, 230px) 0 0 0;
 }
 .news .tit {
     text-align: center;
@@ -844,4 +844,165 @@
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(10px);
+}
+
+.contact {
+    margin: 234px 0 0 0;
+}
+
+.contact .wrapper {
+    display: flex;
+    gap: 0 199px;
+}
+
+/* 공통 스타일 */
+.contact_form {
+    font-family: inherit;
+    width: 40%;
+}
+.contact_upper,
+.contact_lower {
+    display: flex;
+    gap: 24px;     /* 좌우 간격 */
+    margin-bottom: 24px;
+}
+.contact_lower {
+    margin-bottom: 74px;
+    position: relative;
+}
+.contact_lower::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: var(--main1-c);
+    position: absolute;
+    bottom: -38px;
+    left: 0;
+}
+.contact_upper .item,
+.contact_lower .item {
+    flex: 1;       /* 양쪽이 동일한 너비로 */
+    position: relative;
+}
+
+
+.contact_form .item {
+    position: relative;
+    margin-bottom: 0px;
+}
+
+.contact_form input,
+.contact_form select,
+.contact_form textarea {
+    width: 100%;
+    padding: 24px 16px 10px;
+    font-size: 16px;
+    border: 1px solid var(--main1-c);
+    background: transparent;
+    color: var(--main1-c);
+    outline: none;
+}
+.contact_form input {
+    color: var(--txt-c);
+}
+.contact_form textarea {
+    height: 280px;
+    resize: none;
+    color: var(--tit-c);
+}
+
+
+/* 플로팅 레이블 */
+.contact_form label {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    font-size: 16px;
+    color: #3A6AFF;
+    pointer-events: none;
+    transition: 0.25s;
+}
+
+/* 입력값 있을 때 또는 포커스될 때 라벨 올라감 */
+.contact_form input:focus + label,
+.contact_form input:not(:placeholder-shown) + label,
+.contact_form textarea:focus + label,
+.contact_form textarea:not(:placeholder-shown) + label,
+.contact_form select:focus + label {
+    top: 6px;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* 포커스 시 라벨 플로팅 */
+.contact_form select:focus + label {
+    top: 6px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* 값 선택됨 (JS에서 data-selected 추가됨) */
+.contact_form select[data-selected="true"] + label {
+    top: 6px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* placeholder-shown 트릭 위해 placeholder 추가 */
+.contact_form input::placeholder,
+.contact_form textarea::placeholder {
+    opacity: 0;
+}
+.contact_form select {
+    color: var(--txt-c);   /* 원하는 색 */
+    position: relative;
+}
+.contact .txt {
+    margin-top: 30px;
+}
+.contact .txt h2 {
+    font-size: var(--titsize);
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--tit-c);
+    margin: 0 0 17px 0;
+}
+.contact .txt span.tel {
+    margin: 24px 0 8px 0;
+    display: block;
+}
+
+.contact .txt .submit button{
+
+    display: inline-block;
+    padding: 0.4118em 2.9412em 0.4118em 1.5882em;
+    border-radius: 30px;
+    border: 1px solid var(--tit-c);
+    margin: 94px 0 0 0;
+    transition: .5s;
+    font-size: var(--btnsize);
+}
+
+.contact .txt .submit button:hover {
+border: 1px solid var(--main1-c);
+color: var(--white);
+background-color: var(--main1-c);
+}
+.contact .txt .submit button span {
+position: relative;
+}
+.contact .txt .submit button span::after {
+content: "";
+position: absolute;
+width: 14px;
+height: 10px;
+right: -30px;
+top: 5px;
+background-position: center center;
+background-repeat: no-repeat;
+background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 11' fill='%23111111' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.69225 10.6155L7.9845 9.89625L12.073 5.80775H0V4.80775H12.073L7.9845 0.719251L8.69225 0L14 5.30775L8.69225 10.6155Z' /%3E%3C/svg%3E%0A");
+transition: .5s;
+} 
+.contact .txt .submit button:hover span::after {
+background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 11' fill='%23ffffff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.69225 10.6155L7.9845 9.89625L12.073 5.80775H0V4.80775H12.073L7.9845 0.719251L8.69225 0L14 5.30775L8.69225 10.6155Z' /%3E%3C/svg%3E%0A");
 }

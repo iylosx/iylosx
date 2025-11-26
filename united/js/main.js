@@ -84,5 +84,8 @@ $('.news .news_wrap .recent , .news .news_wrap .news_inner .news_gr1 , .news .ne
 	}
 });
 
+$('#category').on('change', function(){
+    this.dataset.selected = "true";
+});
 
 })

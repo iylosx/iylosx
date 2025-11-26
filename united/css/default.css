@@ -50,7 +50,7 @@ input, select, textarea {
     color: inherit;
     line-height: inherit;
 }
-.ctn_pr05 .search .sch_wrap input[type="submit"] {
+input[type="submit"] {
     cursor: pointer;
 }
 table caption {
@@ -61,4 +61,9 @@ table th {
 }
 img {
     vertical-align: top;
+}
+select {
+    appearance: none;     /* 기본 화살표 제거 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
