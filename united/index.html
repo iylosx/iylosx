@@ -105,7 +105,7 @@
             </div><!--util-->
         </header>
         <div class="container">
-            <section class="visual">
+            <section data-menu="home" class="visual">
                 <div class="swiper">
                     <ul class="swiper-wrapper">
                         <li class="swiper-slide bg1"> 
@@ -145,7 +145,7 @@
                     <strong><span>SCROLL DOWN</span></strong>
                 </div>
             </section><!--visual-->
-            <section class="global">
+            <section data-menu="vision" class="global">
                 <div class="wrapper">
                     <div class="tit">
                         <h2>The Leader of Global Pharma</h2>
@@ -182,7 +182,7 @@
                     </div><!--global_wrap-->
                 </div><!--wrapper-->
             </section><!--global-->
-            <section class="partners">
+            <section data-menu="partners" class="partners">
                 <div class="wrapper">
                     <div class="tit">
                         <h2>Partners</h2>
@@ -214,7 +214,7 @@
                     </div><!--partner_wrap-->
                 </div>
             </section>
-            <section class="product">
+            <section data-menu="product" class="product">
                 <div class="roll1">
                     <span>KOREA UNITED PHARM KOREA UNITED PHARM KOREA UNITED PHARM KOREA UNITED PHARM KOREA UNITED PHARM</span>
                 </div>
@@ -267,7 +267,7 @@
                     <button class="next"><span class="blind">다음 팝업</span></button>
                 </div>
             </section>
-            <section class="news">
+            <section data-menu="news" class="news">
                 <div class="wrapper">
                     <div class="tit">
                         <h2>NEWS</h2>
@@ -303,7 +303,7 @@
                     </div>
                 </div>
             </section><!--news-->
-            <section class="recruit">
+            <section data-menu="recruit" class="recruit">
                 <div class="recruit_wrap">
                     <div class="txt">
                         <strong>For a healthier, more sustainable Life</strong>
@@ -359,7 +359,18 @@
     <aside class="chat">
         <button><span class="blind">문의하기</span></button>
     </aside>
-    <aside class="ctn_nav"></aside>
+    <aside class="ctn_nav ">
+        <div class="list">
+            <ul>
+                <li data-link="home" class="active"><a href="#n">HOME</a></li>
+                <li data-link="vision"><a href="#n">VISION</a></li>
+                <li data-link="partners"><a href="#n">PARTNERS</a></li>
+                <li data-link="product"><a href="#n">PRODUCT</a></li>
+                <li data-link="news"><a href="#n">NEWS</a></li>
+                <li data-link="recruit"><a href="#n">RECRUIT</a></li>
+            </ul>
+        </div>
+    </aside>
     <div class="cursor"> <span>READ<br>MORE<span> </div>   <!-- 마우스 커서가 될 html 요소를 코딩 (wrap 밖이 안전) -->
 </body>
 </html>

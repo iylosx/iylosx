@@ -121,4 +121,82 @@ $(window).on('scroll', function(){
 	recruit_width_scroll()
 })
 
+
+let isScrolling = false; // 스크롤 중인지 체크
+
+let menuName = $('.ctn_nav')
+let menuItem = $('.ctn_nav .list ul li')
+let sectionName, moveTop, areaTop, areaH, areaName, scrollTop
+
+// 클릭 시 스크롤 이동
+menuItem.on('click', function(){
+    isScrolling = true;  // 스크롤 잠금
+
+    sectionName = $(this).attr('data-link')
+    moveTop = $('*[data-menu="'+sectionName+'"]').offset().top 
+        - ($(window).height() / 2) 
+        + ($('*[data-menu="'+sectionName+'"]').outerHeight() / 2)
+
+   $('html, body').animate({
+    scrollTop : moveTop
+}, 600, function(){
+
+    menuItem.removeClass('active')
+    $('[data-link="'+sectionName+'"]').addClass('active')
+
+    // 스크롤 이벤트 재활성화 시간을 넉넉하게 늘림
+    setTimeout(() => { 
+        isScrolling = false 
+    }, 250)   // ← 50 → 250 
+})
+})
+
+// 스크롤 이벤트
+$(window).on('scroll', function(){
+    if(!isScrolling){
+        menuChk()
+    }
+})
+
+// 섹션 판정 함수
+function menuChk(){
+    scrollTop = $(window).scrollTop()
+
+    $('*[data-menu]').each(function(idx, item){
+        let $el = $(this)
+        areaTop = $el.offset().top
+        areaH = $el.outerHeight()
+        areaName = $el.attr('data-menu')
+
+        if(
+            scrollTop + ($(window).height() * 0.3) >= areaTop &&
+   			scrollTop + ($(window).height() * 0.3) < areaTop + areaH
+        ){
+            menuItem.removeClass('active')
+            $('[data-link="'+areaName+'"]').addClass('active')
+        }
+    })
+}
+
+function scroll_chk(){
+
+    const scroll = $(window).scrollTop();
+    const winH = $(window).height();
+    const footTop = $('footer').offset().top;
+
+    const triggerPoint = footTop - winH + 200; 
+    
+
+    if(scroll > triggerPoint){
+        $('.ctn_nav').addClass('down');
+    }else{
+        $('.ctn_nav').removeClass('down');
+    }
+}
+
+scroll_chk()  //문서로딩 후 1번
+$(window).scroll(function(){
+	scroll_chk()  // 스크롤할때마다
+})
+
 })
