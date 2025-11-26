@@ -386,8 +386,10 @@ footer .footer_wrap .family button span::after {
     right: -140px;
     top: 6px;
     width: 14px;
-    height: 9px;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 19 11' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-0.000265528 9.30775L9.30748 -4.06855e-07L18.6152 9.30775L17.5517 10.3712L9.30748 2.127L1.06323 10.3712L-0.000265528 9.30775Z' /%3E%3C/svg%3E%0A");
+    height: 10px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 18 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-0.00038147 8.73452L0.997515 9.73242L8.73321 1.99673L16.4689 9.73242L17.4668 8.73452L8.73321 0.000936404L-0.00038147 8.73452Z' fill='white'/%3E%3C/svg%3E%0A");
     transition: .5s;
 }
 footer .footer_wrap .family.open button span::after {
@@ -442,8 +444,8 @@ footer .footer_wrap .f_info {
 }
 footer .footer_wrap .f_logo {
     margin: 95px 0 0 0;
-    width: clamp(123px, 32vw ,432.81px);
-    height: clamp(80px, 13vw ,115px);
+    width: clamp(180px, 32vw ,432.81px);
+    height: clamp(90px, 13vw ,115px);
     background: url(../images/common/logo_w.svg) no-repeat center center / contain;
 }
 footer .footer_wrap .copyright {
@@ -452,4 +454,54 @@ footer .footer_wrap .copyright {
     bottom: 0;
     font-size: 15px;
     opacity: 0.8;
+}
+
+@media screen and (max-width:1024px){
+    footer {
+        margin: 65px 0 0 0;
+    }
+
+    
+    footer .footer_wrap {
+        padding: 70px 0 25px 0;
+    }
+    footer .footer_wrap .family {
+        position: relative;
+        display: inline-block;
+    }
+    footer .footer_wrap .family button {
+        padding: 11px 95px 11px 17px;
+    }
+
+    footer .footer_wrap .family button span::after {
+        right: -80px;
+        top: 2px;
+        width: 10px;
+        height: 10px;
+    }
+    footer .footer_wrap .family.open button span::after {
+        transform: rotate(180deg);
+    }
+    
+    footer .footer_wrap .f_nav ul {
+        display: flex;
+        gap: 15px 0;
+        flex-direction: column;
+        margin: 60px 0 0 0 ;
+    }
+    footer .footer_wrap .f_nav ul li a:hover {
+        font-weight: 700;
+    }
+    footer .footer_wrap .f_info {
+        margin: 64px 0 0 0;
+    }
+    footer .footer_wrap .f_logo {
+        margin: 30px 0 0 0;
+        background: url(../images/common/logo_w.svg) no-repeat center center / contain;
+    }
+    footer .footer_wrap .copyright {
+        position: relative;
+        font-size: 13px;
+        margin-top: 20px;
+    }
 }
