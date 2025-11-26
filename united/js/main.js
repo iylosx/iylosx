@@ -58,7 +58,7 @@ const product_swiper = new Swiper('.product .swiper', { /* 팝업을 감싼는 �
 	slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
 	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
 	breakpoints: {
-		640: {    /* 640px 이상일때 적용 */
+		1024: {    /* 640px 이상일때 적용 */
 			slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
 			spaceBetween: 20,
 		},
@@ -72,7 +72,17 @@ const product_swiper = new Swiper('.product .swiper', { /* 팝업을 감싼는 �
 	},
 	
 });
-
+$(window).on('scroll mousemove', function(e){  /* html cursor가 마우스 포인터를 따라다니게 하는 값 */
+	if(device_status =='pc'){
+	$('.cursor').css('left', e.pageX + 'px');
+	$('.cursor').css('top', e.pageY + 'px');
+	}
+});
+$('.news .news_wrap .recent , .news .news_wrap .news_inner .news_gr1 , .news .news_wrap .news_inner .news_gr2').hover(function(){ /* 특정한 요소에 마우스를 올렸을때만 on 클래스 주기 */
+	if(device_status =='pc'){
+	$('.cursor').toggleClass('on');
+	}
+});
 
 
 })

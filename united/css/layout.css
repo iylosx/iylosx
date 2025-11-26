@@ -304,11 +304,11 @@ aside.top {
     bottom: 5%;
     background-color: var(--main1-c);
     border-radius: 50%;
-    width: 62px;
-    height: 62px;
+    width: clamp(50px , 10vw , 62px);
+    height: clamp(50px , 10vw , 62px);
     z-index: 90;
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 19px;
+    background-size: clamp(14px, 3vw ,19px);
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 20' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.0386 7.51898L14.0197 8.52163L8.22765 2.72959L8.22765 19.833L6.81098 19.833L6.81098 2.72959L1.01894 8.52163L-5.38263e-07 7.51898L7.51931 -0.000332207L15.0386 7.51898Z' /%3E%3C/svg%3E%0A");
 }
