@@ -6,7 +6,6 @@
 
 body{
     font-weight: 300;
-    min-width: 1400px;
 }
 .main {
     /* height: 100dvh; */
@@ -18,7 +17,7 @@ body{
     padding: 180px 0 0 0;
 }
 .main .slogan h2 {
-    font-size: 13rem;
+    font-size: clamp(60%, 6vw, 12rem);
     line-height: 1.3;
     font-weight: 400;
     position: relative;
@@ -97,7 +96,6 @@ body{
 
 .about {
     background-color: var(--txt-c);
-    min-width: 1500px;
     border-radius: 40px;
     padding: 95px 0 142px 0;
     color: var(--main2-c);
@@ -410,18 +408,11 @@ footer .f_right span {
     opacity: 0.2;
     text-align: right;
 }
-@media screen and (max-width:1669px){
-    .wrapper {
-        width: 1300px;
-        margin: 0 auto;
-    }
-}
+
 
 @media screen and (max-width:1600px){ 
 
-.main .slogan h2 {
-    font-size: 12rem;
-}
+
 .main .slogan h2::before {
     left: 500px;
 }

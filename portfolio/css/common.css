@@ -112,9 +112,22 @@ body {
     }
     .wrapper {
         width: auto;
-        margin: 0 3%;
+        margin: 0 var(--ctn-mar);
+        
     }
-   
+}
+
+@media screen and (max-width:1024px){
+    :root {
+        --ctn-mar: 4%;
+    }
+    .wrapper {
+        width: auto;
+        margin: 0 var(--ctn-mar);
+        
+    }
+    
+    
 }
 
 .mo_only {
