@@ -59,16 +59,6 @@ header.fixed .util .lang::before {
 }
 
 
-/*********
-**스크롤 올림
-**근데, menu_pc랑 menu_mo가 들어가면 작동이 안되면 좋겠음!!
-**********/
-
-header.up:not(.menu_pc, .menu_mo) {
-    transform: translateY(-100%);
-}
-
-
 
 /*PC!!!!!!!!!!!!!!!!*/
 
