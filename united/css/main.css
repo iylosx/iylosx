@@ -552,7 +552,7 @@
     border-radius: 50%;
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 16px;
+    background-size: clamp(12px, 1.2vw ,16px);
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 35' fill='%233875F2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.2655 34.5314L19.2383 32.5586L3.94536 17.2657L19.2383 1.97277L17.2655 0L-0.000183105 17.2657L17.2655 34.5314Z' /%3E%3C/svg%3E%0A");
     z-index: 30;
 }

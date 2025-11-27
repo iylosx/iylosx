@@ -55,18 +55,18 @@ $(document).ready(function(){
         scrolling = $(window).scrollTop()
         diff_scroll = prev_scroll - scrolling
     
-        // 🟡 사파리 바운스 보호용: 음수거나 너무 작은 변화는 무시
-        let ignore_range = 5; // 5px 이하의 값은 무시
+        // 사파리 바운스 보호용: 음수거나 너무 작은 변화는 무시
+        let ignore_range = 3; // 5px 이하의 값은 무시
     
         if (Math.abs(diff_scroll) < ignore_range) {
             return // 헤더 up/down 처리 스킵
         }
     
-        // 🔽 아래로 스크롤 중
+        // 아래로 스크롤 중
         if(diff_scroll < 0){
             $('header').addClass('up')
         }
-        // 🔼 위로 스크롤 중
+        //  위로 스크롤 중
         else{
             $('header').removeClass('up')
         }
@@ -79,19 +79,17 @@ $(document).ready(function(){
 
             
             if(scrolling > 100){
-                $('aside.top, aside.chat').addClass('show')
+                $('.quick_wrap').addClass('show')
             }else{
-                $('aside.top, aside.chat').removeClass('show')
+                $('.quick_wrap').removeClass('show')
             }
 
         }
         
         
         scroll_chk()  //문서로딩 후 1번
-        $(window).scroll(function(){
-            scroll_chk()  // 스크롤할때마다
-            
-
+        $(window).on('load scroll', function(){
+            scroll_chk()  // 스크롤하고 로드될때마다
         })
 
         //모바일메뉴!!!!
@@ -125,7 +123,7 @@ $(document).ready(function(){
 
         //탑버튼
 
-    $('aside.top').on('click', function(){
+    $('aside .top').on('click', function(){
        $('html, body').animate({
                 scrollTop: 0
             }, 500)
