@@ -46,27 +46,36 @@ $(document).ready(function(){
         }
     });
 
-    let scrolling = $(window).scrollTop()// 현재스크롤값
-        let prev_scroll  // 이전에 스크롤된값
-        let diff_scroll // 차이값
+    let scrolling = $(window).scrollTop(); // 현재 스크롤값
+    let prev_scroll = scrolling;
+    let diff_scroll = 0;
     
-        function scroll_chk(){
-            prev_scroll = scrolling
-            scrolling = $(window).scrollTop()
-            diff_scroll = prev_scroll - scrolling
-            // console.log(diff_scroll)/
-
-            if(diff_scroll < 0){  //스크롤을 위로 올리면
-                $('header').addClass('up')
-            }else{  //아래로 내리면
-                $('header').removeClass('up')    
-            }
-
-            if(scrolling > 0){
-                $('header').addClass('fixed')
-            }else{
-                $('header').removeClass('fixed')
-            }
+    function scroll_chk(){
+        prev_scroll = scrolling
+        scrolling = $(window).scrollTop()
+        diff_scroll = prev_scroll - scrolling
+    
+        // 🟡 사파리 바운스 보호용: 음수거나 너무 작은 변화는 무시
+        let ignore_range = 5; // 5px 이하의 값은 무시
+    
+        if (Math.abs(diff_scroll) < ignore_range) {
+            return // 헤더 up/down 처리 스킵
+        }
+    
+        // 🔽 아래로 스크롤 중
+        if(diff_scroll < 0){
+            $('header').addClass('up')
+        }
+        // 🔼 위로 스크롤 중
+        else{
+            $('header').removeClass('up')
+        }
+    
+        if(scrolling > 0){
+            $('header').addClass('fixed')
+        }else{
+            $('header').removeClass('fixed')
+        }
 
             
             if(scrolling > 100){
