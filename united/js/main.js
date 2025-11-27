@@ -199,16 +199,10 @@ $(window).scroll(function(){
 	scroll_chk()  // 스크롤할때마다
 })
 
-window.addEventListener('load', function() {
-    AOS.init({
-        offset: 150,
-        duration: 500,
-        easing: 'ease',
-    });
-
-    setTimeout(() => {
-        AOS.refresh();
-    }, 200);
+AOS.init({
+	offset: 150,
+	duration: 500,
+	easing: 'ease',
 });
 
 })
