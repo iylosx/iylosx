@@ -323,6 +323,7 @@ aside.chat {
     flex-direction: column;
     z-index: 90;
     gap: 3% 0;
+    cursor: pointer;
 }
 
 aside.top button{

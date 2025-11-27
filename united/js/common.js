@@ -51,8 +51,8 @@ $(document).ready(function(){
     let diff_scroll = 0;
     
     function scroll_chk(){
-        prev_scroll = scrolling
-        scrolling = $(window).scrollTop()
+        prev_scroll = scrolling  // 마지막으로 스크롤 한 값
+        scrolling = $(window).scrollTop() // 현재 스크롤 값
         diff_scroll = prev_scroll - scrolling
     
         // 사파리 바운스 보호용: 음수거나 너무 작은 변화는 무시
@@ -62,18 +62,17 @@ $(document).ready(function(){
             return // 헤더 up/down 처리 스킵
         }
         
-        //현재 스크롤 값이 0보다 클 경우에만 up 애니메이션 실행 = 현재 스크롤이 음수면 실행 안함..
-        if(scrolling > 0){
-            // 아래로 스크롤 중
-            if(diff_scroll <= 0){
-                $('header').addClass('up')
-                return;
-            }
-            //  위로 스크롤 중
-            else{
-                $('header').removeClass('up')
-            }
-        }
+       
+        // // 아래로 스크롤 중
+        // if(diff_scroll < 0){
+        //     $('header').addClass('up')
+        //     return;
+        // }
+        // //  위로 스크롤 중
+        // else{
+        //     $('header').removeClass('up')
+        // }
+        
         
             if(scrolling > 0){
                 $('header').addClass('fixed')
