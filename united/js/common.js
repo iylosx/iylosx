@@ -56,7 +56,7 @@ $(document).ready(function(){
         diff_scroll = prev_scroll - scrolling
     
         // 사파리 바운스 보호용: 음수거나 너무 작은 변화는 무시
-        let ignore_range = 3; // 5px 이하의 값은 무시
+        let ignore_range = 5; // 5px 이하의 값은 무시
     
         if (Math.abs(diff_scroll) < ignore_range) {
             return // 헤더 up/down 처리 스킵
@@ -65,6 +65,7 @@ $(document).ready(function(){
         // 아래로 스크롤 중
         if(diff_scroll <= 0){
             $('header').addClass('up')
+            return;
         }
         //  위로 스크롤 중
         else{
@@ -85,9 +86,11 @@ $(document).ready(function(){
             let s = $(window).scrollTop();
         
             if(s > 100){
-                $('.quick_wrap').addClass('show');
+                $('aside.top button').addClass('show');
+                $('aside.chat button').addClass('show');
             }else{
-                $('.quick_wrap').removeClass('show');
+                $('aside.top button').removeClass('show');
+                $('aside.chat button').removeClass('show');
             }
         }
         
@@ -129,7 +132,7 @@ $(document).ready(function(){
 
         //탑버튼
 
-    $('aside .top').on('click', function(){
+    $('aside.top').on('click', function(){
        $('html, body').animate({
                 scrollTop: 0
             }, 500)
