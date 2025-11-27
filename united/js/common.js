@@ -61,24 +61,27 @@ $(document).ready(function(){
         if (Math.abs(diff_scroll) < ignore_range) {
             return // 헤더 up/down 처리 스킵
         }
-    
-        // 아래로 스크롤 중
-        if(diff_scroll <= 0){
-            $('header').addClass('up')
-            return;
-        }
-        //  위로 스크롤 중
-        else{
-            $('header').removeClass('up')
-        }
-    
+        
+        //현재 스크롤 값이 0보다 클 경우에만 up 애니메이션 실행 = 현재 스크롤이 음수면 실행 안함..
         if(scrolling > 0){
-            $('header').addClass('fixed')
-        }else{
-            $('header').removeClass('fixed')
+            // 아래로 스크롤 중
+            if(diff_scroll <= 0){
+                $('header').addClass('up')
+                return;
+            }
+            //  위로 스크롤 중
+            else{
+                $('header').removeClass('up')
+            }
         }
+        
+            if(scrolling > 0){
+                $('header').addClass('fixed')
+            }else{
+                $('header').removeClass('fixed')
+            }
 
-    
+       
 
         }
         
