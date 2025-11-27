@@ -63,7 +63,7 @@ $(document).ready(function(){
         }
     
         // 아래로 스크롤 중
-        if(diff_scroll < 0){
+        if(diff_scroll <= 0){
             $('header').addClass('up')
         }
         //  위로 스크롤 중
@@ -77,15 +77,21 @@ $(document).ready(function(){
             $('header').removeClass('fixed')
         }
 
-            
-            if(scrolling > 100){
-                $('.quick_wrap').addClass('show')
-            }else{
-                $('.quick_wrap').removeClass('show')
-            }
+    
 
         }
         
+        function quick_chk(){
+            let s = $(window).scrollTop();
+        
+            if(s > 100){
+                $('.quick_wrap').addClass('show');
+            }else{
+                $('.quick_wrap').removeClass('show');
+            }
+        }
+        
+        $(window).on('load scroll', quick_chk);
         
         scroll_chk()  //문서로딩 후 1번
         $(window).on('load scroll', function(){
