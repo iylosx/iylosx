@@ -680,7 +680,7 @@
 }
 .news .news_wrap .recent h3 {
     font-weight: 700;
-    font-size: clamp(22px, 7vw ,28px);
+    font-size: clamp(19px, 4vw ,28px);
     line-height: 1.3;
     margin: 0 0 31px 0;
 }
@@ -719,7 +719,7 @@
 }
 .news .news_wrap .news_inner h3 {
     font-weight: 700;
-    font-size: clamp(19px, 7vw ,28px);
+    font-size: clamp(19px, 4vw ,28px);
     line-height: 1.3;
     margin: 0 0 31px 0;
     display: -webkit-box;
@@ -797,7 +797,6 @@
     }
     .news .news_wrap .news_inner h3 {
         font-weight: 700;
-        font-size: clamp(22px, 7vw ,28px);
         line-height: 1.3;
         margin: 0 0 31px 0;
         display: -webkit-box;
