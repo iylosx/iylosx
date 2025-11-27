@@ -348,13 +348,11 @@ aside.top button,
 aside.chat button {
     transform: translateY(270px);
     transition: 0.45s ease;
-    pointer-events: none;  /* 안 보일 때 클릭 방지 */
 }
 
 aside.top.show button,
 aside.chat.show button {
     transform: translateY(0);
-    pointer-events: auto;
 }
 
 
