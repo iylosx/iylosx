@@ -821,27 +821,28 @@
 }
 
 .cursor { 
-	position: absolute; 
-	z-index: 999;
-	transform: translate(-50%, -50%);
-	pointer-events: none; /* 생성된 cursor에 마우스 오버 이벤트를 주지 않기 - 이걸 주지 않으면 cursor에 마우스가 오버된 것으로 인식되어 하단 요소가 클릭되지 않음 */
-	display:none;
-   
-    
-}
-.cursor.on {
-	display: block;  /* jquery에서 특정 요소에 마우스를 오버하면 class명을 추가해주고 그때 나타남 */
-	/* 기본적인 스타일 주기 */
-    background-color: var(--white50);
+    position: absolute; 
+    z-index: 999;
+    transform: translate(-50%, -50%) scale(0); /* 기본은 작게 숨김 */
+    pointer-events: none;
     width: 148px;
     height: 148px;
     border-radius: 50%;
-	box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.06);
+    background-color: var(--white50);
+    backdrop-filter: blur(10px);
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.06);
     color: var(--main1-c);
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(10px);
+    transition:  opacity .4s ease;
+    opacity: 0;
+    transform-origin: center;
+}
+
+.cursor.on {
+    transform: translate(-50%, -50%) scale(1); /* 자연스럽게 확대 */
+    opacity: 1;
 }
 
 .recruit {

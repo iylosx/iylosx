@@ -78,11 +78,17 @@ $(window).on('scroll mousemove', function(e){  /* html cursor가 마우스 포�
 	$('.cursor').css('top', e.pageY + 'px');
 	}
 });
-$('.news .news_wrap .recent , .news .news_wrap .news_inner .news_gr1 , .news .news_wrap .news_inner .news_gr2').hover(function(){ /* 특정한 요소에 마우스를 올렸을때만 on 클래스 주기 */
-	if(device_status =='pc'){
-	$('.cursor').toggleClass('on');
-	}
-});
+$('.news .news_wrap .recent, .news .news_wrap .news_inner .news_gr1, .news .news_wrap .news_inner .news_gr2')
+   .on('mouseenter', function(){
+	   if(device_status == 'pc'){
+		   $('.cursor').addClass('on');
+	   }
+   })
+   .on('mouseleave', function(){
+	   if(device_status == 'pc'){
+		   $('.cursor').removeClass('on');
+	   }
+   });
 function recruit_width_scroll(){
 
 	let winTop = $(window).scrollTop()
@@ -199,10 +205,10 @@ $(window).scroll(function(){
 	scroll_chk()  // 스크롤할때마다
 })
 
-AOS.init({
-	offset: 150,
-	duration: 500,
-	easing: 'ease',
-});
+    AOS.init({
+        offset: 150,
+        duration: 500,
+        easing: 'ease',
+    });
 
 })
