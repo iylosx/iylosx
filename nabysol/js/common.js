@@ -76,4 +76,31 @@ $(document).ready(function(){
         $('header').removeClass('menu_mo')
     })
 
+
+
+ let scrolling = $(window).scrollTop()// 현재스크롤값
+
+
+        function scroll_chk(){
+            scrolling = $(window).scrollTop()
+
+            if(scrolling > 0){
+                $('header').addClass('fixed')
+            }else{
+                $('header').removeClass('fixed')
+            }
+        }
+
+        scroll_chk()  //문서로딩 후 1번
+        $(window).scroll(function(){
+            scroll_chk()  // 스크롤할때마다
+            
+        })
+
+        $('aside .top button').on('click', function(){
+             $('html, body').animate({
+            scrollTop:0
+            },500)
+        })
+
 })//끝!!

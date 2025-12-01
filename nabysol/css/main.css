@@ -4,18 +4,27 @@
 @import url(layout.css);
 
 .visual {
-    width: 100%;
-    height: 100dvh;
     position: relative;
 }
+.visual .swiper {
+    width: 100%;
+    height: 100dvh;
+}
+.visual .swiper .swiper-slide {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 
-
+}
 .visual .swiper .swiper-slide .photo {
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    position: relative;
-
 }
 .visual .swiper .swiper-slide .photo::before {
     width: 100%;
@@ -42,7 +51,14 @@
 .visual .swiper .swiper-slide.swiper-slide-active .photo img {
     transform: scale3d(1, 1, 1);
 }
-
+.visual .swiper .swiper-slide .txt {
+    z-index: 10;
+    text-align: center;
+}
+.visual .swiper .swiper-slide .txt h2 {
+    font-size: clamp(40px, 4vw, 60px);
+    white-space: nowrap;
+}
 .visual .paging {
     position: absolute; 
     left:0; 
@@ -104,10 +120,6 @@
 100% { stroke-dashoffset: 0 }
 }
 
-.visual .scroll {
-    z-index: 10;
-}
-
 .visual .scroll .scr_txt {
     position: absolute;
     bottom: 10%;
@@ -116,6 +128,8 @@
     white-space: nowrap;
     font-size: 13px;
     font-family: "SUIT";
+    z-index: 20;
+
 }
 .visual .scroll .scr_bar {
     position: absolute;
@@ -126,6 +140,8 @@
     height: 7%;
     background-color: var(--white20);
     overflow: hidden;
+    z-index: 20;
+
 }
 .visual .scroll .scr_bar::after {
     position: absolute;
@@ -148,23 +164,81 @@
 @media screen and (max-width:768px){
 
     .visual {
-        height: 500px;
+        height: 90dvh;
     }
 
     .visual .txt {
         top: 35%;
     }
-
+    .visual .swiper {
+        width: 100%;
+        height: 100%;
+    }
+    .visual .swiper .swiper-slide .txt h2 {
+    white-space: wrap;
+    margin-bottom: 13px;
+    }
     .visual .paging {
-        bottom: 20%; 
-        z-index:10; 
-        width:100%; 
-        display: flex; 
-        justify-content: center; 
-        gap: 0 5px;
+        bottom:10%; 
     }
 
     .visual .scroll {
         display: none;
     }
+}
+.slogan {
+    margin: 195px 0 0 0;
+    width: 100%;
+}
+.slogan .slogan_wrap {
+    margin-left: var(--wrapper-mar);
+    width: calc(50% + 742px);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    gap: 0 24px;
+}
+
+.slogan .tit {
+    width: 50.69%;
+    padding: 90px 0 0 0;
+}
+
+.slogan .tit h2 {
+    margin: 30px 0 30px 0;
+    font-size: var(--titsize);
+    line-height: 1.3;
+    font-weight: 700;
+}
+ 
+.slogan .slogan_wrap .photo_wrap {
+    width: calc(100% - 210px);
+    overflow: hidden;
+    height: 640px;
+}
+.slogan .slogan_wrap .photo_wrap ul {
+    display: flex;
+    gap: 0 50px;
+    animation: slogan_roll 40s  infinite linear;
+
+}
+
+@keyframes slogan_roll {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-233.4%); }
+}
+
+.slogan .slogan_wrap .photo_wrap ul li:nth-child(even) .photo {
+    transform: translateY(100px);
+} 
+.slogan .slogan_wrap .photo_wrap ul li .photo {
+    width: 342px;
+    height: 465px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.slogan .slogan_wrap .photo_wrap ul li .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
