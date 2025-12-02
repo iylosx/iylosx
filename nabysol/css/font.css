@@ -1,9 +1,9 @@
 
 @font-face {
-    font-family: "Noto Serif KR", serif;
+    font-family: "Noto Serif KR";
     font-weight: 500;
     font-style: normal;
-    src: url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap');
+    src: url('../font/NotoSerifkr-Medium.woff') format('woff');
 }
 
 

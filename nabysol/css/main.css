@@ -774,8 +774,7 @@
     position: absolute; 
     z-index: 999;
     pointer-events: none;
-    width: 110px;
-    height: 110px;
+    
     border-radius: 50%;
     background-color: var(--light);
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.06);
@@ -788,10 +787,14 @@
     font-size: 15px;
     font-family: "SUIT";
     transform: translate(-50%, -50%); /* 커서 위치 조정 */
+    width: 0.2px;
+    height: 0.2px;
 }
 
 .cursor_sol.on {
     opacity: 1;
+    width: 110px;
+    height: 110px;
 }
 
 .cursor_sol span {
@@ -826,6 +829,7 @@
 
 .medic .swiper .swiper-slide {
     display: flex;
+    gap: 0 69px;
 }
 .medic .swiper .swiper-slide .photo {
     width: 488px;
@@ -837,4 +841,126 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+.medic .swiper .swiper-slide .txt {
+    opacity: 0;
+}
+.medic .swiper .swiper-slide.swiper-slide-active .txt {
+    opacity: 1;
+}
+.medic .swiper .swiper-slide.swiper-slide-active .txt .medic_slogan{
+    font-family: "Noto Serif KR";
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--main2-c);
+    position: relative;
+}
+.medic .swiper .swiper-slide.swiper-slide-active .txt .medic_slogan::before{
+    position: absolute;
+    right: 0;
+    top: 0;
+    content: "";
+    width: 126.88px;
+    height: 94.98px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 127 95' fill='%23E8E3DF' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M83.748 3.77083C75.735 0 71.0215 -0.942708 69.6074 0.942708C68.1934 2.35677 71.4928 5.42057 79.5059 10.1341C85.6335 13.4336 90.8184 18.3828 95.0605 24.9818C99.3027 31.1094 101.66 36.7656 102.131 41.9505C92.7038 41.4792 85.1621 43.6003 79.5059 48.3138C73.8496 52.556 71.0215 58.6836 71.0215 66.6966C71.0215 74.2383 73.6139 80.6016 78.7988 85.7865C83.9837 90.5 90.8184 92.8568 99.3027 92.8568C108.73 92.8568 115.8 90.0286 120.514 84.3724C124.756 78.7161 126.877 71.6458 126.877 63.1615C126.877 52.3203 122.163 40.7721 112.736 28.5169C103.309 16.2617 93.6465 8.01302 83.748 3.77083ZM13.0449 5.89193C5.97461 2.59245 1.73242 1.88542 0.318359 3.77083C-1.0957 5.1849 2.20377 8.2487 10.2168 12.9622C15.873 16.2617 20.8223 20.7396 25.0645 26.3958C29.3066 31.5807 31.8991 37.237 32.8418 43.3646C23.4147 42.8932 15.873 45.0143 10.2168 49.7279C4.0892 53.9701 1.02539 60.3333 1.02539 68.8177C1.02539 76.8307 3.61784 83.194 8.80273 87.9076C13.9876 92.6211 20.3509 94.9779 27.8926 94.9779C36.8483 94.9779 44.1543 92.3854 49.8105 87.2005C54.9954 81.5443 57.5879 74.2383 57.5879 65.2826C57.5879 51.6133 53.11 39.5938 44.1543 29.224C34.7272 18.3828 24.3574 10.6055 13.0449 5.89193Z' /%3E%3C/svg%3E%0A");
+    z-index: -2;
+}
+.medic .swiper .swiper-slide.swiper-slide-active .txt h3 {
+    margin: 69px 0 0 0;
+    font-size: 20px;
+    line-height: 1.3;
+    
+}
+.medic .swiper .swiper-slide.swiper-slide-active .txt h3 span {
+    font-size: var(--titsize);
+    font-weight: 600;
+    color: var(--main2-c);
+    margin-right: 7px;
+}
+.medic .swiper .swiper-slide.swiper-slide-active .txt p {
+    margin: 15px 0 32px 0;
+}
+
+.medic .swiper .swiper-slide.swiper-slide-active .txt .his li{
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 6px;
+}
+.medic .swiper .swiper-slide.swiper-slide-active .txt .his li::before{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    background-color: var(--dark);
+    border-radius: 50%;
+}
+.medic .swiper .txt .more a{
+    display: inline-block;
+    font-size: var(--btnsize);
+    color: var(--light);
+    padding: 0.5294em 1.9412em 0.4706em 1.9412em;
+    border-radius: 30px;
+    background-color: var(--main1-c);
+    transition: .3s;
+    margin-top: 60px;
+}
+.medic .swiper .txt .more a:hover {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+@media screen and (max-width:1024px){
+    .medic {
+        margin: 131px 0 0 0;
+    }
+    
+    .medic .swiper .swiper-slide {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px 0;
+        text-align: center;
+    }
+    .medic .swiper .swiper-slide .photo {
+        width: 310px;
+        height: 459px;
+    }
+
+    .medic .swiper .swiper-slide.swiper-slide-active .txt .medic_slogan{
+        font-size: 32px;
+    }
+
+    .medic .swiper .swiper-slide.swiper-slide-active .txt h3 {
+        margin: 50px 0 0 0;
+        
+    }
+
+    .medic .swiper .swiper-slide.swiper-slide-active .txt p {
+        margin: 15px 0 32px 0;
+    }
+    
+    .medic .swiper .swiper-slide.swiper-slide-active .txt .his li{
+        display: none;
+    }
+    .medic .swiper .txt .more a{
+        margin-top: 10px;
+    }
+
+}
+
+@media screen and (max-width:425px){
+    .medic .swiper .swiper-slide.swiper-slide-active .txt .medic_slogan{
+        font-size: 20px;
+    }
+    .medic .swiper .swiper-slide.swiper-slide-active .txt h3 {
+        margin: 30px 0 0 0;
+        
+    }
 }
