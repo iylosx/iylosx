@@ -13,7 +13,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 var(--ctn-mar);
-    border-bottom: 1px solid var(--white20);
+    /* border-bottom: 1px solid var(--white20); */
     transition: .3s;
 }
 header .logo {
@@ -31,19 +31,28 @@ header .gnb {
 /*헤더고정!!!!!*/
 header.fixed {
     position: fixed;
-    background-color: var(--light);
+    background-color: var(--dark);
 }
 
 header.fixed .logo {
+    background-image: url(../images/common/logo_w.svg);
+}
+header.fixed .logo.change {
     background-image: url(../images/common/logo.svg);
 }
+
+
 header.fixed .gnb .gnb_wrap .gnb_list ul.depth1 > li > a span::after {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 7' fill='%23777558' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-0.000181827 0.708893L6.20499 6.91406L12.4102 0.708892L11.7012 -0.000108153L6.20499 5.49606L0.708818 -0.000107672L-0.000181827 0.708893Z' /%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 7' fill='%23F2EDE9' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-0.000181827 0.708893L6.20499 6.91406L12.4102 0.708892L11.7012 -0.000108153L6.20499 5.49606L0.708818 -0.000107672L-0.000181827 0.708893Z' /%3E%3C/svg%3E%0A");
 }
 header.fixed .gnb .gnb_wrap .gnb_list ul.depth1 > li > a {
-    color: var(--main2-c);
+    color: var(--light);
     
 }
+header.fixed .gnb .gnb_wrap .gnb_list ul.depth1 > li > a span.change::after {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 7' fill='%23777558' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-0.000181827 0.708893L6.20499 6.91406L12.4102 0.708892L11.7012 -0.000108153L6.20499 5.49606L0.708818 -0.000107672L-0.000181827 0.708893Z' /%3E%3C/svg%3E%0A");
+}
+
 
 
 /*메뉴PC!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
@@ -55,7 +64,7 @@ header.bg_on::before{
     position: absolute;
     width: 100%;
     height: 0;
-    background-color: var(--light50);
+    background-color: var(--dark50);
     left: 0;
     top: 100%;
     opacity: 0;
@@ -114,7 +123,7 @@ header .gnb .gnb_wrap .gnb_list ul.depth1 > li > ul.depth2 {
     visibility: hidden;
     pointer-events: none; /* 안 보일 때 hover 불가 */
     transition: opacity .35s ease;
-    color: var(--main1-c);
+    color: var(--light);
     line-height: var(--header-h);
     white-space: nowrap;
 }
@@ -129,11 +138,11 @@ header .gnb .gnb_wrap .gnb_list ul.depth1 > li:nth-child(n+4) > ul.depth2 {
 
 /*menu_pc*/
 header.menu_pc {
-    background-color: var(--light);
-    color: var(--main2-c);
+    background-color: var(--dark);
+    color: var(--light);
 }
 header.menu_pc .logo {
-    background-image: url(../images/common/logo.svg);
+    background-image: url(../images/common/logo_w.svg);
 }
 
 header.bg_on::before{
@@ -145,8 +154,10 @@ header.bg_on::before{
 
 /*li over*/
 header.menu_pc .gnb .gnb_wrap .gnb_list ul.depth1 > li > a span::after {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 7' fill='%23777558' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-0.000181827 0.708893L6.20499 6.91406L12.4102 0.708892L11.7012 -0.000108153L6.20499 5.49606L0.708818 -0.000107672L-0.000181827 0.708893Z' /%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 7' fill='%23F2EDE9' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-0.000181827 0.708893L6.20499 6.91406L12.4102 0.708892L11.7012 -0.000108153L6.20499 5.49606L0.708818 -0.000107672L-0.000181827 0.708893Z' /%3E%3C/svg%3E%0A");
 }
+
+
 
 header .gnb .gnb_wrap .gnb_list ul.depth1 > li.over > a span::after{
     transform: rotate(0deg);
@@ -378,7 +389,9 @@ aside.quick .top button span::after {
     background-size: contain;
     background-image: url("data:image/svg+xml,%3Csvg width='18' height='10' viewBox='0 0 18 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.0642 8.53211L8.5321 3.7295e-07L0 8.53211L0.974875 9.50698L8.5321 1.94975L16.0893 9.50698L17.0642 8.53211Z' fill='%23F2EDE9'/%3E%3C/svg%3E%0A");
 }
-
+aside.quick .top button.change span::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='10' viewBox='0 0 18 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.0642 8.53211L8.5321 3.7295e-07L0 8.53211L0.974875 9.50698L8.5321 1.94975L16.0893 9.50698L17.0642 8.53211Z' fill='%23201C1A'/%3E%3C/svg%3E%0A");
+}
 
 
 @media screen and (max-width:768px){

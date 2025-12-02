@@ -4,8 +4,8 @@ $(document).ready(function(){
     const $counters = $(".counter");
     
     // 노출 비율(%)과 애니메이션 속도(ms)을 설정합니다.
-    const exposurePercentage = 100; // ex) 스크롤 했을 때 $counters 컨텐츠가 화면에 100% 노출되면 숫자가 올라갑니다.
-    const duration = 1500; // ex) 1000 = 1초
+    const exposurePercentage = 70; // ex) 스크롤 했을 때 $counters 컨텐츠가 화면에 100% 노출되면 숫자가 올라갑니다.
+    const duration = 800; // ex) 1000 = 1초
     
     // 숫자에 쉼표를 추가할지 여부를 설정합니다.
     const addCommas = true; // ex) true = 1,000 / false = 1000

@@ -42,7 +42,9 @@
 
     /*margin*/
     --ctn-mar: 30px;
-    --wrapper-mar: 210px;
+    /* --wrapper-mar: 210px; */
+    --wrapper-width: 1440px;
+    --wrapper-mar: calc((100vw - var(--wrapper-width)) / 2);
 }
 @media screen and (max-width:1024px){
     :root {
@@ -80,6 +82,7 @@ body {
     word-break: keep-all;
     word-wrap: break-word;
     background-color: var(--dark);
+    transition: background-color .5s;
 }
 @media screen and (max-width:768px){
     body {
