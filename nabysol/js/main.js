@@ -152,7 +152,7 @@ $(document).ready(function(){
 		}
 
 
-		$(window).on('scroll mousemove', function(e){  /* html cursor가 마우스 포인터를 따라다니게 하는 값 */
+		$(window).on('pointermove mousemove touchmove', function(e){  /* html cursor가 마우스 포인터를 따라다니게 하는 값 */
 			console.log('지금')
 			$('.cursor_sol').css('left', e.pageX + 'px');
 			$('.cursor_sol').css('top', e.pageY + 'px');
@@ -160,7 +160,22 @@ $(document).ready(function(){
 		$('.solutions .solutions_list .swiper-slide a').hover(function(){ /* 특정한 요소에 마우스를 올렸을때만 on 클래스 주기 */
 			$('.cursor_sol').toggleClass('on');
 		});
+
 		
+		const medic_swiper = new Swiper('.medic .swiper', { /* 팝업을 감싼는 요소의 class명 */
+
+			autoplay: {  /* 팝업 자동 실행 */
+				delay: 7000,
+				disableOnInteraction: true,
+			},
+		
+			effect: "fade", /* fade 효과 */
+		
+			loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+		
+		
+		
+		});
 		
 
 })//끝!!!
