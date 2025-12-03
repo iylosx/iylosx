@@ -296,5 +296,10 @@ $(document).ready(function(){
 			$('.popup_bg').hide()
 		});
 
+		AOS.init({
+			offset: 150,
+			duration: 1000,
+			easing: 'ease',
+		});
 
 })//끝!!!

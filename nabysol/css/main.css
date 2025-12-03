@@ -1454,7 +1454,8 @@
     }
 }
 .layerpopup_wrap {
-    display: flex;
+    /* display: flex; */
+    display: none;
     gap: 30px;
     position: fixed;
     right: 127px;
