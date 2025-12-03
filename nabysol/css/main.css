@@ -1534,7 +1534,7 @@
     }
 
     .popup_bg {
-        display: block;
+        /* display: block; */
         position: absolute;
         left: 0;
         top: 0;

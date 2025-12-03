@@ -69,109 +69,78 @@ $(document).ready(function(){
 
 	});
 
-	let scrolling = $(window).scrollTop()// 현재스크롤값
+	function scroll_chk() {
+    function bgChangeBySection() {
+        let scroll = $(window).scrollTop();
+        let winH = $(window).height();
+        let winBottom = scroll + winH;
 
+        let sol = $('.solutions');
+        let box = $('.box');
 
-        function scroll_chk(){
-            scrolling = $(window).scrollTop()
+        let solTop = sol.offset().top;
+        let solH = sol.outerHeight();
+        let boxTop = box.offset().top;
+        let boxH = box.outerHeight();
 
+        let solExposed = Math.max(0, winBottom - solTop);
+        let boxExposed = Math.max(0, winBottom - boxTop);
 
-			function bgChangeBySection() {
-				let scroll = $(window).scrollTop();
-				let winH = $(window).height();
-				let winBottom = scroll + winH;
-			
-				// section 정보 가져오기
-				let sol = $('.solutions');
-				let box = $('.box');
-			
-				let solTop = sol.offset().top;
-				let solH = sol.outerHeight();
-				let boxTop = box.offset().top;
-				let boxH = box.outerHeight();
-			
-				// 노출된 높이 (음수는 0 처리)
-				let solExposed = Math.max(0, winBottom - solTop);
-				let boxExposed = Math.max(0, winBottom - boxTop);
-			
-				// 퍼센트 계산 (0 ~ 1 값)
-				let solRatio = solExposed / solH; 
-				let boxRatio = boxExposed / boxH;
-			
-			
-				//  솔루션 섹션: 10% 보이면 밝게
-				if (solRatio >= 0.1 && boxRatio < 0.2) {
-					setLightTheme();
-				}
-				//  박스 섹션: 20% 보이면 어둡게
-				else if (boxRatio >= 0.5) {
-					setDarkTheme();
-				}
-				// 초기 영역
-				else {
-					setDarkTheme();
-				}
-			}
-			
-			
-			
-			// 밝은 테마
-			function setLightTheme() {
-				$('body').css('background-color', 'var(--light)');
-				$('aside.quick .top button').css('color', 'var(--dark)');
-				$('header.fixed').css('background-color', 'var(--light2)');
-				$('header.fixed .gnb .gnb_wrap .gnb_list ul.depth1 > li > a').css('color', 'var(--main1-c)');
-				$('aside.quick .top button , header.fixed .gnb .gnb_wrap .gnb_list ul.depth1 > li > a span , header.fixed .logo')
-					.addClass('change');
-				$('header.bg_on').css('background-color', 'var(--light50)');
-			}
-			
-			// 어두운 테마
-			function setDarkTheme() {
-				$('body').css('background-color', 'var(--dark)');
-				$('aside.quick .top button').css('color', 'var(--light)');
-				$('header.fixed').css('background-color', 'var(--dark)');
-				$('header.fixed .gnb .gnb_wrap .gnb_list ul.depth1 > li > a').css('color', 'var(--light2)');
-				$('aside.quick .top button , header.fixed .gnb .gnb_wrap .gnb_list ul.depth1 > li > a span , header.fixed .logo')
-					.removeClass('change');
-				$('header.bg_on').css('background-color', 'var(--dark50)');
-			}
-			
-			
-			// 실행
-			$(window).on('scroll resize load', function () {
-				bgChangeBySection();
-			});
-			
-			
-			// 밝은 테마
-			function setLightTheme() {
-				$('body').css('background-color', 'var(--light)');
-				$('aside.quick .top button').css('color', 'var(--dark)');
-				$('header.fixed').css('background-color', 'var(--light2)');
-				$('header.fixed .gnb .gnb_wrap .gnb_list ul.depth1 > li > a').css('color', 'var(--main1-c)');
-				$('aside.quick .top button , header.fixed .gnb .gnb_wrap .gnb_list ul.depth1 > li > a span , header.fixed .logo')
-					.addClass('change');
-				$('header.bg_on').css('background-color', 'var(--light50)');
-			}
-			
-			// 어두운 테마
-			function setDarkTheme() {
-				$('body').css('background-color', 'var(--dark)');
-				$('aside.quick .top button').css('color', 'var(--light)');
-				$('header.fixed').css('background-color', 'var(--dark)');
-				$('header.fixed .gnb .gnb_wrap .gnb_list ul.depth1 > li > a').css('color', 'var(--light2)');
-				$('aside.quick .top button , header.fixed .gnb .gnb_wrap .gnb_list ul.depth1 > li > a span , header.fixed .logo')
-					.removeClass('change');
-				$('header.bg_on').css('background-color', 'var(--dark50)');
-			}
-			
-			
-			// 실행
-			$(window).on('scroll resize load', function () {
-				bgChangeBySection();
-			});
+        let solRatio = solExposed / solH;
+        let boxRatio = boxExposed / boxH;
+
+        // 솔루션: 10% 이상 보이면 밝은 모드
+        if (solRatio >= 0.1 && boxRatio < 0.2) {
+            setLightTheme();
+        } 
+        // 박스: 50% 이상 보이면 밝은 모드 해제 → 기본(어두운)
+        else if (boxRatio >= 0.5) {
+            setDarkTheme();
         }
+        // 나머지 구간도 기본 모드 유지
+        else {
+            setDarkTheme();
+        }
+    }
+
+    // -----------------------------------------------------
+    // ✔ 밝은 테마 적용
+    // CSS의 change 클래스 기반 구조 그대로 사용
+    // -----------------------------------------------------
+    function setLightTheme() {
+
+        $('body').addClass('light');
+        $('header').addClass('light');
+        $('aside.quick').addClass('light');
+
+        // header.fixed 내부 아이콘/텍스트 change
+        $('aside.quick .top button').addClass('change');
+        $('header.fixed .gnb .gnb_wrap .gnb_list ul.depth1 > li > a span').addClass('change');
+        $('header.fixed .logo').addClass('change');
+    }
+
+    // -----------------------------------------------------
+    // ✔ 밝은 테마 제거 = 기본(어두운)으로 돌아감
+    // change 클래스만 제거 → “다크를 덮어쓰기”가 아니라 “밝은 효과 제거”
+    // -----------------------------------------------------
+    function setDarkTheme() {
+
+        $('body').removeClass('light');
+        $('header').removeClass('light');
+        $('aside.quick').removeClass('light');
+
+        $('aside.quick .top button').removeClass('change');
+        $('header.fixed .gnb .gnb_wrap .gnb_list ul.depth1 > li > a span').removeClass('change');
+        $('header.fixed .logo').removeClass('change');
+    }
+
+    // 실행
+    bgChangeBySection();
+}
+
+// 최초 실행 + 스크롤 시 실행
+scroll_chk();
+$(window).on('scroll resize load', scroll_chk);
 
         scroll_chk()  //문서로딩 후 1번
         $(window).scroll(function(){

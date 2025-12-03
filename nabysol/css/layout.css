@@ -13,7 +13,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 var(--ctn-mar);
-    /* border-bottom: 1px solid var(--white20); */
     transition: .3s;
 }
 header .logo {
@@ -49,6 +48,12 @@ header.fixed .gnb .gnb_wrap .gnb_list ul.depth1 > li > a {
     color: var(--light);
     
 }
+@media screen and (min-width:1025px){
+header.light.fixed .gnb .gnb_wrap .gnb_list ul.depth1 > li > a {
+    color: var(--main2-c);
+}
+}
+
 header.fixed .gnb .gnb_wrap .gnb_list ul.depth1 > li > a span.change::after {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 7' fill='%23777558' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-0.000181827 0.708893L6.20499 6.91406L12.4102 0.708892L11.7012 -0.000108153L6.20499 5.49606L0.708818 -0.000107672L-0.000181827 0.708893Z' /%3E%3C/svg%3E%0A");
 }
@@ -206,8 +211,8 @@ header .gnb .gnb_wrap .gnb_list ul.depth1 > li.over > ul.depth2 li > a:hover {
         background-size: 13px;
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 10' fill='%23F2EDE9' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1.42857V0H13V1.42857H0ZM0 10V8.57143H13V10H0ZM0 5.71429V4.28571H9.1V5.71429H0Z' /%3E%3C/svg%3E%0A");
     }
-    header.fixed.change .gnb .gnb_open{
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 10' fill='%23F2EDE9' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1.42857V0H13V1.42857H0ZM0 10V8.57143H13V10H0ZM0 5.71429V4.28571H9.1V5.71429H0Z' /%3E%3C/svg%3E%0A");
+    header.light.fixed .gnb .gnb_open{
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 13 10' fill='%23777558' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1.42857V0H13V1.42857H0ZM0 10V8.57143H13V10H0ZM0 5.71429V4.28571H9.1V5.71429H0Z' /%3E%3C/svg%3E%0A");
     }
     header .gnb .gnb_wrap {
         position: absolute;
@@ -640,4 +645,22 @@ aside.quick .top{
     aside.quick ul li:last-child {
         display: none;
     } 
+}
+
+body.light {
+    background-color: var(--light);
+}
+
+header.light.fixed {
+    background-color: var(--light2);
+}
+
+aside.quick.light .top button {
+    color: var(--dark);
+}
+
+@media screen and (max-width:390px){
+header.light.fixed ul.depth1 > li {
+    color: var(--main2-c);
+}
 }

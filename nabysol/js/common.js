@@ -94,7 +94,7 @@ $(document).ready(function(){
         scroll_chk()  //문서로딩 후 1번
         $(window).scroll(function(){
             scroll_chk()  // 스크롤할때마다
-            
+            console.log(scrolling)
         })
 
         $('aside .top button').on('click', function(){
