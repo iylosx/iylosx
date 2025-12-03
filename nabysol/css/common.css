@@ -6,6 +6,7 @@
     --main2-c: #777558;
     --light:#F2EDE9;
     --light50:rgba(242, 237, 233, .5);
+    --light30:rgba(242, 237, 233, .3);
     --light2:#E8E3DF;
     --txt-c: #F2EDE9;
     --tit-c: #F2EDE9;
@@ -142,4 +143,10 @@ body {
 
 .mo_only {
    display: none;  /*모바일에서만 보임*/
+}
+
+@media screen and (max-width:768px){
+    .mo_only {
+        display: block;  /*모바일에서만 보임*/
+     }
 }

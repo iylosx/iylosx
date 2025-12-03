@@ -103,6 +103,21 @@ $(document).ready(function(){
             },500)
         })
 
+
+        $('footer .family .site .site_open').on('click', function(){
+            if($(this).hasClass('open')){
+                $(this).removeClass('open')
+                $('footer .family .site .stie_wrap').slideUp()
+            }else{
+                $(this).addClass('open')
+                $('footer .family .site .stie_wrap').slideDown()
+            }
+        })
         
+        $('footer .family .f_top button').on('click', function(){
+            $('html, body').animate({
+           scrollTop:0
+           },500)
+       })
 
 })//끝!!
