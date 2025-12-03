@@ -90,7 +90,7 @@ $(document).ready(function(){
         let boxRatio = boxExposed / boxH;
 
         // 솔루션: 10% 이상 보이면 밝은 모드
-        if (solRatio >= 0.1 && boxRatio < 0.2) {
+        if (solRatio >= 0.4 && boxRatio < 0.2) {
             setLightTheme();
         } 
         // 박스: 50% 이상 보이면 밝은 모드 해제 → 기본(어두운)
@@ -176,7 +176,7 @@ $(window).on('scroll resize load', scroll_chk);
 		}
 
 
-		$(window).on('pointermove mousemove touchmove', function(e){
+		$(window).on('pointermove', function(e){
 			if (!$('.cursor_sol').hasClass('on')) return; // on 아닐 땐 움직이지 않음
 		
 			$('.cursor_sol').css({
@@ -203,7 +203,9 @@ $(window).on('scroll resize load', scroll_chk);
 			
 		});
 
-		$(window).on('pointermove mousemove touchmove', function(e){
+		$('.cursor_sol, .cursor_box').appendTo('html');
+
+		$(window).on('pointermove', function(e){
 			if (!$('.cursor_box').hasClass('on')) return; // on 아닐 땐 움직이지 않음
 		
 			$('.cursor_box').css({
