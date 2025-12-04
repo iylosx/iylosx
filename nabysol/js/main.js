@@ -65,13 +65,16 @@ $(document).ready(function(){
 			nextEl: '.facility .ctrl_btn .next',
 			prevEl: '.facility .ctrl_btn .prev',
 		},
-		speed: 1000
+		speed: 1000,
+		on: {
+			init: function () {
+				this.update()
+			},
+		}
 
 	});
 
-	$(window).load(function(){
-		facility_swiper.update();
-	})
+	
 
 	function scroll_chk() {
     function bgChangeBySection() {
