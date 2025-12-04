@@ -458,6 +458,10 @@
     padding-top: clamp(104px, 20vh ,200px);
     position: relative;
 }
+
+
+
+
 .facility .facility_list .swiper .swiper-slide{
     width: 70vw;
     height: 64vh;

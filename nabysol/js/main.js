@@ -20,6 +20,7 @@ $(document).ready(function () {
         device_chk();
     });
 
+	
     const visual_swiper = new Swiper('.visual .swiper', {
         autoplay: {
             delay: 8000,
@@ -56,6 +57,7 @@ $(document).ready(function () {
         },
         centeredSlides: true,
         loop: true,
+
         navigation: {
             nextEl: '.facility .ctrl_btn .next',
             prevEl: '.facility .ctrl_btn .prev',
@@ -125,9 +127,12 @@ $(document).ready(function () {
     scroll_chk();
     $(window).on('scroll resize load', scroll_chk);
 
+	
+
     scroll_chk();  // 문서 로딩 후 1번
     $(window).scroll(function () {
         scroll_chk(); // 스크롤할 때마다
+		
     });
 
     const solutions_swiper = new Swiper('.solutions .swiper', {
@@ -242,6 +247,7 @@ $(document).ready(function () {
         duration: 500,
         easing: 'ease',
     });
+
 
 
 }); // 끝!!!
