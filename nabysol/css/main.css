@@ -455,7 +455,7 @@
     margin: 50px 0 0 0;
 }
 .facility .facility_list .swiper {
-    padding-top: 104px;
+    padding-top: clamp(104px, 20vh ,200px);
     position: relative;
 }
 .facility .facility_list .swiper .swiper-slide{
