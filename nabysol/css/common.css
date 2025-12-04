@@ -133,7 +133,7 @@ body {
 }
 .blind {
     position: absolute;
-    clip: rect(0, 0, 0, 0); /*도형을 그리는 명령*/
+    clip: rect(0 0 0 0); /*도형을 그리는 명령*/
     width: 1px;
     height: 1px;
     margin: -1px;

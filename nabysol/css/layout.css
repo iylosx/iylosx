@@ -74,7 +74,6 @@ header.bg_on::before{
     top: 100%;
     opacity: 0;
     visibility: hidden;
-    pointer-events: none;
     transition: opacity .35s ease;
     backdrop-filter: blur(10px);
 }
@@ -154,7 +153,6 @@ header.bg_on::before{
     height: var(--header-h);
     opacity: 1;
     visibility: visible;
-    pointer-events: auto;
 }
 
 /*li over*/
@@ -171,7 +169,6 @@ header .gnb .gnb_wrap .gnb_list ul.depth1 > li.over > a span::after{
 header .gnb .gnb_wrap .gnb_list ul.depth1 > li.over > ul.depth2 {
     opacity: 1;
     visibility: visible;
-    pointer-events: auto;   
     display: flex;
 }
 header .gnb .gnb_wrap .gnb_list ul.depth1 > li.over > ul.depth2 li > a:hover {
