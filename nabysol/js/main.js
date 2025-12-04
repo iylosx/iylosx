@@ -69,6 +69,10 @@ $(document).ready(function(){
 
 	});
 
+	$(window).load(function(){
+		facility_swiper.update();
+	})
+
 	function scroll_chk() {
     function bgChangeBySection() {
         let scroll = $(window).scrollTop();

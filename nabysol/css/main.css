@@ -1251,7 +1251,7 @@
             padding: 6px 16px 5px 16px;
             border-radius: 30px;
         }
-
+        
         .news .media_wrap .list ul li a .list_tit h3 {
             font-size: clamp(18px, 2vw, 22px);
             margin-bottom: 8px;
