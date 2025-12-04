@@ -1008,7 +1008,7 @@
         .box {
             margin:100px 0 0 0;
             flex-direction: column;
-            justify-content: auto;
+            justify-content: unset;
         }
         
         .box .review , 
