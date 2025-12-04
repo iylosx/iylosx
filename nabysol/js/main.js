@@ -267,17 +267,15 @@ $(window).on('scroll resize load', scroll_chk);
 			$('.popup_bg').hide()
 		});
 
-		$(window).on('load', function(){
-			AOS.init({
-				offset: 150,
-				duration: 1000,
-				easing: 'ease',
-			});
+		scroll_chk()  //문서로딩 후 1번
+		$(window).scroll(function(){
+			scroll_chk()  // 스크롤할때마다
+		})
 
-			// 최초 계산 안정화
-			setTimeout(() => {
-				AOS.refresh();
-			}, 200);
+		AOS.init({
+			offset: 150,
+			duration: 500,
+			easing: 'ease',
 		});
 
 })//끝!!!
