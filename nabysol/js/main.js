@@ -71,10 +71,18 @@ $(document).ready(function(){
 				this.update()
 			},
 		}
-
+		
 	});
 
+	// ★ 첫 로딩 때 틀어지는 문제 해결
+	window.addEventListener('load', function () {
+		setTimeout(() => {
+			facility_swiper.update();
+			facility_swiper.slideToLoop(0, 0);
+		}, 50);
+	});
 	
+
 
 	function scroll_chk() {
     function bgChangeBySection() {
@@ -96,12 +104,12 @@ $(document).ready(function(){
         let solRatio = solExposed / solH;
         let boxRatio = boxExposed / boxH;
 
-        // 솔루션: 10% 이상 보이면 밝은 모드
-        if (solRatio >= 0.4 && boxRatio < 0.2) {
+        // 솔루션: 40% 이상 보이면 밝은 모드
+        if (solRatio >= 0.4 && boxRatio < 0.8) {
             setLightTheme();
         } 
-        // 박스: 50% 이상 보이면 밝은 모드 해제 → 기본(어두운)
-        else if (boxRatio >= 0.5) {
+        // 박스: 70% 이상 보이면 밝은 모드 해제 → 기본(어두운)
+        else if (boxRatio >= 0.8) {
             setDarkTheme();
         }
         // 나머지 구간도 기본 모드 유지
@@ -283,6 +291,11 @@ $(window).on('scroll resize load', scroll_chk);
 			offset: 150,
 			duration: 500,
 			easing: 'ease',
+		});
+
+		document.addEventListener('aos:in', () => {
+			facility_swiper.update();
+			facility_swiper.slideToLoop(0, 0);
 		});
 
 })//끝!!!
