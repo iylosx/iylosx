@@ -29,7 +29,7 @@ $(document).ready(function(){
         }
     })
 
-    $('header .gnb .gnb_wrap .gnb_list ul.depth1 > li').on('mouseenter', function(){
+    $('header .gnb .gnb_wrap .gnb_list ul.depth1 > li').on('mouseenter focusin', function(){
         if(device_status =='pc'){
             $(this).addClass('over');
             $('header').addClass('menu_pc');
@@ -45,6 +45,21 @@ $(document).ready(function(){
         }
     });
     
+    $('ul.depth1 > li').find('> a').on('focusin', function () {
+        if(device_status == 'pc'){
+            $('ul.depth1 > li').removeClass('over');     // 이전 모든 on 제거
+            $(this).parent().addClass('over'); // 현재만 on
+
+            let hasDepth2 = $(this).children('ul.depth2').length > 0;
+        
+            if (hasDepth2) {
+                $('header').addClass('bg_on');
+            } else {
+                $('header').removeClass('bg_on');
+            }
+        }
+    });
+
     $('header .gnb .gnb_wrap .gnb_list ul.depth1 > li').on('mouseleave', function(){
         if(device_status =='pc'){
             $(this).removeClass('over');
@@ -52,6 +67,15 @@ $(document).ready(function(){
             $('header').removeClass('bg_on');
         }
     });
+    $('header .gnb .gnb_wrap .gnb_list ul.depth1 > li:last-child > ul.depth2 > li:last-child').on('focusout', function(){
+        if(device_status =='pc'){
+            $('header .gnb .gnb_wrap .gnb_list ul.depth1 > li').removeClass('over');
+            $('header').removeClass('menu_pc');
+            $('header').removeClass('bg_on');
+        }
+    });
+
+
 
     $('header .gnb .gnb_wrap .gnb_list ul.depth1 > li > a').on('click', function(e){
         if(device_status =='mo'){
