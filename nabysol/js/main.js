@@ -41,7 +41,7 @@ $(document).ready(function () {
         },
     });
 
-    const facility_swiper = new Swiper('.facility .swiper', {
+    let facility_swiper = new Swiper('.facility .swiper', {
         slidesPerView: 'auto',
         spaceBetween: 30,
         breakpoints: {
@@ -67,7 +67,6 @@ $(document).ready(function () {
             },
         }
     });
-
     
 
     function scroll_chk() {
@@ -244,10 +243,5 @@ $(document).ready(function () {
         easing: 'ease',
     });
 
-    document.addEventListener('aos:in', (e) => {
-		if ($(e.detail).closest('.facility').length) {
-			facility_swiper.update();
-		}
-	});
 
 }); // 끝!!!
