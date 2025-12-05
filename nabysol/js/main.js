@@ -237,16 +237,16 @@ $(document).ready(function () {
         $('.popup_bg').hide();
     });
 
-    // scroll_chk();  // 문서 로딩 후 1번
-    // $(window).scroll(function () {
-    //     scroll_chk();  // 스크롤할 때마다
-    // });
+    scroll_chk();  // 문서 로딩 후 1번
+    $(window).scroll(function () {
+        scroll_chk();  // 스크롤할 때마다
+    });
 
-    // AOS.init({
-    //     offset: 150,
-    //     duration: 500,
-    //     easing: 'ease',
-    // });
+    AOS.init({
+        offset: 150,
+        duration: 500,
+        easing: 'ease',
+    });
 
 
 
